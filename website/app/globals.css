@@ -381,4 +381,333 @@ footer {
   }
 }
 
-.logo{display:inline-flex;align-items:center;gap:12px}.logo .logo-text{color:var(--foreground);white-space:nowrap}.logo-graphic{width:64px;height:64px;object-fit:contain;flex-shrink:0}@media(max-width:640px){.logo{gap:8px;font-size:24px}.logo-graphic{width:44px;height:44px}header{gap:12px}}
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+.logo .logo-text {
+  color: var(--foreground);
+  white-space: nowrap;
+}
+.logo-graphic {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+@media (max-width: 640px) {
+  .logo {
+    gap: 8px;
+    font-size: 24px;
+  }
+  .logo-graphic {
+    width: 44px;
+    height: 44px;
+  }
+  header {
+    gap: 12px;
+  }
+}
+.enquiry-page {
+  max-width: 960px;
+  margin: auto;
+  padding: 65px 24px 90px;
+}
+.enquiry-page h1 {
+  font-size: clamp(44px, 6vw, 76px);
+  letter-spacing: -2px;
+  line-height: 1.08;
+}
+.enquiry-intro {
+  max-width: 660px;
+  font-size: 19px;
+}
+.trip-card {
+  margin-top: 40px;
+  background: #fffdf8;
+  border: 1px solid #cbd5cd;
+  padding: 40px;
+}
+.trip-card h2 {
+  width: auto;
+  font-size: 34px;
+}
+.trip-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  padding: 0;
+  list-style: none;
+  margin: 0 0 35px;
+  font-size: 14px;
+}
+.trip-steps li {
+  border-bottom: 2px solid #d5ded5;
+  padding-bottom: 15px;
+}
+.trip-steps li[aria-current] {
+  border-color: #173f3a;
+  font-weight: bold;
+}
+.trip-steps span {
+  display: block;
+}
+.optional-note {
+  font-size: 14px;
+}
+.trip-fields {
+  border: 0;
+  padding: 0;
+  display: grid;
+  gap: 22px;
+  margin: 30px 0;
+}
+.trip-field label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.trip-field input,
+.trip-field textarea {
+  font-size: 16px;
+  line-height: 1.5;
+  height: auto;
+  min-height: 48px;
+  padding: 12px;
+  border: 1px solid #849c8e;
+  border-radius: 4px;
+  background: white;
+  color: #173f3a;
+  box-shadow: none;
+  outline-offset: 3px;
+}
+.trip-field input:focus-visible,
+.trip-field textarea:focus-visible {
+  outline: 2px solid #326d68;
+}
+.trip-field textarea {
+  min-height: 108px;
+}
+.trip-field small {
+  display: block;
+  font-size: 14px;
+  margin-top: 7px;
+  color: #53665c;
+}
+.trip-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  margin-top: 28px;
+}
+.trip-actions button,
+.trip-review button {
+  height: auto;
+  min-height: 48px;
+  padding: 12px 22px;
+  border-radius: 3px;
+  font-size: 16px;
+  white-space: normal;
+}
+.trip-actions button:last-child {
+  margin-left: auto;
+}
+.trip-review {
+  padding: 24px;
+  background: #edf2ec;
+  margin: 24px 0;
+}
+.trip-review dl > div {
+  margin-bottom: 15px;
+}
+.trip-review dt {
+  font-weight: 600;
+  font-size: 14px;
+}
+.trip-review dd {
+  margin: 3px 0;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.field-error,
+.form-error {
+  color: #943b2c;
+}
+.form-error,
+.form-notice {
+  padding: 16px;
+  border-left: 3px solid #b3533e;
+  background: #fff0e7;
+}
+.direct-contact {
+  font-size: 14px;
+  margin-top: 26px;
+  overflow-wrap: anywhere;
+}
+.honeypot {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+.reference {
+  overflow-wrap: anywhere;
+}
+.trip-privacy h2 {
+  font-size: 30px;
+  width: auto;
+  margin-top: 30px;
+}
+@media (max-width: 640px) {
+  .enquiry-page {
+    padding: 40px 18px 60px;
+  }
+  .trip-card {
+    padding: 23px 18px;
+  }
+  .trip-steps {
+    font-size: 12px;
+    gap: 7px;
+  }
+  .trip-card h2 {
+    font-size: 29px;
+  }
+  .trip-actions button {
+    padding: 12px 15px;
+  }
+  .trip-review {
+    padding: 16px;
+  }
+}
+/* Shared page chrome: align secondary pages with the enquiry content grid. */
+.site-header {
+  display: block;
+  max-width: 1600px;
+  padding: 0;
+  margin: 0 auto;
+}
+.site-header-inner {
+  max-width: 1600px;
+  margin: auto;
+  padding: 30px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+}
+.site-header-contained .site-header-inner {
+  max-width: 960px;
+  padding: 24px;
+}
+.back-home {
+  font-size: 14px;
+  white-space: nowrap;
+  text-decoration: none;
+}
+.back-home:hover {
+  text-decoration: underline;
+}
+.site-footer {
+  padding: 55px 5% 24px;
+}
+.footer-inner {
+  max-width: 1440px;
+  margin: auto;
+}
+.site-footer-contained {
+  padding: 0;
+}
+.site-footer-contained .footer-inner {
+  max-width: 960px;
+  padding: 48px 24px 26px;
+}
+.footer-links {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.photo-credit {
+  max-width: 1440px;
+  margin: 15px auto 0;
+  font-size: 12px;
+  color: #c9d6ce;
+}
+.photo-credit a {
+  text-decoration: none;
+}
+.legal-page {
+  max-width: 960px;
+}
+.legal-page h1 {
+  font-size: clamp(42px, 6vw, 68px);
+  margin-bottom: 18px;
+}
+.legal-date {
+  font-size: 14px;
+  color: #53665c;
+}
+.legal-page section {
+  max-width: 760px;
+  margin: 34px 0;
+}
+.legal-page h2 {
+  width: auto;
+  font-size: 28px;
+  letter-spacing: -0.5px;
+  margin: 0 0 15px;
+}
+.legal-page p {
+  line-height: 1.8;
+}
+.legal-page .form-notice {
+  max-width: 760px;
+}
+@media (max-width: 640px) {
+  .site-header-inner {
+    padding: 22px 6%;
+    gap: 12px;
+  }
+  .site-header-contained .site-header-inner {
+    padding: 20px 18px;
+  }
+  .site-header-contained .logo {
+    font-size: 22px;
+    gap: 6px;
+  }
+  .site-header-contained .logo-graphic {
+    width: 40px;
+    height: 40px;
+  }
+  .back-home {
+    font-size: 12px;
+  }
+  .site-footer-contained .footer-inner {
+    padding: 38px 18px 24px;
+  }
+  .site-footer {
+    padding: 40px 7% 24px;
+  }
+  .site-footer-contained {
+    padding: 0;
+  }
+  .footer-links {
+    gap: 20px;
+  }
+  .legal-page h2 {
+    font-size: 26px;
+  }
+}
+@media (max-width: 350px) {
+  .site-header-inner {
+    flex-wrap: wrap;
+  }
+  .back-home {
+    margin-left: auto;
+  }
+}
+
+.trip-confirmation h2 {
+  margin-bottom: 1rem;
+}

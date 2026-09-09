@@ -2,6 +2,8 @@
 
 ## Delivery order
 
+The user has brought the enquiry form forward after the holding page. The original sequence below remains the broader site roadmap; see ENQUIRY-SETUP.md for the current implementation and email activation requirements.
+
 1. Public supplier-facing holding page.
 2. Full marketing site developed in preview while the holding page remains public.
 3. Structured enquiry engine integrated into the marketing site.

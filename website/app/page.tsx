@@ -1,32 +1,15 @@
+import SiteHeader from '../components/site-header';
+import SiteFooter from '../components/site-footer';
 import Link from 'next/link';
 import Image from 'next/image';
 import { site } from '../lib/site';
+import { enquiriesEnabled } from '../lib/enquiry-config';
+export const dynamic = 'force-dynamic';
 const email = process.env.PUBLIC_CONTACT_EMAIL?.trim() || site.contactEmail;
 export default function Home() {
   return (
     <>
-      <a className="skip" href="#main">
-        Skip to content
-      </a>
-      <header>
-        <Link className="logo" href="/">
-          <Image
-            className="logo-graphic"
-            src="/images/logo-circle.png"
-            alt=""
-            width={64}
-            height={64}
-            unoptimized
-          />
-          <span className="logo-text">
-            travel{' '}
-            <b>
-              plan it<span>.</span>
-            </b>
-          </span>
-        </Link>
-        <span className="status">A new journey is coming</span>
-      </header>
+      <SiteHeader />
       <main id="main">
         <section className="hero">
           <div className="copy">
@@ -42,7 +25,11 @@ export default function Home() {
               Thoughtfully planned journeys, shaped around what matters to you.
             </p>
             <div className="contact">
-              {email ? (
+              {enquiriesEnabled() ? (
+                <Link className="button" href="/plan-my-trip/">
+                  Plan my trip ↗
+                </Link>
+              ) : email ? (
                 <a
                   className="button"
                   href={`mailto:${email}?subject=Travel%20Plan%20It%20enquiry`}
@@ -110,29 +97,7 @@ export default function Home() {
           </div>
         </section>
       </main>
-      <footer>
-        <div className="footer-top">
-          <p>
-            A new way to plan
-            <br />
-            <em>extraordinary travel.</em>
-          </p>
-          <div>
-            <span>{email ? 'PLANNING A TRIP?' : 'THE NEXT CHAPTER'}</span>
-            {email ? (
-              <a href={`mailto:${email}`}>{email} ↗</a>
-            ) : (
-              <p>Coming soon.</p>
-            )}
-          </div>
-        </div>
-        <div className="footer-bottom">
-          <span>© {new Date().getFullYear()} Travel Plan It</span>
-          <a href="https://unsplash.com/photos/a-view-of-a-body-of-water-surrounded-by-mountains-Tm6Sm2cDwBc">
-            Photography by Benjamin Chambon / Unsplash
-          </a>
-        </div>
-      </footer>
+      <SiteFooter photoCredit />
     </>
   );
 }

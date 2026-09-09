@@ -2,6 +2,8 @@
 
 No delivery dates or commercial commitments are implied. Each stage depends on the preceding outcome and the user's implementation scope.
 
+Update, 8 September 2026: the user reported publishing the holding page and chose to bring the enquiry form forward, ahead of the full marketing site. Resend on its free tier is selected, with internal notifications to enquiries@mytravelplanit.co.uk and customer acknowledgements sent from the verified mytravelplanit.co.uk domain. Implementation is local; credentials, domain verification and real delivery testing remain pending. See ENQUIRY-SETUP.md.
+
 | Stage | Deliverable | Completion gate |
 | --- | --- | --- |
 | 0 — documentation | Brief, brand direction, scope and supplier register. | Seven Markdown files created and checked; unknowns explicit. |

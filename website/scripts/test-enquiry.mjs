@@ -1,0 +1,34 @@
+import ts from 'typescript';
+import {readFileSync} from 'node:fs';
+import assert from 'node:assert/strict';
+const moduleUrl = source => `data:text/javascript;base64,${Buffer.from(ts.transpileModule(source,{compilerOptions:{module:ts.ModuleKind.ESNext,target:ts.ScriptTarget.ES2022}}).outputText).toString('base64')}`;
+globalThis.__testWorkerEnv = {};
+const workerUrl=moduleUrl(readFileSync('lib/worker-env.ts','utf8').replace("'cloudflare:workers'",JSON.stringify(moduleUrl('export const env = globalThis.__testWorkerEnv;'))));
+const configUrl=moduleUrl(readFileSync('lib/enquiry-config.ts','utf8').replace("'./worker-env'",JSON.stringify(workerUrl)));
+let routeSource=readFileSync('app/api/enquiries/route.ts','utf8');
+for(const name of ['enquiry','site']) routeSource=routeSource.replace(`'../../../lib/${name}'`,JSON.stringify(moduleUrl(readFileSync(`lib/${name}.ts`,'utf8'))));
+routeSource=routeSource.replace("'../../../lib/worker-env'",JSON.stringify(workerUrl)).replace("'../../../lib/enquiry-config'",JSON.stringify(configUrl));
+const {POST}=await import(moduleUrl(routeSource));
+const sample={id:'f882ab4d-7edb-4e55-8a20-895c0dd3f822',token:'test-token',website:'',data:{destination:'Vietnam',name:'Test Traveller',email:'test@example.com',adults:'2'}};
+const req=(body=sample,origin='https://example.com')=>new Request('https://example.com/api/enquiries',{method:'POST',headers:{origin,'Content-Type':'application/json'},body:JSON.stringify(body)});
+const oldFetch=globalThis.fetch;
+let calls=[];
+try {
+  globalThis.__testWorkerEnv.ENQUIRIES_ENABLED='false';
+  assert.equal((await POST(req())).status,503);
+  assert.equal((await POST(req(sample,'https://attacker.example'))).status,403);
+  assert.equal((await POST(req({...sample,data:{...sample.data,email:'invalid'}}))).status,400);
+  assert.equal((await POST(req({...sample,website:'spam'}))).status,400);
+  assert.equal((await POST(req({...sample,data:{...sample.data,notes:'x'.repeat(22000)}}))).status,413);
+  Object.assign(globalThis.__testWorkerEnv,{ENQUIRIES_ENABLED:'true',RESEND_API_KEY:'test-only',TURNSTILE_SECRET_KEY:'test-only',TURNSTILE_SITE_KEY:'test-only'});
+  globalThis.fetch=async(url,options)=>{calls.push({url,options});return Response.json(String(url).includes('siteverify')?{success:true,hostname:'example.com',action:'enquiry'}:{data:[{id:'internal-id'},{id:'customer-id'}]});};
+  const first=await POST(req());assert.equal(first.status,200);assert.ok((await first.json()).reference.startsWith('TPI-'));
+  const batch=JSON.parse(calls[1].options.body);assert.equal(batch.length,2);assert.deepEqual(batch[1].to,['test@example.com']);assert.equal(batch[1].reply_to,'enquiries@mytravelplanit.co.uk');assert.ok(batch[1].text.includes('not a booking confirmation'));const sent=batch[0];assert.deepEqual(sent.to,['rishikhosla@mytravelplanit.co.uk']);assert.equal(sent.reply_to,'test@example.com');assert.equal(sent.from,'Travel Plan It <enquiries@mytravelplanit.co.uk>');assert.equal(batch[1].from,sent.from);assert.equal(calls[1].options.headers.Authorization,'Bearer test-only');
+  await POST(req());assert.equal(calls[1].options.headers['Idempotency-Key'],calls[3].options.headers['Idempotency-Key']);assert.equal(calls[1].options.body,calls[3].options.body);
+  globalThis.fetch=async()=>Response.json({success:false});assert.equal((await POST(req())).status,400);
+  globalThis.fetch=async()=>Response.json({success:true,hostname:'wrong.example',action:'enquiry'});assert.equal((await POST(req())).status,400);
+  globalThis.fetch=async(url)=>String(url).includes('siteverify')?Response.json({success:true,hostname:'example.com',action:'enquiry'}):Response.json({error:'down'},{status:500});assert.equal((await POST(req())).status,502);
+  globalThis.fetch=async(url)=>String(url).includes('siteverify')?Response.json({success:true,hostname:'example.com',action:'enquiry'}):Response.json({data:[{id:'only-one'}]});assert.equal((await POST(req())).status,502);
+  globalThis.fetch=async()=>{throw Error('timeout')};assert.equal((await POST(req())).status,502);
+  console.log('Passed: validation, body limit, origin, honeypot, disabled setup, fixed recipient, reply-to, stable retry payload, spam rejection, provider failure and timeout. No real emails sent.');
+} finally {globalThis.fetch=oldFetch;}
