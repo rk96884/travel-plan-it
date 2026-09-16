@@ -1,75 +1,58 @@
-# CAM-001 Video Scripts
+# CAM-001 — 30-Second Master Video
 
-**Target:** 25–35 seconds, 9:16, captions required.
+**Asset ID:** VID-KH-001-V1  
+**Format:** 9:16 vertical  
+**Target length:** 30 seconds  
+**Primary channels:** Instagram Reels, Facebook Reels, YouTube Shorts; TikTok when account is ready.
 
-## VID-TH-001-HOOK-A — Mistake
+## Master voiceover
 
-**0–3s**  
-VO/Text: **"The biggest Thailand mistake? Trying to fit everything into two weeks."**
+### 0–4 seconds — Hook
 
-**3–7s**  
-VO: "Bangkok. Chiang Mai. Phuket. Krabi. Samui. Another island..."  
-Visual: destination names accumulate quickly, then simplify.
+**VO:** "Did you know Thailand has pink dolphins?"
 
-**7–11s**  
-VO: **"More stops doesn't always mean a better trip."**
+**On-screen:** DID YOU KNOW THAILAND HAS PINK DOLPHINS?
 
-**11–23s**  
-VO: "For the right traveller, we'd start simpler: Bangkok for the energy, Chiang Mai for the north, then finish somewhere like Koh Samui with time to actually slow down."
+### 4–8 seconds — Reveal
 
-**23–28s**  
-VO: "The exact route depends on when you travel, what you love and how you want the trip to feel."
+**VO:** "Not where most visitors are looking. Welcome to Khanom."
 
-**28–33s**  
-VO/Text: **"You bring the travel idea. We make the itinerary work."**
+**On-screen:** KHANOM, THAILAND
 
-CTA pre-launch: **Follow @travelplanit**
+### 8–16 seconds — Discovery
 
-CTA live: **Planning Thailand? Tell us what you have in mind.**
+**VO:** "A quieter stretch of Thailand's Gulf coast, where beaches, nature and local life move at a different pace."
 
----
+**On-screen sequence:** QUIETER BEACHES / NATURE / LOCAL LIFE
 
-## VID-TH-001-HOOK-B — Expertise
+### 16–22 seconds — Brand idea
 
-**0–3s**  
-**"Bangkok, Chiang Mai and the beach — how would we make 14 days actually work?"**
+**VO:** "And that's exactly the kind of place we think makes a journey more memorable."
 
-**3–8s**  
-"First, we wouldn't treat every destination as another box to tick."
+**On-screen:** THAILAND, BEYOND THE OBVIOUS.
 
-**8–21s**  
-"Give Bangkok enough time to arrive and explore. Change the pace in Chiang Mai. Then protect the end of the trip for the beach instead of squeezing in another transfer."
+### 22–27 seconds — TPI differentiation
 
-**21–27s**  
-"Different dates or interests could change that route completely — that's the point of tailor-made planning."
+**VO:** "Because sometimes the most extraordinary places aren't the obvious ones."
 
-**27–32s**  
-**"Travel Plan It — tailor-made long-haul, expertly planned."**
+**On-screen:** BEYOND THE OBVIOUS
 
----
+### 27–30 seconds — End card
 
-## VID-TH-001-HOOK-C — Challenge
+**VO:** "Travel Plan It. Extraordinary places. Thoughtfully planned."
 
-**0–3s**  
-**"Five Thailand stops in two weeks? We'd probably remove one."**
+**End card:**
+- Travel Plan It logo
+- EXTRAORDINARY PLACES. THOUGHTFULLY PLANNED.
+- @travelplanit
+- optional: mytravelplanit.co.uk
 
-**3–8s**  
-"Because every extra stop costs more than another hotel check-in."
+## Production requirements
 
-**8–15s**  
-"It can mean packing, transfers, airports and losing chunks of the day."
-
-**15–25s**  
-"A better itinerary balances what you want to see with enough time to enjoy being there."
-
-**25–32s**  
-**"Planning Thailand? Start with the experience you want — then build the route."**
-
-End card: **Travel Plan It | @travelplanit | mytravelplanit.co.uk**
-
-## Production notes
-
-- Use the same master body where possible so hook performance can be compared.
-- Keep on-screen text concise.
-- Verify that footage represents the named destination.
-- Do not show unverified package prices, flight schedules or hotel availability.
+- Captions required.
+- Natural British voice preferred for the reference version.
+- Do not use an over-enthusiastic hard-sell travel-ad delivery.
+- Pink dolphin imagery should feel plausible and natural, not fluorescent/cartoon pink.
+- Travel Plan It logo must be clean and undistorted.
+- Destination footage/images must match the narration as closely as practical.
+- Music should build gently and remain subordinate to voiceover.
