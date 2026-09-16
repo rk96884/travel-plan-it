@@ -1,85 +1,69 @@
-# CAM-001 Campaign Brief
+# CAM-001 Campaign Brief — Beyond the Obvious: Khanom
 
-## Problem
+## Objective
 
-People planning a two-week Thailand trip can be tempted to add too many stops, creating unnecessary transfers, hotel changes and lost holiday time.
+Introduce Travel Plan It's differentiation through discovery rather than a generic travel-agency introduction.
 
-## Audience
+## Core insight
 
-Initial hypothesis:
+Travellers already know Thailand's headline destinations. Specialist planning becomes valuable when it reveals compelling alternatives and works them intelligently into a wider trip.
 
-- UK-based couples/small parties;
-- long-haul intent;
-- approximately two-week trip;
-- interested in multiple Thailand experiences rather than a single resort;
-- values advice/time/confidence over lowest-price-only shopping.
+## Hook
+
+> **Did you know Thailand has pink dolphins?**
+
+## Reveal
+
+> **Not where most visitors are looking. Welcome to Khanom.**
+
+## Positioning
+
+> **Thailand, beyond the obvious.**
+
+## Brand close
+
+> **Extraordinary places. Thoughtfully planned.**
+
+## Audience hypothesis
+
+UK long-haul travellers who:
+
+- are considering Thailand/Asia;
+- want more than a standard resort itinerary;
+- value discovery, authenticity and expert planning;
+- may know Phuket/Koh Samui but not Khanom;
+- are willing to trade some mass-tourism convenience for a more distinctive trip.
 
 ## Desired response
 
-"I hadn't thought about the itinerary that way — I could use help planning this."
+"I've never heard of Khanom. What else could Travel Plan It show me?"
 
-## Proposition demonstrated
+## Creative role of pink dolphins
 
-**You bring the travel idea. We make the itinerary work.**
+The dolphins are the curiosity hook, not the entire proposition.
 
-## Example itinerary narrative
+They should lead naturally into Khanom's wider appeal and then into TPI's broader promise of discovering less-obvious places.
 
-Use Bangkok + Chiang Mai + Koh Samui as the simple three-part story:
+## Tone
 
-1. **Bangkok** — arrival, city and food/culture.
-2. **Chiang Mai** — change of pace and northern experience.
-3. **Koh Samui** — finish with beach/down-time.
+- intriguing;
+- premium but accessible;
+- cinematic;
+- knowledgeable;
+- calm;
+- discovery-led;
+- never sensational.
 
-Do not imply this is universally the best route. The expert message is that the right route depends on dates, interests, budget and pace.
+## Accuracy / trust
 
-## Creative tone
+Do not:
 
-- expert but accessible;
-- visually inspiring;
-- calm rather than frantic;
-- modern;
-- practical;
-- no hard sell.
+- call Khanom untouched, undiscovered or virgin territory as a factual claim;
+- guarantee dolphin sightings;
+- imply generated dolphins are documentary footage;
+- invent package prices, availability or experiences;
+- make unconfirmed membership/protection claims.
 
-## Visual direction
+## Campaign platform
 
-Use recognisable, accurate visual categories:
-
-- Bangkok skyline/street/temple context;
-- Chiang Mai/northern landscape/culture;
-- Koh Samui tropical coast;
-- simple route/map motif;
-- subtle Travel Plan It brand treatment.
-
-Avoid depicting a specific hotel or experience unless it is genuinely being referenced.
-
-## Deliverables
-
-### Phase A — proof of concept
-
-- 3 scripts/hooks;
-- 30-second master storyboard;
-- 9:16 reference creative;
-- carousel;
-- social captions.
-
-### Phase B — conversion infrastructure
-
-- Thailand landing page;
-- enquiry CTA;
-- analytics/UTM;
-- CRM source capture.
-
-### Phase C — paid validation
-
-Only after tracking and operational booking readiness:
-
-- Meta creative variants;
-- high-intent Google Search test;
-- retargeting when audience volume supports it.
-
-## Success
-
-Pre-launch success is production learning and meaningful audience response.
-
-Post-launch success is measured through qualified enquiries and ultimately retained contribution/CAC.
+If CAM-001 works, **Beyond the Obvious** becomes a repeatable series for less-obvious places across Asia and long-haul destinations.
