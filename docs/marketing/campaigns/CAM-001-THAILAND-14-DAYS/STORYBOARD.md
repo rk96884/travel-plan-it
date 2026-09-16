@@ -1,40 +1,36 @@
-# CAM-001 Master Storyboard
+# CAM-001 — Approved Storyboard Direction
 
-## Format
+**Asset:** VID-KH-001-V1  
+**Duration:** ~30 seconds  
+**Aspect:** 9:16 / 1080 × 1920 target
 
-- 9:16 vertical
-- 1080 × 1920 target
-- ~30 seconds
-- captions/sound-off legibility
-- safe margins for platform UI
-
-## Shot plan
-
-| Time | Visual | On-screen text | Purpose |
+| Time | Visual direction | Text | Audio purpose |
 | --- | --- | --- | --- |
-| 0–3s | Fast montage / map with too many Thailand stop labels | The biggest Thailand mistake? | Pattern interrupt |
-| 3–7s | Labels/routes stack rapidly | Trying to fit everything into two weeks | Establish problem |
-| 7–11s | Route visually simplifies | More stops ≠ better trip | Insight |
-| 11–15s | Bangkok visual | BANGKOK — arrive + explore | Itinerary |
-| 15–19s | Chiang Mai visual | CHIANG MAI — change the pace | Itinerary |
-| 19–23s | Koh Samui visual | KOH SAMUI — slow down | Itinerary |
-| 23–27s | Clean route line / three-stop map | Dates + interests + pace matter | Tailor-made caveat |
-| 27–32s | Brand-led end frame | You bring the idea. We make the itinerary work. | Positioning + CTA |
+| 0–4s | Immediate cinematic pink-dolphin surface/breach shot in tropical Gulf water | DID YOU KNOW THAILAND HAS PINK DOLPHINS? | Curiosity hook |
+| 4–8s | Wide reveal of Khanom coastline / map-location transition | KHANOM, THAILAND | Reveal |
+| 8–11s | Quiet broad beach | QUIETER BEACHES | Discovery |
+| 11–14s | Green coastline/jungle/nature | NATURE | Discovery |
+| 14–16s | Respectful local-life/fishing/coastal detail | LOCAL LIFE | Human texture |
+| 16–22s | Slow cinematic sequence tying coast + landscape together | THAILAND, BEYOND THE OBVIOUS. | Positioning |
+| 22–27s | Golden-hour hero coastline, possibly dolphin echo shot | SOMETIMES THE MOST EXTRAORDINARY PLACES AREN'T THE OBVIOUS ONES | Emotional payoff |
+| 27–30s | Clean Travel Plan It branded end card | EXTRAORDINARY PLACES. THOUGHTFULLY PLANNED. / @travelplanit | Brand + CTA |
 
-## Audio
+## Visual benchmark
 
-Prefer warm, contemporary travel audio under a clear natural voiceover. Music must be properly licensed/platform-safe.
+Use the approved generated storyboard/poster direction from the campaign development session as the reference: warm cinematic coastal photography, restrained teal/white brand treatment, pink-dolphin hook and strong Travel Plan It end card.
 
-## Brand treatment
+## Correction from early concept
 
-Do not force the logo into every shot. Use restrained brand typography/colour cues and a clean final frame.
+Do **not** use the absolute line "Not in Phuket. Not in Samui."
 
-## AI production test
+Approved replacement:
 
-Produce comparable versions using available:
+> **Not where most visitors are looking. Welcome to Khanom.**
 
-1. ChatGPT/OpenAI workflow;
-2. Creatify;
-3. Zeely AI.
+## Editing
 
-Record the exact workflow and human correction required in `RESULTS.md`.
+- First cut should move quickly enough to retain attention but should not feel frantic.
+- Allow the destination reveal to breathe.
+- Avoid excessive AI transitions.
+- Use subtle map/location graphics if they improve comprehension.
+- Logo appears prominently at the end; light brand cues may appear earlier.
