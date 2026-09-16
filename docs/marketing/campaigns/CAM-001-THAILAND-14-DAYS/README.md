@@ -1,57 +1,48 @@
-# CAM-001 — Thailand in 14 Days
+# CAM-001 — Beyond the Obvious: Khanom
 
-**Status:** BUILD  
-**Campaign type:** Lean creative proof-of-concept / future acquisition campaign  
-**Primary audience:** UK travellers planning a first or complex Thailand trip  
-**Primary objective:** Demonstrate Travel Plan It's itinerary-design expertise and generate qualified trip-planning enquiries once the booking proposition is live.
+**Status:** BUILD — creative direction approved  
+**Campaign type:** Brand introduction / destination discovery / AI video workflow test  
+**Hero destination:** Khanom, Thailand  
+**Primary hook:** **Did you know Thailand has pink dolphins?**
 
-## Core idea
+## Campaign idea
 
-**Thailand in 14 days works better when you make choices.**
+Travel Plan It should introduce itself by showing why specialist, tailor-made planning adds value: we can take travellers beyond the obvious choices.
 
-Travel Plan It should not sell "see everything". The campaign demonstrates how thoughtful sequencing can create a better-paced Bangkok + northern Thailand + beach itinerary.
+Khanom is the first expression of a repeatable content platform:
 
-## Working route
+> **BEYOND THE OBVIOUS**
 
-**Bangkok → Chiang Mai → Koh Samui**
+### Episode 01 — Khanom, Thailand
 
-This is a creative planning example, not a live quote or fixed package. Exact routing, transport, hotels, seasonality and price must be verified for each customer.
+The pink dolphins earn attention. Khanom is the reveal. Travel Plan It is the reason the story matters.
 
-## Hero hook
+## Message hierarchy
 
-> The biggest Thailand mistake? Trying to fit everything into two weeks.
+1. **Hook:** Did you know Thailand has pink dolphins?
+2. **Reveal:** Not where most visitors are looking. Welcome to Khanom.
+3. **Destination:** quieter coastline, nature and a different side of Thailand.
+4. **Positioning:** Thailand, beyond the obvious.
+5. **Brand:** Travel Plan It.
+6. **Close:** Extraordinary places. Thoughtfully planned.
+7. **Pre-launch CTA:** Follow @travelplanit.
 
-## Supporting hooks
+## Important accuracy rule
 
-- Bangkok, Chiang Mai and the beach — here's how we'd make 14 days actually work.
-- Five stops in Thailand in two weeks? We'd probably remove one.
+Pink dolphins are wild animals. Never guarantee a sighting or imply generated imagery documents a specific real encounter.
 
-## Asset system
+## Approved visual direction
 
-- 3 vertical video hook variants
-- 1 master 30-second storyboard
-- 1 carousel concept
-- 1 landing-page brief
-- organic social copy
-- future Meta/paid-media variants
-- experiment/result record
+Cinematic 9:16 destination film. Pink dolphins open the story, followed by a Khanom reveal, coastal/nature/local-life sequences and a restrained branded end card using the Travel Plan It logo.
 
-## Campaign rule
+## Deliverables
 
-Every asset must communicate a planning insight. Avoid generic tropical footage that could belong to any travel company.
-
-## CTA stages
-
-**Pre-launch:** Follow Travel Plan It for smarter long-haul planning.
-
-**Operational launch:** Planning Thailand? Tell us the trip you have in mind.
-
-## Files
-
-- `CAMPAIGN-BRIEF.md`
-- `VIDEO-SCRIPTS.md`
-- `STORYBOARD.md`
-- `SOCIAL-COPY.md`
-- `LANDING-PAGE.md`
-- `PAID-MEDIA.md`
-- `RESULTS.md`
+- 30-second master production brief
+- voiceover + on-screen copy
+- shot-by-shot storyboard
+- ChatGPT/OpenAI production route
+- Creatify comparison
+- Zeely comparison
+- social copy
+- future landing/paid-media concept
+- results scorecard
