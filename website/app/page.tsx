@@ -36,10 +36,12 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="proposition" aria-labelledby="inspiration-title">
+        <section className="proposition inspiration-preview" aria-labelledby="inspiration-title">
           <div className="heading"><p className="eyebrow">TRAVEL INSPIRATION</p><h2 id="inspiration-title">Ideas to make your own.</h2></div>
-          <p className="intro">Explore a few of the places and experiences that inspire us. They’re not fixed packages — they’re starting points for a journey designed around you.</p>
-          <div className="contact"><Link className="button" href="/inspiration/">Explore travel inspiration ↗</Link></div>
+          <div className="inspiration-preview-body">
+            <p className="intro">Explore a few of the places and experiences that inspire us. They’re not fixed packages — they’re starting points for a journey designed around you.</p>
+            <div className="contact"><Link className="button" href="/inspiration/">Explore travel inspiration ↗</Link></div>
+          </div>
         </section>
 
         <section className="planning-journey" aria-labelledby="planning-title">
@@ -54,7 +56,9 @@ export default function Home() {
           </div>
           <div className="planning-deposit">
             <div className="planning-deposit-title">
-              <Image className="planning-mark" src="/images/logo-circle.png" alt="" width="110" height="110" />
+              <div className="planning-campaign-image">
+                <Image unoptimized src="/images/inspiration/nihi-sumba-coast-sunset.png" alt="Remote tropical coastline glowing in the evening light" width="1200" height="1600" />
+              </div>
               <p className="eyebrow">YOUR TAILOR-MADE PLANNING DEPOSIT</p>
               <h2>Expert planning. Invested back into your journey.</h2>
             </div>
