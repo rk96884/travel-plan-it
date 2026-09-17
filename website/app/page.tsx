@@ -44,7 +44,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="planning-journey" aria-labelledby="planning-title">
+        <section className="planning-journey" id="how-it-works" aria-labelledby="planning-title">
           <div className="planning-heading">
             <p className="eyebrow">HOW IT WORKS</p>
             <div><h2 id="planning-title">From first idea to a journey that feels like yours.</h2><p>Thoughtful travel takes thoughtful planning. We begin with a conversation, then shape the details around you.</p></div>
