@@ -9,11 +9,9 @@ export default function Terms() {
       <main id="main" className="enquiry-page legal-page">
         <p className="eyebrow">WEBSITE INFORMATION</p>
         <h1>Terms of use</h1>
-        <p className="legal-date">Draft for review · 9 September 2026</p>
+        <p className="legal-date">Draft for review · 17 September 2026</p>
         <aside className="form-notice">
-          These terms are being prepared for launch. The operator’s legal status
-          and any applicable company registration details remain to be
-          confirmed.
+          These website terms remain a draft for review.
         </aside>
         <section>
           <h2>About this website</h2>
@@ -26,7 +24,9 @@ export default function Terms() {
             For questions, contact{' '}
             <a href={`mailto:${site.contactEmail}`}>{site.contactEmail}</a>.
           </p>
-          <p>Business name: {site.legalName}. Correspondence address:</p>
+          <p>Company name: {site.legalName}.</p>
+          <p>Company number: {site.companyNumber}.</p>
+          <p>Correspondence address:</p>
           <address style={{ fontStyle: 'normal' }}>
             {site.correspondenceAddress.map((line) => (
               <div key={line}>{line}</div>

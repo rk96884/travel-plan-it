@@ -47,7 +47,7 @@ Measure enquiry starts, completions, delivery failures, qualified leads and even
 
 | Item | Status / next action |
 | --- | --- |
-| Legal entity and trading details | Confirm actual registered name, number and required public details. Do not assume “Ltd”. |
+| Legal entity and trading details | User confirmed Travel Plan It Ltd, company number 17459068, on 17 September 2026. |
 | Domain, email, telephone | Supply verified public details and confirm mailbox monitoring. |
 | Consortium and protection | Evaluate responses; record approved relationship and exact wording. |
 | Logo and final visual identity | Typographic exploration requested; final assets not established. |

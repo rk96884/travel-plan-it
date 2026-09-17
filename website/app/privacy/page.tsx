@@ -10,7 +10,7 @@ export default function Privacy() {
       <main id="main" className="enquiry-page legal-page">
         <p className="eyebrow">YOUR INFORMATION</p>
         <h1>Privacy notice</h1>
-        <p className="legal-date">Last updated: 9 September 2026</p>
+        <p className="legal-date">Last updated: 17 September 2026</p>
         <section>
           <h2>Who handles your information</h2>
           <p>
@@ -18,7 +18,9 @@ export default function Privacy() {
             privacy questions, corrections or requests, email{' '}
             <a href={`mailto:${site.contactEmail}`}>{site.contactEmail}</a>.
           </p>
-          <p>Business name: {site.legalName}. Correspondence address:</p>
+          <p>Company name: {site.legalName}.</p>
+          <p>Company number: {site.companyNumber}.</p>
+          <p>Correspondence address:</p>
           <address style={{ fontStyle: 'normal' }}>
             {site.correspondenceAddress.map((line) => (
               <div key={line}>{line}</div>
