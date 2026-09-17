@@ -2,10 +2,9 @@ import SiteHeader from '../components/site-header';
 import SiteFooter from '../components/site-footer';
 import Link from 'next/link';
 import Image from 'next/image';
-import { site } from '../lib/site';
-import { enquiriesEnabled } from '../lib/enquiry-config';
+
 export const dynamic = 'force-dynamic';
-const email = process.env.PUBLIC_CONTACT_EMAIL?.trim() || site.contactEmail;
+
 export default function Home() {
   return (
     <>
@@ -14,28 +13,11 @@ export default function Home() {
         <section className="hero">
           <div className="copy">
             <p className="eyebrow">TAILOR-MADE TRAVEL · ASIA & BEYOND</p>
-            <h1>
-              Your planet.
-              <br />
-              Your <em>plan.</em>
-            </h1>
+            <h1>Your planet.<br />Your <em>plan.</em></h1>
             <p className="tagline">Tailor-made travel, built around you.</p>
-            <p className="intro">
-              The places you’ve dreamed of. The discoveries you haven’t.
-              Thoughtfully planned journeys, shaped around what matters to you.
-            </p>
+            <p className="intro">The places you’ve dreamed of. The discoveries you haven’t. Thoughtfully planned journeys, shaped around what matters to you.</p>
             <div className="contact">
-              {enquiriesEnabled() ? (
-                <Link className="button" href="/plan-my-trip/">
-                  Start planning your journey ↗
-                </Link>
-              ) : email ? (
-                <a className="button" href={`mailto:${email}?subject=Travel%20Plan%20It%20enquiry`}>
-                  Let’s plan something extraordinary ↗
-                </a>
-              ) : (
-                <p className="soon">Our full website is coming soon.</p>
-              )}
+              <Link className="button" href="/plan-my-trip/">Start planning your journey ↗</Link>
               <p className="note">Your initial consultation is complimentary and there’s no obligation.</p>
             </div>
           </div>
@@ -44,6 +26,7 @@ export default function Home() {
             <figcaption><span>Room for a little wonder.</span><small>HẠ LONG BAY, VIETNAM</small></figcaption>
           </figure>
         </section>
+
         <section className="proposition">
           <div className="heading"><p className="eyebrow">A MORE PERSONAL WAY TO TRAVEL</p><h2>Extraordinary journeys.<br />A human touch.</h2></div>
           <div className="principles">
@@ -52,6 +35,7 @@ export default function Home() {
             <article><span>03 /</span><h3>People who plan.</h3><p>Experienced travel planning supported by smarter digital tools. Personal advice, considered details and a real person behind your journey.</p></article>
           </div>
         </section>
+
         <section className="planning-journey" aria-labelledby="planning-title">
           <div className="planning-heading">
             <p className="eyebrow">HOW IT WORKS</p>
@@ -63,10 +47,14 @@ export default function Home() {
             <article><span>03</span><h3>Book with confidence</h3><p>When you book your holiday with Travel Plan It, your <strong>£99 planning deposit is credited in full against your booking.</strong></p></article>
           </div>
           <div className="planning-deposit">
-            <div><p className="eyebrow">YOUR TAILOR-MADE PLANNING DEPOSIT</p><h2>Expert planning. Invested back into your journey.</h2></div>
+            <div className="planning-deposit-title">
+              <Image className="planning-mark" src="/images/logo-circle.png" alt="" width="110" height="110" />
+              <p className="eyebrow">YOUR TAILOR-MADE PLANNING DEPOSIT</p>
+              <h2>Expert planning. Invested back into your journey.</h2>
+            </div>
             <div><p>Creating a truly personalised journey takes time, research and specialist knowledge. Once we understand your brief and you’re ready for us to start designing, we’ll ask for a £99 planning deposit.</p><ul><li>Personalised itinerary</li><li>Two rounds of refinements included</li><li>£99 credited in full when you book</li></ul><p className="planning-small">Need further refinements? Additional rounds are £49. If you decide to substantially redesign your journey, we’ll discuss any additional planning fee with you before carrying out the work.</p></div>
           </div>
-          {enquiriesEnabled() && <div className="planning-cta"><p>Have a journey in mind?</p><Link className="button" href="/plan-my-trip/">Start planning your journey ↗</Link><small>Your initial consultation is complimentary and there’s no obligation.</small></div>}
+          <div className="planning-cta"><p>Have a journey in mind?</p><Link className="button" href="/plan-my-trip/">Start planning your journey ↗</Link><small>Your initial consultation is complimentary and there’s no obligation.</small></div>
         </section>
       </main>
       <SiteFooter photoCredit />
