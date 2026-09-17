@@ -36,6 +36,12 @@ export default function Home() {
           </div>
         </section>
 
+        <section className="proposition" aria-labelledby="inspiration-title">
+          <div className="heading"><p className="eyebrow">TRAVEL INSPIRATION</p><h2 id="inspiration-title">Ideas to make your own.</h2></div>
+          <p className="intro">Explore a few of the places and experiences that inspire us. They’re not fixed packages — they’re starting points for a journey designed around you.</p>
+          <div className="contact"><Link className="button" href="/inspiration/">Explore travel inspiration ↗</Link></div>
+        </section>
+
         <section className="planning-journey" aria-labelledby="planning-title">
           <div className="planning-heading">
             <p className="eyebrow">HOW IT WORKS</p>
