@@ -25,13 +25,11 @@ export default function SiteHeader({ back = false }: { back?: boolean }) {
               </b>
             </span>
           </Link>
-          {back ? (
-            <Link className="back-home" href="/">
-              ← Back to home
-            </Link>
-          ) : (
-            <span className="status">A new journey is coming</span>
-          )}
+          <nav className="primary-nav" aria-label="Primary navigation">
+            <Link href="/#how-it-works">How it works</Link>
+            <Link href="/inspiration/">Inspiration</Link>
+            <Link className="nav-enquiry" href="/plan-my-trip/">Enquiries</Link>
+          </nav>
         </div>
       </header>
     </>
