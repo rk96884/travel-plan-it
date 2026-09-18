@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import SiteHeader from '../../components/site-header';
 import SiteFooter from '../../components/site-footer';
 import styles from './why-us.module.css';
@@ -22,6 +23,12 @@ export default function WhyUsPage() {
           <h1>Your holiday.<br /><em>Our thinking.</em></h1>
           <p className={styles.lede}>Extraordinary travel takes more than a search box. We combine expertise, ideas and carefully chosen partners to create journeys around you — while taking care of the time-consuming planning along the way.</p>
           <Link className={styles.button} href="/plan-my-trip/">Tell us where you’re thinking ↗</Link>
+        </section>
+
+        <section className={styles.visualStrip} aria-label="Travel Plan It inspiration">
+          <div><Image src="/images/inspiration/khanom-pink-dolphin.png" alt="Pink dolphin in the waters off Khanom, Thailand" fill sizes="33vw" /></div>
+          <div><Image src="/images/inspiration/palawan-lagoon.png" alt="Turquoise lagoon among the limestone islands of Palawan" fill sizes="33vw" /></div>
+          <div><Image src="/images/inspiration/nihi-sumba-horse-beach.png" alt="Horse riding along the wild coast of Sumba" fill sizes="33vw" /></div>
         </section>
 
         <section className={styles.reasons} aria-label="Why choose Travel Plan It">
