@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { Facebook, Instagram, Music2, Youtube } from 'lucide-react';
 import { site } from '../lib/site';
 
 export default function SiteFooter({
@@ -28,10 +29,10 @@ export default function SiteFooter({
         <div className="footer-social">
           <span>FOLLOW TRAVEL PLAN IT</span>
           <nav aria-label="Social media">
-            <a href="https://www.instagram.com/travelplanit/" target="_blank" rel="noreferrer">Instagram ↗</a>
-            <a href="https://www.facebook.com/travelplanit" target="_blank" rel="noreferrer">Facebook ↗</a>
-            <a href="https://www.tiktok.com/@travelplanit" target="_blank" rel="noreferrer">TikTok ↗</a>
-            <a href="https://www.youtube.com/@mytravelplanit" target="_blank" rel="noreferrer">YouTube ↗</a>
+            <a href="https://www.instagram.com/travelplanit/" target="_blank" rel="noreferrer" aria-label="Instagram"><Instagram aria-hidden="true" /></a>
+            <a href="https://www.facebook.com/profile.php?id=61594424911097" target="_blank" rel="noreferrer" aria-label="Facebook"><Facebook aria-hidden="true" /></a>
+            <a href="https://www.tiktok.com/@travelplanit" target="_blank" rel="noreferrer" aria-label="TikTok"><Music2 aria-hidden="true" /></a>
+            <a href="https://www.youtube.com/@mytravelplanit" target="_blank" rel="noreferrer" aria-label="YouTube"><Youtube aria-hidden="true" /></a>
           </nav>
         </div>
         <div className="footer-bottom">
