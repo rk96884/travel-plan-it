@@ -11,6 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/inspiration/palawan/`, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${baseUrl}/inspiration/nihi-sumba/`, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${baseUrl}/plan-my-trip/`, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${baseUrl}/travel-insurance/`, changeFrequency: 'yearly', priority: 0.5 },
     { url: `${baseUrl}/privacy/`, changeFrequency: 'yearly', priority: 0.2 },
     { url: `${baseUrl}/terms/`, changeFrequency: 'yearly', priority: 0.2 },
   ];
