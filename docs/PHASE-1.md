@@ -42,8 +42,10 @@ A verified email link is an acceptable initial contact method. A registration fo
 | /contact/ | Verified contact channels and relevant business details. |
 | /faqs/ | Planning process, enquiries and launch status; protection answers only when verified. |
 | /privacy/ | Accurate handling of enquiries and any analytics actually used. |
+| /terms/ | Website use, enquiry and planning-service terms; not a substitute for booking conditions. |
+| /booking-conditions/ | Separate customer booking conditions to be published before live bookings are taken. |
 
-Add cookie information and other terms when the deployed functionality and operating model require them. Never generate finished legal promises from speculative supplier arrangements. Destinations beyond Asia should be published only with useful, validated content, not empty SEO pages.
+Add cookie information and other terms when the deployed functionality and operating model require them. A separate Booking Conditions page is required before live bookings are taken. It should cover when a booking becomes binding, deposits and balance payments, customer amendments and cancellations, supplier-specific non-refundable costs, transfers, significant changes or cancellation by the organiser, applicable package-travel rights, insurance, supplier conditions, complaints, liability and financial protection wording appropriate to the final operating model. Do not publish a fixed cancellation scale until supplier contracts and the contractual organiser structure are confirmed. Never generate finished legal promises from speculative supplier arrangements. Destinations beyond Asia should be published only with useful, validated content, not empty SEO pages.
 
 ## Enquiry engine
 
