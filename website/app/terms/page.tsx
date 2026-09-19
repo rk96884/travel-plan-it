@@ -9,7 +9,7 @@ export default function Terms() {
       <main id="main" className="enquiry-page legal-page">
         <p className="eyebrow">WEBSITE INFORMATION</p>
         <h1>Terms of use</h1>
-        <p className="legal-date">Draft for review · 17 September 2026</p>
+        <p className="legal-date">Draft for review · 19 September 2026</p>
         <aside className="form-notice">
           These website terms remain a draft for review.
         </aside>
@@ -40,6 +40,11 @@ export default function Terms() {
           <p>If you request further refinement rounds after the two included rounds, each additional round is charged at £49. We will tell you before carrying out work that would incur this fee.</p>
           <p>A substantial redesign — for example, changing destination, travel dates or the main structure of an itinerary after design work has begun — may require an additional planning fee of £99 or more depending on the work involved. We will explain and agree any such fee with you before starting the redesign.</p>
           <p>After a holiday has been booked, requests to amend confirmed travel arrangements may incur a Travel Plan It administration fee of £35 in addition to any supplier charges and any increase in the price of the travel arrangements. Where practical, we may make minor administrative corrections without charging our administration fee. Any applicable charges will be explained before an amendment is made.</p>
+        </section>
+        <section>
+          <h2>Cancellations after booking</h2>
+          <p>If you subsequently make a confirmed travel booking with Travel Plan It, cancellation terms and any applicable charges will be set out in the Booking Conditions supplied to you before you book.</p>
+          <p>Cancellation charges may vary depending on how close to departure you cancel and whether airlines, hotels or other suppliers have imposed non-refundable charges. Any applicable terms will be explained before you commit to the booking. Your statutory rights are unaffected.</p>
         </section>
         <section>
           <h2>Using the site</h2>
