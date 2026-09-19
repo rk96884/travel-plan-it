@@ -25,6 +25,15 @@ export default function SiteFooter({
             <a href={`mailto:${email}`}>{email} ↗</a>
           </div>
         </div>
+        <div className="footer-social">
+          <span>FOLLOW TRAVEL PLAN IT</span>
+          <nav aria-label="Social media">
+            <a href="https://www.instagram.com/travelplanit/" target="_blank" rel="noreferrer">Instagram ↗</a>
+            <a href="https://www.facebook.com/travelplanit" target="_blank" rel="noreferrer">Facebook ↗</a>
+            <a href="https://www.tiktok.com/@travelplanit" target="_blank" rel="noreferrer">TikTok ↗</a>
+            <a href="https://www.youtube.com/@mytravelplanit" target="_blank" rel="noreferrer">YouTube ↗</a>
+          </nav>
+        </div>
         <div className="footer-bottom">
           <span>© {new Date().getFullYear()} Travel Plan It</span>
           <nav className="footer-links" aria-label="Helpful information">
