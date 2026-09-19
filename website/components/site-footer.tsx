@@ -27,7 +27,8 @@ export default function SiteFooter({
         </div>
         <div className="footer-bottom">
           <span>© {new Date().getFullYear()} Travel Plan It</span>
-          <nav className="footer-links" aria-label="Legal information">
+          <nav className="footer-links" aria-label="Helpful information">
+            <Link href="/travel-insurance/">Travel insurance</Link>
             <Link href="/terms/">Terms of use</Link>
             <Link href="/privacy/">Privacy notice</Link>
           </nav>
