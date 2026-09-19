@@ -38,8 +38,8 @@ export default function TravelInsurancePage() {
           </div>
           <div className={styles.heroImage}>
             <Image
-              src="/images/ha-long-bay.jpg"
-              alt="A long-haul travel destination with dramatic limestone islands and open water"
+              src="/images/travel-insurance-airport.png"
+              alt="Traveller with luggage looking out across an airport runway at sunset"
               fill
               priority
               sizes="(max-width: 760px) 100vw, 50vw"
