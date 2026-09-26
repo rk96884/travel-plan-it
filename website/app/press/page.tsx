@@ -45,9 +45,12 @@ export default function PressPage() {
           <p className={styles.eyebrow}>ABOUT TRAVEL PLAN IT</p><div><h2>Travel designed around the person, not the package.</h2><p>Travel Plan It LTD helps travellers turn an idea into a carefully considered journey. Rather than starting with an off-the-shelf package, we begin with how someone wants to travel — their interests, pace, budget and priorities — and bring the individual parts together into a coherent itinerary.</p><p>Our focus is on tailor-made long-haul travel, multi-centre journeys and trips where knowledgeable planning can make a real difference. Asia is a particular area of interest, alongside distinctive destinations and experiences that travellers may not discover through a conventional search.</p></div>
         </div></section>
 
-        <section className={`${styles.section} ${styles.expertise}`}><div className={`${styles.inner} ${styles.twoCol}`}>
-          <p className={styles.eyebrow}>COMMENTARY & EXPERTISE</p><div><h2>How we can help journalists and creators.</h2><p>We can provide background information, itinerary ideas and commentary across areas including:</p><ul>{topics.map((topic) => <li key={topic}>{topic}</li>)}</ul></div>
-        </div></section>
+        <section className={`${styles.section} ${styles.expertise}`}>
+          <div className={styles.expertiseMark} aria-hidden="true"><Image src="/images/logo-circle.png" alt="" fill sizes="420px" /></div>
+          <div className={`${styles.inner} ${styles.twoCol} ${styles.expertiseContent}`}>
+            <p className={styles.eyebrow}>COMMENTARY & EXPERTISE</p><div><h2>How we can help journalists and creators.</h2><p>We can provide background information, itinerary ideas and commentary across areas including:</p><ul>{topics.map((topic) => <li key={topic}>{topic}</li>)}</ul></div>
+          </div>
+        </section>
 
         <section className={`${styles.section} ${styles.inspiration}`}><div className={`${styles.inner} ${styles.twoCol}`}>
           <p className={styles.eyebrow}>TRAVEL INSPIRATION</p><div><h2>Ideas beyond the obvious.</h2><p>Our growing inspiration library explores places and experiences that reflect the way we approach travel — from quieter Thailand and island adventures in the Philippines to remote Indonesian landscapes.</p><Link href="/inspiration/">Explore Travel Plan It inspiration ↗</Link></div>
