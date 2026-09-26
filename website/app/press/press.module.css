@@ -16,7 +16,7 @@
 .intro p:not(.eyebrow), .expertise p:not(.eyebrow), .inspiration p:not(.eyebrow), .contact p:not(.eyebrow) { max-width: 720px; font-size: 1.08rem; line-height: 1.75; }
 .expertise { position: relative; overflow: hidden; background: #153b35; color: #f4f0e8; }
 .expertiseContent { position: relative; z-index: 1; }
-.expertiseMark { position: absolute; z-index: 0; width: clamp(300px, 34vw, 520px); aspect-ratio: 1; right: clamp(-120px, -6vw, -55px); top: 50%; transform: translateY(-50%); opacity: .075; filter: grayscale(1) brightness(0) invert(1); pointer-events: none; }
+.expertiseMark { position: absolute; z-index: 0; width: clamp(300px, 34vw, 520px); aspect-ratio: 1; left: clamp(-120px, -6vw, -55px); top: 50%; transform: translateY(-50%); opacity: .075; filter: grayscale(1) brightness(0) invert(1); pointer-events: none; }
 .expertiseMark img { object-fit: contain; }
 .expertise ul { max-width: 760px; margin: 2rem 0 0; padding: 0; list-style: none; border-top: 1px solid rgba(244,240,232,.35); }
 .expertise li { padding: 1rem 0; border-bottom: 1px solid rgba(244,240,232,.35); line-height: 1.5; }
@@ -30,6 +30,6 @@
 .buttonLight { color: inherit; }
 @keyframes imageReveal { from { opacity: 0; transform: translateY(24px); clip-path: inset(10% 0 0 0); } to { opacity: 1; transform: translateY(0); clip-path: inset(0); } }
 @keyframes imageSettle { from { transform: scale(1.055); } to { transform: scale(1); } }
-@media (max-width: 900px) { .heroGrid { grid-template-columns: 1fr; gap: 3rem; } .heroImage { min-height: 420px; max-width: 680px; } .expertiseMark { right: -140px; } }
-@media (max-width: 720px) { .section { padding: 4rem 1.25rem; } .hero { min-height: auto; padding-top: 6rem; } .twoCol { grid-template-columns: 1fr; gap: 1rem; } .heroImage { min-height: 360px; } .factGrid { grid-template-columns: 1fr; } .expertiseMark { width: 330px; right: -155px; top: 40%; } }
+@media (max-width: 900px) { .heroGrid { grid-template-columns: 1fr; gap: 3rem; } .heroImage { min-height: 420px; max-width: 680px; } .expertiseMark { left: -140px; } }
+@media (max-width: 720px) { .section { padding: 4rem 1.25rem; } .hero { min-height: auto; padding-top: 6rem; } .twoCol { grid-template-columns: 1fr; gap: 1rem; } .heroImage { min-height: 360px; } .factGrid { grid-template-columns: 1fr; } .expertiseMark { width: 330px; left: -155px; top: 40%; } }
 @media (prefers-reduced-motion: reduce) { .heroImage, .heroImage img { animation: none; } }
