@@ -45,6 +45,7 @@ export default function SiteFooter({
         <div className="footer-bottom">
           <span>© {new Date().getFullYear()} Travel Plan It</span>
           <nav className="footer-links" aria-label="Helpful information">
+            <Link href="/press/">Press & media</Link>
             <Link href="/travel-insurance/">Travel insurance</Link>
             <Link href="/terms/">Terms of use</Link>
             <Link href="/privacy/">Privacy notice</Link>
