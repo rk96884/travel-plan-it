@@ -1,12 +1,17 @@
 .page { background: #f4f0e8; color: #153b35; }
-.hero, .intro, .expertise, .inspiration, .facts, .contact { padding: clamp(4rem, 8vw, 8rem) clamp(1.5rem, 7vw, 7rem); }
-.hero { min-height: 68vh; display: flex; flex-direction: column; justify-content: center; background: #e9e1d2; }
+.section { padding: clamp(4rem, 8vw, 8rem) clamp(1.5rem, 5vw, 4rem); }
+.inner { width: 100%; max-width: 1180px; margin: 0 auto; }
+.hero { min-height: 68vh; display: flex; align-items: center; background: #e9e1d2; }
+.heroGrid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(300px, .9fr); align-items: center; gap: clamp(3rem, 7vw, 7rem); }
+.heroCopy { min-width: 0; }
+.heroImage { position: relative; width: 100%; min-height: 520px; overflow: hidden; border-radius: 2px; }
+.heroImage img { object-fit: cover; object-position: center; }
 .eyebrow { margin: 0 0 1.5rem; font-size: .75rem; font-weight: 700; letter-spacing: .16em; }
-.hero h1 { max-width: 950px; margin: 0; font-size: clamp(3rem, 7vw, 7rem); line-height: .94; font-weight: 500; letter-spacing: -.045em; }
+.hero h1 { max-width: 680px; margin: 0; font-size: clamp(3rem, 5.4vw, 6rem); line-height: .94; font-weight: 500; letter-spacing: -.045em; }
 .hero h1 em { font-family: Georgia, serif; font-weight: 400; }
-.lede { max-width: 760px; margin: 2rem 0 0; font-size: clamp(1.1rem, 1.8vw, 1.45rem); line-height: 1.55; }
+.lede { max-width: 650px; margin: 2rem 0 0; font-size: clamp(1.05rem, 1.4vw, 1.3rem); line-height: 1.55; }
 .button, .buttonLight { display: inline-block; width: fit-content; margin-top: 2rem; padding: .9rem 1.2rem; border: 1px solid currentColor; text-decoration: none; font-weight: 600; }
-.intro, .expertise, .inspiration, .contact { display: grid; grid-template-columns: minmax(160px, .55fr) minmax(0, 1.45fr); gap: 3rem; }
+.twoCol { display: grid; grid-template-columns: minmax(170px, .5fr) minmax(0, 1.5fr); gap: clamp(2.5rem, 6vw, 6rem); }
 .intro h2, .expertise h2, .inspiration h2, .contact h2 { max-width: 760px; margin: 0 0 1.5rem; font-size: clamp(2rem, 4vw, 4.2rem); line-height: 1.02; font-weight: 500; letter-spacing: -.035em; }
 .intro p:not(.eyebrow), .expertise p:not(.eyebrow), .inspiration p:not(.eyebrow), .contact p:not(.eyebrow) { max-width: 720px; font-size: 1.08rem; line-height: 1.75; }
 .expertise { background: #153b35; color: #f4f0e8; }
@@ -20,4 +25,5 @@
 .factGrid strong { max-width: 420px; font-size: clamp(1.25rem, 2vw, 1.8rem); line-height: 1.2; font-weight: 500; }
 .contact { background: #b95f43; color: #fffaf1; }
 .buttonLight { color: inherit; }
-@media (max-width: 720px) { .hero, .intro, .expertise, .inspiration, .facts, .contact { padding: 4rem 1.25rem; } .hero { min-height: auto; padding-top: 6rem; } .intro, .expertise, .inspiration, .contact { grid-template-columns: 1fr; gap: 1rem; } .factGrid { grid-template-columns: 1fr; } }
+@media (max-width: 900px) { .heroGrid { grid-template-columns: 1fr; gap: 3rem; } .heroImage { min-height: 420px; max-width: 680px; } }
+@media (max-width: 720px) { .section { padding: 4rem 1.25rem; } .hero { min-height: auto; padding-top: 6rem; } .twoCol { grid-template-columns: 1fr; gap: 1rem; } .heroImage { min-height: 360px; } .factGrid { grid-template-columns: 1fr; } }
