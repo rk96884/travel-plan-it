@@ -1,0 +1,23 @@
+.page { background: #f4f0e8; color: #153b35; }
+.hero, .intro, .expertise, .inspiration, .facts, .contact { padding: clamp(4rem, 8vw, 8rem) clamp(1.5rem, 7vw, 7rem); }
+.hero { min-height: 68vh; display: flex; flex-direction: column; justify-content: center; background: #e9e1d2; }
+.eyebrow { margin: 0 0 1.5rem; font-size: .75rem; font-weight: 700; letter-spacing: .16em; }
+.hero h1 { max-width: 950px; margin: 0; font-size: clamp(3rem, 7vw, 7rem); line-height: .94; font-weight: 500; letter-spacing: -.045em; }
+.hero h1 em { font-family: Georgia, serif; font-weight: 400; }
+.lede { max-width: 760px; margin: 2rem 0 0; font-size: clamp(1.1rem, 1.8vw, 1.45rem); line-height: 1.55; }
+.button, .buttonLight { display: inline-block; width: fit-content; margin-top: 2rem; padding: .9rem 1.2rem; border: 1px solid currentColor; text-decoration: none; font-weight: 600; }
+.intro, .expertise, .inspiration, .contact { display: grid; grid-template-columns: minmax(160px, .55fr) minmax(0, 1.45fr); gap: 3rem; }
+.intro h2, .expertise h2, .inspiration h2, .contact h2 { max-width: 760px; margin: 0 0 1.5rem; font-size: clamp(2rem, 4vw, 4.2rem); line-height: 1.02; font-weight: 500; letter-spacing: -.035em; }
+.intro p:not(.eyebrow), .expertise p:not(.eyebrow), .inspiration p:not(.eyebrow), .contact p:not(.eyebrow) { max-width: 720px; font-size: 1.08rem; line-height: 1.75; }
+.expertise { background: #153b35; color: #f4f0e8; }
+.expertise ul { max-width: 760px; margin: 2rem 0 0; padding: 0; list-style: none; border-top: 1px solid rgba(244,240,232,.35); }
+.expertise li { padding: 1rem 0; border-bottom: 1px solid rgba(244,240,232,.35); line-height: 1.5; }
+.inspiration a { color: inherit; font-weight: 700; text-underline-offset: 4px; }
+.facts { background: #e9e1d2; }
+.factGrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; background: rgba(21,59,53,.25); border: 1px solid rgba(21,59,53,.25); }
+.factGrid article { min-height: 150px; padding: 1.5rem; background: #e9e1d2; display: flex; flex-direction: column; justify-content: space-between; gap: 1.5rem; }
+.factGrid span { font-size: .75rem; text-transform: uppercase; letter-spacing: .12em; }
+.factGrid strong { max-width: 420px; font-size: clamp(1.25rem, 2vw, 1.8rem); line-height: 1.2; font-weight: 500; }
+.contact { background: #b95f43; color: #fffaf1; }
+.buttonLight { color: inherit; }
+@media (max-width: 720px) { .hero, .intro, .expertise, .inspiration, .facts, .contact { padding: 4rem 1.25rem; } .hero { min-height: auto; padding-top: 6rem; } .intro, .expertise, .inspiration, .contact { grid-template-columns: 1fr; gap: 1rem; } .factGrid { grid-template-columns: 1fr; } }
