@@ -26,9 +26,9 @@ export default function SiteHeader({ back = false }: { back?: boolean }) {
             </span>
           </Link>
           <nav className="primary-nav" aria-label="Primary navigation">
-            <Link href="/#how-it-works">How it works</Link>
-            <Link href="/inspiration/">Inspiration</Link>
+            <Link href="/travel-planning/">Travel Planning</Link>
             <Link href="/why-us/">Why us</Link>
+            <Link href="/inspiration/">Inspiration</Link>
             <Link className="nav-enquiry" href="/plan-my-trip/">Enquiries</Link>
           </nav>
         </div>
