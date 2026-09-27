@@ -79,7 +79,7 @@ export default function TravelPlanningPage() {
         </section>
 
         <section className={styles.complex}>
-          <div className={styles.complexImage}><Image src="/images/inspiration/khanom-coastline.png" alt="Quiet palm-fringed coastline in Khanom, southern Thailand" fill sizes="(max-width: 1100px) 100vw, 44vw" /></div>
+          <div className={styles.complexImage}><Image src="/images/inspiration/khanom-coastline.webp" alt="Quiet palm-fringed coastline in Khanom, southern Thailand" fill sizes="(max-width: 1100px) 100vw, 44vw" /></div>
           <div>
             <p className={styles.eyebrow}>COMPLEX TRAVEL, SIMPLIFIED</p>
             <h2>More places should not mean more stress.</h2>
