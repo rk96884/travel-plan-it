@@ -26,9 +26,9 @@ export default function WhyUsPage() {
         </section>
 
         <section className={styles.visualStrip} aria-label="Travel Plan It inspiration">
-          <div><Image src="/images/inspiration/khanom-fisherman.png" alt="Local fisherman on the coast of Khanom, Thailand" fill sizes="33vw" /></div>
-          <div><Image src="/images/inspiration/palawan-jungle.png" alt="Lush tropical landscape in Palawan, Philippines" fill sizes="33vw" /></div>
-          <div><Image src="/images/inspiration/nihi-sumba-resort-aerial.png" alt="Remote retreat and coastline on Sumba, Indonesia" fill sizes="33vw" /></div>
+          <div><Image src="/images/inspiration/khanom-fisherman.webp" alt="Local fisherman on the coast of Khanom, Thailand" fill sizes="33vw" /></div>
+          <div><Image src="/images/inspiration/palawan-jungle.webp" alt="Lush tropical landscape in Palawan, Philippines" fill sizes="33vw" /></div>
+          <div><Image src="/images/inspiration/nihi-sumba-resort-aerial.webp" alt="Remote retreat and coastline on Sumba, Indonesia" fill sizes="33vw" /></div>
         </section>
 
         <section className={styles.reasons} aria-label="Why choose Travel Plan It">
