@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
+  title: { default: 'Travel insurance | Travel Plan It', template: '%s' },
   alternates: { canonical: '/travel-insurance/' },
 };
 
