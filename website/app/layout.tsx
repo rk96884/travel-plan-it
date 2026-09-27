@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   },
   description:
     'Independent UK travel planning for tailor-made long-haul holidays, complex itineraries and journeys across Asia and beyond.',
+  alternates: { canonical: '/' },
   robots: { index: true, follow: true },
 };
 
