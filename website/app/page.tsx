@@ -22,7 +22,7 @@ export default function Home() {
             </div>
           </div>
           <figure>
-            <Image unoptimized src="/images/ha-long-bay.jpg" alt="Lush limestone cliffs above the teal waters of Hạ Long Bay, Vietnam" width="1400" height="1800" fetchPriority="high" />
+            <Image src="/images/ha-long-bay.webp" alt="Lush limestone cliffs above the teal waters of Hạ Long Bay, Vietnam" width="1400" height="1800" fetchPriority="high" />
             <figcaption><span>Room for a little wonder.</span><small>HẠ LONG BAY, VIETNAM</small></figcaption>
           </figure>
         </section>
@@ -57,7 +57,7 @@ export default function Home() {
           <div className="planning-deposit">
             <div className="planning-deposit-title">
               <div className="planning-campaign-image">
-                <Image unoptimized src="/images/inspiration/nihi-sumba-coast-sunset.png" alt="Remote tropical coastline glowing in the evening light" width="1200" height="1600" />
+                <Image src="/images/inspiration/nihi-sumba-coast-sunset.webp" alt="Remote tropical coastline glowing in the evening light" width="1200" height="1600" />
               </div>
               <p className="eyebrow">YOUR TAILOR-MADE PLANNING DEPOSIT</p>
               <h2>Expert planning. Invested back into your journey.</h2>

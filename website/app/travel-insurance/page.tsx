@@ -38,7 +38,7 @@ export default function TravelInsurancePage() {
           </div>
           <div className={styles.heroImage}>
             <Image
-              src="/images/travel-insurance-airport.png"
+              src="/images/travel-insurance-airport.webp"
               alt="Traveller with luggage looking out across an airport runway at sunset"
               fill
               priority

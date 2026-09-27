@@ -35,7 +35,7 @@ export default function PressPage() {
                 <a className={styles.button} href="mailto:enquiries@mytravelplanit.co.uk?subject=Press%20%26%20media%20enquiry">Media enquiry ↗</a>
               </div>
               <div className={styles.heroImage}>
-                <Image src="/images/agent.png" alt="Travel consultant planning a tailor-made journey" fill priority sizes="(max-width: 800px) 100vw, 42vw" />
+                <Image src="/images/agent.webp" alt="Travel consultant planning a tailor-made journey" fill priority sizes="(max-width: 800px) 100vw, 42vw" />
               </div>
             </div>
           </div>
