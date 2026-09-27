@@ -60,7 +60,7 @@ export default function TravelPlanningPage() {
               <Link className={styles.textLink} href="/inspiration/">Explore travel inspiration</Link>
             </div>
           </div>
-          <div className={styles.heroImage}><Image src="/images/inspiration/palawan-lagoon.png" alt="Turquoise lagoon surrounded by limestone cliffs in Palawan, Philippines" fill priority sizes="(max-width: 800px) 100vw, 42vw" /></div>
+          <div className={styles.heroImage}><Image src="/images/travel-planning-overwhelm.webp" alt="Traveller comparing flights, hotels, transfers and experiences across multiple browser tabs while planning a complex holiday" fill priority sizes="(max-width: 800px) 100vw, 42vw" /></div>
         </section>
 
         <section className={styles.intro}>
