@@ -19,9 +19,19 @@ const steps = [
   ['04', 'Refine, book and travel.', 'We fine-tune the details with you and, when you are happy, bring the arrangements together so you can look forward to the journey rather than the logistics.'],
 ];
 
+const services = [
+  ['Flights & routing', 'We can look at sensible flight options and routing so the journey works from the moment you leave home.'],
+  ['Private transfers & transport', 'Airport transfers, drivers, rail and other ground transport can be planned into the itinerary rather than left as an afterthought.'],
+  ['Hotels & stays', 'We research accommodation around your priorities, from location and character to facilities, room type and the overall value it adds to the trip.'],
+  ['Airport lounges', 'Where useful, we can look at airport lounge options to make longer journeys, connections and departure days more comfortable.'],
+  ['Excursions & experiences', 'Private guides, day trips, tours and memorable local experiences can be woven into the journey at the right pace.'],
+  ['The details between', 'We think about connection times, arrival days, travel fatigue and the practical details that make a complex itinerary feel effortless.'],
+];
+
 const faqs = [
   ['What does a travel planner do?', 'A travel planner turns your ideas, dates, budget and preferences into a coherent journey. That can include researching destinations, comparing routes and accommodation, shaping the pace of an itinerary and bringing together the individual parts of a complex trip.'],
   ['Why use a travel planner instead of booking everything myself?', 'You can absolutely plan a holiday yourself. A travel planner is most useful when the trip is complex, your time is limited, you want specialist ideas or you would value having one person consider how the whole journey fits together.'],
+  ['Can you arrange transfers, airport lounges and excursions?', 'Yes. Depending on your journey, we can look at airport and ground transfers, transport between destinations, airport lounge options and excursions or experiences as part of the overall itinerary.'],
   ['Do you specialise in Asia?', 'Asia is a particular area of expertise for Travel Plan It, including tailor-made and multi-centre journeys across Southeast Asia and beyond. We can also help with long-haul travel elsewhere.'],
   ['Can you plan multi-centre and complex itineraries?', 'Yes. Multi-centre and more involved long-haul journeys are central to what we do. We consider the order of destinations, realistic travel times and the balance between seeing more and actually enjoying each place.'],
   ['Do I need to know exactly where I want to go?', 'No. Some of the best briefs begin with a feeling, an occasion or a few things you love doing. We can use that starting point to suggest destinations and combinations you may not have considered.'],
@@ -68,7 +78,7 @@ export default function TravelPlanningPage() {
         </section>
 
         <section className={styles.complex}>
-          <div className={styles.complexImage}><Image src="/images/inspiration/khanom-coastline.png" alt="Quiet palm-fringed coastline in Khanom, southern Thailand" fill sizes="(max-width: 800px) 100vw, 44vw" /></div>
+          <div className={styles.complexImage}><Image src="/images/inspiration/khanom-coastline.png" alt="Quiet palm-fringed coastline in Khanom, southern Thailand" fill sizes="(max-width: 1100px) 100vw, 44vw" /></div>
           <div>
             <p className={styles.eyebrow}>COMPLEX TRAVEL, SIMPLIFIED</p>
             <h2>More places should not mean more stress.</h2>
@@ -76,6 +86,12 @@ export default function TravelPlanningPage() {
             <p>We design the trip as one journey rather than a collection of separate bookings. That means thinking about pace and geography as carefully as hotels and experiences.</p>
             <Link href="/why-us/">Why plan with Travel Plan It ↗</Link>
           </div>
+        </section>
+
+        <section className={styles.services}>
+          <div className={styles.sectionHeading}><p className={styles.eyebrow}>THE WHOLE JOURNEY</p><h2>We can take care of more than where you stay.</h2></div>
+          <p className={styles.servicesIntro}>A well-planned holiday is often defined by the details between the headline destinations. Where appropriate, we can bring the practical and experiential parts together into one considered itinerary.</p>
+          <div className={styles.serviceGrid}>{services.map(([title, text], index) => <article key={title}><span>0{index + 1} /</span><h3>{title}</h3><p>{text}</p></article>)}</div>
         </section>
 
         <section className={styles.asia}>
