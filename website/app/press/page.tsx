@@ -8,7 +8,7 @@ import styles from './press.module.css';
 export const metadata: Metadata = {
   title: 'Press & Media',
   description: 'Press and media information for Travel Plan It LTD, an independent UK travel business specialising in tailor-made long-haul and complex itineraries, with particular expertise in Asia.',
-  alternates: { canonical: '/press/' },
+  alternates: { canonical: '/press' },
 };
 
 const topics = [
