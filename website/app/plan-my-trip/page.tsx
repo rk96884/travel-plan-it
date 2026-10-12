@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Plan My Trip | Travel Plan It',
   description: 'Tell us about your ideal journey and enquire about a personalised tailor-made holiday.',
-  alternates: { canonical: '/plan-my-trip/' },
+  alternates: { canonical: '/plan-my-trip' },
 };
 import SiteHeader from '../../components/site-header';
 import SiteFooter from '../../components/site-footer';
