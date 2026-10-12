@@ -8,3 +8,8 @@
 .inclusions li{display:list-item;list-style:disc outside;padding:6px 0 6px 4px;line-height:1.55}
 .inclusions li::marker{color:#a04c38;font-size:1.05em}
 @media(max-width:580px){.stats span{font-size:14px;padding:9px 11px}.journeyAside>p{font-size:23px;line-height:1.22}}
+
+/* Hero photographs must fill the frame without side gutters or letterboxing. */
+.heroPhoto{padding:0!important;overflow:hidden;background:#173f3a}
+.heroPhoto img{display:block;position:absolute;inset:0;width:100%!important;height:100%!important;max-width:none!important;object-fit:cover!important;object-position:center center;transform:scale(1.09);transform-origin:center center}
+@media(max-width:850px){.heroPhoto img{transform:scale(1.07)}}
