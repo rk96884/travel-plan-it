@@ -8,7 +8,7 @@ import styles from './holidays.module.css';
 export const metadata: Metadata = {
   title: 'Tailor-Made Holidays | Twin-Centre & Multi-Centre Trips',
   description: 'Explore tailor-made twin-centre and multi-centre holiday ideas from Travel Plan It. Explore Thailand and Cambodia twin-centre holidays, then personalise your route, hotels and experiences.',
-  alternates: { canonical: '/tailor-made-holidays/' },
+  alternates: { canonical: '/tailor-made-holidays' },
 };
 
 const journeys = [bangkokPhuket, cambodiaTwinCentre];
