@@ -6,6 +6,7 @@ import SiteFooter from '../../components/site-footer';
 import styles from './travel-insurance.module.css';
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/travel-insurance/' },
   title: 'Travel insurance | Travel Plan It',
   description:
     'Why travel insurance matters, what to consider when arranging cover, and guidance for tailor-made and multi-destination journeys.',
