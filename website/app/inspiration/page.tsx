@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Travel Inspiration | Asia and Beyond',
   description: 'Explore tailor-made travel inspiration, from Thailand’s quieter coast to the islands of the Philippines and Indonesia.',
-  alternates: { canonical: '/inspiration/' },
+  alternates: { canonical: '/inspiration' },
 };
 
 import Image from 'next/image';
