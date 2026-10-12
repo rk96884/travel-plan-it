@@ -21,9 +21,9 @@ export default function TripIdeaPage({ trip }: { trip: TripIdea }) {
         <h1>{trip.title}</h1>
         <p className={styles.lead}>{trip.summary}</p>
         <div className={styles.stats}><span>{trip.duration} / {trip.nights}</span><span>Private guided tours</span><span>Two accommodation options</span></div>
-        <p className={styles.from}>From <strong>£{Math.min(...trip.tiers.map(t => t.price)).toLocaleString('en-GB')}</strong> <span>per person*</span></p>
+        <p className={styles.from}>From <strong>£{Math.min(...trip.tiers.map(t => t.price)).toLocaleString('en-GB')}</strong> <span>per person* · estimated for March travel</span></p>
         <Link className={styles.button} href={enquiry()}>Enquire about this journey ↗</Link>
-        <p className={styles.fine}>*Indicative price based on two adults sharing. Not a live or guaranteed offer. Flights, accommodation and availability require reconfirmation.</p>
+        <p className={styles.fine}>*Indicative price based on two adults sharing. Estimated for travel in March; not a live or guaranteed offer. Flights, accommodation and availability require reconfirmation.</p>
       </div>
       <TripPhoto image={trip.hero} className={styles.heroPhoto}/>
     </section>
@@ -36,7 +36,7 @@ export default function TripIdeaPage({ trip }: { trip: TripIdea }) {
         <ul>{tier.hotels.map(hotel => <li key={hotel.name}><strong>{hotel.place} · {hotel.nights} nights</strong><span>{hotel.name}</span><small>{hotel.room}</small></li>)}</ul>
         <Link className={styles.button} href={enquiry(tier.id)}>Enquire about {tier.label.toLowerCase()} ↗</Link>
       </article>)}</div>
-      <p className={styles.fine}>*Example prices are per person based on two sharing a twin/double room, and include the proposed itinerary. All prices are indicative and subject to a final personalised quotation.</p>
+      <p className={styles.fine}>*Example prices are per person based on two sharing a twin/double room, and include the proposed itinerary. Prices are estimates for March travel and are subject to availability and a final personalised quotation.</p>
     </section>
     <section className={styles.journey} aria-labelledby="journey-heading">
       <div className={styles.sectionHead}><p className={styles.eyebrow}>YOUR JOURNEY, DAY BY DAY</p><h2 id="journey-heading">{trip.journeyTitle || "From Bangkok to the Andaman Sea."}</h2></div>
