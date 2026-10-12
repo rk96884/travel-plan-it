@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Khanom, Thailand | Travel Inspiration',
   description: 'Discover Khanom’s quieter beaches, local communities and pink dolphins with tailor-made Thailand travel inspiration.',
-  alternates: { canonical: '/inspiration/khanom/' },
+  alternates: { canonical: '/inspiration/khanom' },
 };
 
 import Image from 'next/image'; import Link from 'next/link'; import SiteHeader from '../../../components/site-header'; import SiteFooter from '../../../components/site-footer'; import styles from '../inspiration.module.css';
