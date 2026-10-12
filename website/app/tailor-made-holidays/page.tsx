@@ -2,16 +2,16 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import SiteHeader from '../../components/site-header';
 import SiteFooter from '../../components/site-footer';
-import { bangkokPhuket } from '../../lib/trip-ideas';
+import { bangkokPhuket, cambodiaTwinCentre } from '../../lib/trip-ideas';
 import styles from './holidays.module.css';
 
 export const metadata: Metadata = {
   title: 'Tailor-Made Holidays | Twin-Centre & Multi-Centre Trips',
-  description: 'Explore tailor-made twin-centre and multi-centre holiday ideas from Travel Plan It. Start with Bangkok and Phuket, then personalise your route, hotels and experiences.',
+  description: 'Explore tailor-made twin-centre and multi-centre holiday ideas from Travel Plan It. Explore Thailand and Cambodia twin-centre holidays, then personalise your route, hotels and experiences.',
   alternates: { canonical: '/tailor-made-holidays/' },
 };
 
-const journeys = [bangkokPhuket];
+const journeys = [bangkokPhuket, cambodiaTwinCentre];
 
 export default function TailorMadeHolidays() {
   return <><SiteHeader/><main id="main" className={styles.page}>
@@ -32,7 +32,7 @@ export default function TailorMadeHolidays() {
           <p>{trip.summary}</p><div className={styles.meta}><span>{trip.duration} / {trip.nights}</span><span>From £{Math.min(...trip.tiers.map(t=>t.price)).toLocaleString('en-GB')}pp*</span></div>
           <Link className={styles.textLink} href={`/inspiration/${trip.slug}/`}>Explore this journey →</Link>
         </div>
-        <p className={styles.credit}><a href={trip.secondImage.creditUrl} target="_blank" rel="license noreferrer">{trip.secondImage.credit}</a></p>
+        {trip.secondImage.credit && trip.secondImage.creditUrl && <p className={styles.credit}><a href={trip.secondImage.creditUrl} target="_blank" rel="license noreferrer">{trip.secondImage.credit}</a></p>}
       </article>)}</div>
       <p className={styles.disclaimer}>*Indicative example prices based on two adults sharing, subject to availability and a personalised quotation. These are trip ideas, not live bookable packages.</p>
     </section>
