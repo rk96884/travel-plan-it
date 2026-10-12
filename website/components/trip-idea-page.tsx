@@ -13,7 +13,7 @@ function TripPhoto({ image, className = '' }: { image: TripIdea['hero']; classNa
 
 export default function TripIdeaPage({ trip }: { trip: TripIdea }) {
   const enquiry = (tier?: string) => `/plan-my-trip/?trip=${encodeURIComponent(trip.slug)}${tier ? `&tier=${encodeURIComponent(tier)}` : ''}`;
-  return <main id="main" className={styles.page}>
+  return <main id="main" className={`${styles.page} ${trip.country === "Cambodia" ? styles.cambodia : ""}`}>
     <div className={styles.breadcrumb}><Link href="/tailor-made-holidays/">← All tailor-made holidays</Link><span> / {trip.country || "Thailand"} / {trip.country ? "Phnom Penh & Siem Reap" : "Bangkok & Phuket"}</span></div>
     <section className={styles.hero}>
       <div className={styles.heroCopy}>
