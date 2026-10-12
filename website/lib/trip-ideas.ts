@@ -29,16 +29,16 @@ export const bangkokPhuket: TripIdea = {
   duration: '12 days',
   nights: '10 nights',
   hero: {
-    src: 'https://commons.wikimedia.org/wiki/Special:FilePath/Templo%20Wat%20Arun%2C%20Bangkok%2C%20Tailandia%2C%202013-08-22%2C%20DD%2037.jpg?width=1400',
-    alt: 'Wat Arun temple in Bangkok, Thailand, photographed in warm evening light',
-    credit: 'Diego Delso / delso.photo · CC BY-SA 3.0',
-    creditUrl: 'https://commons.wikimedia.org/wiki/File:Templo_Wat_Arun,_Bangkok,_Tailandia,_2013-08-22,_DD_37.jpg',
+    src: '/images/inspiration/bangkok-wat-arun.webp',
+    alt: 'AI-generated illustration inspired by Wat Arun and the Chao Phraya River at sunset',
+    credit: '',
+    creditUrl: '',
   },
   secondImage: {
-    src: 'https://commons.wikimedia.org/wiki/Special:FilePath/Thailand%2C%20Phuket%20-%20Karon%20Beach%20WMID2669793.jpg?width=1400',
-    alt: 'Sunny Karon Beach in Phuket with blue sky and turquoise water',
-    credit: 'SpitfireMK14 / Wikimapia via Wikimedia Commons · CC BY-SA 3.0',
-    creditUrl: 'https://commons.wikimedia.org/wiki/File:Thailand,_Phuket_-_Karon_Beach_WMID2669793.jpg',
+    src: '/images/inspiration/phuket-coast.webp',
+    alt: 'AI-generated illustration inspired by Phuket’s tropical coastline and longtail boats',
+    credit: '',
+    creditUrl: '',
   },
   tiers: [
     { id: 'essential', label: 'Essential escape', price: 1599, hotels: [
