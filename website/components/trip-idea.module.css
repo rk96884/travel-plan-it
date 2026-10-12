@@ -630,3 +630,8 @@
         height: auto;
     }
 }
+/* Override the earlier portrait contain rule: eliminate Bangkok hero side gutters. */
+.thailand .heroPhoto img {
+    object-fit: cover;
+    object-position: 50% 45%;
+}
