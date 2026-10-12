@@ -1,7 +1,7 @@
 import SiteHeader from '../../components/site-header';
 import SiteFooter from '../../components/site-footer';
 import { site } from '../../lib/site';
-export const metadata = { title: 'Website terms of use | Travel Plan It', alternates: { canonical: '/terms/' } };
+export const metadata = { title: 'Website terms of use | Travel Plan It', alternates: { canonical: '/terms' } };
 export default function Terms() {
   return (
     <>
