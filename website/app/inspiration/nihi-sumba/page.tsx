@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Nihi Sumba, Indonesia | Travel Inspiration',
   description: 'Discover Nihi Sumba’s wild coastline and distinctive luxury escape with tailor-made Indonesia travel inspiration.',
-  alternates: { canonical: '/inspiration/nihi-sumba/' },
+  alternates: { canonical: '/inspiration/nihi-sumba' },
 };
 
 import Image from 'next/image'; import Link from 'next/link'; import SiteHeader from '../../../components/site-header'; import SiteFooter from '../../../components/site-footer'; import styles from '../inspiration.module.css';
