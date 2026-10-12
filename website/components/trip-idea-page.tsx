@@ -14,7 +14,7 @@ function TripPhoto({ image, className = '' }: { image: TripIdea['hero']; classNa
 export default function TripIdeaPage({ trip }: { trip: TripIdea }) {
   const enquiry = (tier?: string) => `/plan-my-trip/?trip=${encodeURIComponent(trip.slug)}${tier ? `&tier=${encodeURIComponent(tier)}` : ''}`;
   return <main id="main" className={styles.page}>
-    <div className={styles.breadcrumb}><Link href="/inspiration/">← All inspiration</Link><span> / Thailand / Bangkok & Phuket</span></div>
+    <div className={styles.breadcrumb}><Link href="/tailor-made-holidays/">← All tailor-made holidays</Link><span> / Thailand / Bangkok & Phuket</span></div>
     <section className={styles.hero}>
       <div className={styles.heroCopy}>
         <p className={styles.eyebrow}>{trip.eyebrow}</p>
