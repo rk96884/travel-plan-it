@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Palawan, Philippines | Travel Inspiration',
   description: 'Explore Palawan’s lagoons, beaches and island adventures with tailor-made Philippines travel inspiration.',
-  alternates: { canonical: '/inspiration/palawan/' },
+  alternates: { canonical: '/inspiration/palawan' },
 };
 
 import Image from 'next/image'; import Link from 'next/link'; import SiteHeader from '../../../components/site-header'; import SiteFooter from '../../../components/site-footer'; import styles from '../inspiration.module.css';
