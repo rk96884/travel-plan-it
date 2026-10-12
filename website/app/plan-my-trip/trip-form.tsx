@@ -50,6 +50,22 @@ const hints: Partial<Record<Field, string>> = {
 const longFields: Field[] = ['destination', 'style', 'accommodation', 'notes'];
 export default function EnquiryForm({ siteKey }: { siteKey: string }) {
   const [data, setData] = useState({ ...emptyEnquiry });
+  // Preserve trip context in the existing validated enquiry flow; no new API fields.
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('trip') !== 'bangkok-phuket-twin-centre') return;
+    const tier = params.get('tier');
+    const choice = tier === 'premium' ? 'Premium escape (Amari Bangkok + Amari Phuket)' :
+      tier === 'essential' ? 'Essential escape (ibis Bangkok Sathorn + ibis Phuket Patong)' : '';
+    setData(previous => ({
+      ...previous,
+      destination: 'Thailand — Bangkok & Phuket twin-centre holiday',
+      style: 'Private Bangkok temple and market tours, followed by a Phuket beach stay',
+      duration: '12 days / 10 nights',
+      ...(choice ? { accommodation: choice } : {}),
+      notes: 'Interested in the Bangkok & Phuket trip idea. Please provide a personalised quotation; example prices are indicative.',
+    }));
+  }, []);
   const [step, setStep] = useState(0);
   const [errors, setErrors] = useState<Partial<Record<Field, string>>>({});
   const [error, setError] = useState('');
