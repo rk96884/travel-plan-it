@@ -4,7 +4,7 @@ import styles from './trip-idea.module.css';
 
 function TripPhoto({ image, className = '' }: { image: TripIdea['hero']; className?: string }) {
   return <figure className={`${styles.photo} ${className}`}>
-    {/* Commons' thumbnail redirect serves a licensed image; attribution remains visible. */}
+
     {/* eslint-disable-next-line @next/next/no-img-element */}
     <img src={image.src} alt={image.alt} loading="lazy" referrerPolicy="no-referrer" />
     {image.credit && image.creditUrl && <figcaption><a href={image.creditUrl} target="_blank" rel="license noreferrer">{image.credit}</a></figcaption>}
@@ -13,7 +13,7 @@ function TripPhoto({ image, className = '' }: { image: TripIdea['hero']; classNa
 
 export default function TripIdeaPage({ trip }: { trip: TripIdea }) {
   const enquiry = (tier?: string) => `/plan-my-trip/?trip=${encodeURIComponent(trip.slug)}${tier ? `&tier=${encodeURIComponent(tier)}` : ''}`;
-  return <main id="main" className={`${styles.page} ${trip.country === "Cambodia" ? styles.cambodia : ""}`}>
+  return <main id="main" className={`${styles.page} ${trip.country === "Cambodia" ? styles.cambodia : styles.thailand}`}>
     <div className={styles.breadcrumb}><Link href="/tailor-made-holidays/">← All tailor-made holidays</Link><span> / {trip.country || "Thailand"} / {trip.country ? "Phnom Penh & Siem Reap" : "Bangkok & Phuket"}</span></div>
     <section className={styles.hero}>
       <div className={styles.heroCopy}>
