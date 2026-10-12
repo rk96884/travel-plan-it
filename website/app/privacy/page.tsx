@@ -2,7 +2,7 @@ import Link from 'next/link';
 import SiteHeader from '../../components/site-header';
 import SiteFooter from '../../components/site-footer';
 import { site } from '../../lib/site';
-export const metadata = { title: 'Privacy notice | Travel Plan It', alternates: { canonical: '/privacy/' } };
+export const metadata = { title: 'Privacy notice | Travel Plan It', alternates: { canonical: '/privacy' } };
 export default function Privacy() {
   return (
     <>
