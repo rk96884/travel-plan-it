@@ -1,6 +1,6 @@
 # Trip-idea pages
 
-The first reusable editorial trip idea is `/inspiration/bangkok-phuket-twin-centre/`.
+The dedicated listing is `/tailor-made-holidays/` (linked in the main navigation and sitemap). New multi-centre trips can be added to its `journeys` collection. The first reusable editorial trip idea is `/inspiration/bangkok-phuket-twin-centre/`.
 
 ## Structure
 
@@ -21,11 +21,11 @@ The first reusable editorial trip idea is `/inspiration/bangkok-phuket-twin-cent
 
 ## Images and rights
 
-The destination photos are loaded from Wikimedia Commons' `Special:FilePath` thumbnail redirects. They are CC BY-SA 4.0 and credited visibly on the itinerary page with links to their original file descriptions:
-- Wat Arun in Bangkok (1).jpg — Tournasol7, [source](https://commons.wikimedia.org/wiki/File:Wat_Arun_in_Bangkok_(1).jpg).
-- Patong Beach in Phuket.jpg — Ewong17, [source](https://commons.wikimedia.org/wiki/File:Patong_Beach_in_Phuket.jpg).
+The destination photos are loaded from Wikimedia Commons' `Special:FilePath` thumbnail redirects. They are CC BY-SA 3.0 and credited visibly on the itinerary page with links to their original file descriptions:
+- Templo Wat Arun, Bangkok, Tailandia, 2013-08-22, DD 37.jpg — Diego Delso / delso.photo, CC BY-SA 3.0, [source](https://commons.wikimedia.org/wiki/File:Templo_Wat_Arun,_Bangkok,_Tailandia,_2013-08-22,_DD_37.jpg).
+- Thailand, Phuket - Karon Beach WMID2669793.jpg — SpitfireMK14 / Wikimapia, CC BY-SA 3.0, [source](https://commons.wikimedia.org/wiki/File:Thailand,_Phuket_-_Karon_Beach_WMID2669793.jpg). This image depicts Karon Beach, elsewhere on Phuket, not Patong.
 
-Attribution and share-alike obligations must be preserved; if modifying these photos, review licence obligations first. The inspiration hub uses the same licensed Patong Beach photograph, with a visible photographer/licence credit. The itinerary page links to its source file.
+Attribution and share-alike obligations must be preserved; if modifying these photos, review licence obligations first. The inspiration hub uses the same licensed Karon Beach photograph, with a visible photographer/licence credit. The itinerary page links to its source file.
 
 ## Pre-publish checklist
 

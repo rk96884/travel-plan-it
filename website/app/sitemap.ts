@@ -9,6 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/travel-planning/`, lastModified, changeFrequency: 'monthly', priority: 0.9 },
     { url: `${baseUrl}/why-us/`, lastModified, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${baseUrl}/press/`, lastModified, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${baseUrl}/tailor-made-holidays/`, lastModified: new Date('2026-10-12'), changeFrequency: 'monthly', priority: 0.9 },
     { url: `${baseUrl}/inspiration/`, lastModified, changeFrequency: 'weekly', priority: 0.9 },
     { url: `${baseUrl}/inspiration/bangkok-phuket-twin-centre/`, lastModified: new Date('2026-10-12'), changeFrequency: 'monthly', priority: 0.9 },
     { url: `${baseUrl}/inspiration/khanom/`, lastModified, changeFrequency: 'monthly', priority: 0.8 },
