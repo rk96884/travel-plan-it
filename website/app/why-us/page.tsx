@@ -1,3 +1,9 @@
+import type { Metadata } from 'next';
+export const metadata: Metadata = {
+  title: 'Why Travel Plan It | Tailor-Made Travel',
+  description: 'Discover the personal service, destination expertise and thoughtful planning behind Travel Plan It.',
+  alternates: { canonical: '/why-us/' },
+};
 import Link from 'next/link';
 import Image from 'next/image';
 import SiteHeader from '../../components/site-header';
