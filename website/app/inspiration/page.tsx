@@ -5,6 +5,7 @@ import SiteFooter from '../../components/site-footer';
 import styles from './inspiration.module.css';
 
 const stories = [
+  { href: '/inspiration/bangkok-phuket-twin-centre/', image: '/images/inspiration/khanom-pink-dolphin.webp', label: 'THAILAND · 12 DAYS / 10 NIGHTS', title: 'Bangkok & Phuket: city and coast', text: 'Three nights in Bangkok, seven in Phuket, private tours and two accommodation styles. From £1,599pp indicative.' },
   { href: '/inspiration/khanom/', image: '/images/inspiration/khanom-pink-dolphin.webp', label: 'THAILAND · BEYOND THE OBVIOUS', title: 'Khanom: Thailand at a gentler pace', text: 'Quiet beaches, local fishing communities and the chance to see Khanom’s distinctive pink dolphins.' },
   { href: '/inspiration/palawan/', image: '/images/inspiration/palawan-lagoon.webp', label: 'PHILIPPINES · ISLAND ADVENTURE', title: 'Palawan: beyond the beach', text: 'Limestone lagoons, island-hopping and jungle landscapes shaped into a journey at your own pace.' },
   { href: '/inspiration/nihi-sumba/', image: '/images/inspiration/nihi-sumba-horse-beach.webp', label: 'INDONESIA · EXTRAORDINARY ESCAPE', title: 'Nihi Sumba: wild luxury', text: 'A remote Indonesian escape where dramatic coastline, horses and considered luxury come together.' },
