@@ -25,7 +25,7 @@ The destination photos are loaded from Wikimedia Commons' `Special:FilePath` thu
 - Wat Arun in Bangkok (1).jpg — Tournasol7, [source](https://commons.wikimedia.org/wiki/File:Wat_Arun_in_Bangkok_(1).jpg).
 - Patong Beach in Phuket.jpg — Ewong17, [source](https://commons.wikimedia.org/wiki/File:Patong_Beach_in_Phuket.jpg).
 
-Attribution and share-alike obligations must be preserved; if modifying these photos, review licence obligations first. The inspiration hub currently uses an existing generic Thailand photo as its card thumbnail; replace with a specifically licensed Bangkok/Phuket thumbnail before final editorial sign-off.
+Attribution and share-alike obligations must be preserved; if modifying these photos, review licence obligations first. The inspiration hub uses the same licensed Patong Beach photograph, with a visible photographer/licence credit. The itinerary page links to its source file.
 
 ## Pre-publish checklist
 
