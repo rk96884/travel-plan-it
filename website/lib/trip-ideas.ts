@@ -30,13 +30,13 @@ export const bangkokPhuket: TripIdea = {
   nights: '10 nights',
   hero: {
     src: '/images/inspiration/bangkok-wat-arun.webp',
-    alt: 'AI-generated illustration inspired by Wat Arun and the Chao Phraya River at sunset',
+    alt: 'Wat Arun temple beside the Chao Phraya River in Bangkok',
     credit: '',
     creditUrl: '',
   },
   secondImage: {
     src: '/images/inspiration/phuket-coast.webp',
-    alt: 'AI-generated illustration inspired by Phuket’s tropical coastline and longtail boats',
+    alt: 'Natural beach coastline with waves and forested hills in Phuket',
     credit: '',
     creditUrl: '',
   },
