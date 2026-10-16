@@ -53,14 +53,14 @@ const hotelImages: Record<string,string> = {
 };
 
 const excursionImages: Record<string,string> = {
-  'Chao Phraya evening cruise': '/images/inspiration/bangkok-wat-arun.webp',
-  'Thai food and neighbourhood walk': '/images/inspiration/bangkok-wat-arun.webp',
-  'Phang Nga Bay by boat': '/images/inspiration/phuket-coast.webp',
-  'Old Phuket Town and local culture': '/images/inspiration/phuket-coast.webp',
-  'Royal Palace and Silver Pagoda': '/images/inspiration/phnom-penh.webp',
-  'Riverside food and market experience': '/images/inspiration/phnom-penh.webp',
-  'Tonlé Sap lake communities': '/images/inspiration/angkor-wat.webp',
-  'Banteay Srei and countryside': '/images/inspiration/angkor-wat.webp',
+  'Chao Phraya evening cruise': '/images/excursions/chao-phraya-evening-cruise.webp',
+  'Thai food and neighbourhood walk': '/images/excursions/bangkok-food-walk.webp',
+  'Phang Nga Bay by boat': '/images/excursions/phang-nga-bay-boat.webp',
+  'Old Phuket Town and local culture': '/images/excursions/old-phuket-town.webp',
+  'Royal Palace and Silver Pagoda': '/images/excursions/phnom-penh-royal-palace.webp',
+  'Riverside food and market experience': '/images/excursions/phnom-penh-market-food.webp',
+  'Tonlé Sap lake communities': '/images/excursions/tonle-sap-lake.webp',
+  'Banteay Srei and countryside': '/images/excursions/banteay-srei.webp',
 };
 
 const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
@@ -93,7 +93,7 @@ export default function HolidayDetails({ trip }: { trip: TripIdea }) {
       </>}
       {tab==='excursions' && <>
         <p className={styles.note}>Optional experiences are not included in the advertised holiday price. We can discuss availability, suitability and costs when tailoring your itinerary.</p>
-        <div className={styles.excursions}>{data.excursions.map(item=><article key={item.name}><div className={styles.excursionVisual}><img src={excursionImages[item.name]} alt={`Illustrative destination scenery for ${item.place}; not a photograph of the specific excursion`} loading="lazy"/><span>Destination illustration</span></div><div className={styles.excursionBody}><span className={styles.tag}>{item.place}</span><h3>{item.name}</h3><p>{item.detail}</p></div></article>)}</div>
+        <div className={styles.excursions}>{data.excursions.map(item=><article key={item.name}><div className={styles.excursionVisual}><img src={excursionImages[item.name]} alt={`AI-generated illustration of ${item.name} in ${item.place}`} loading="lazy"/><span>AI-generated illustration</span></div><div className={styles.excursionBody}><span className={styles.tag}>{item.place}</span><h3>{item.name}</h3><p>{item.detail}</p></div></article>)}</div>
       </>}
     </div>
   </section>;
