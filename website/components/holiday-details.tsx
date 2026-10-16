@@ -45,15 +45,11 @@ const info = {
   },
 } as const;
 
-const hotelGalleries: Record<string,string> = {
-  'ibis Bangkok Sathorn': 'https://www.tripadvisor.co.uk/Hotel_Review-g293916-d1140504-Reviews-Ibis_Bangkok_Sathorn-Bangkok.html',
-  'ibis Phuket Patong': 'https://www.tripadvisor.co.uk/Hotel_Review-g297930-d1055081-Reviews-Ibis_Phuket_Patong-Patong_Kathu_Phuket.html',
-  'Amari Bangkok': 'https://www.tripadvisor.co.uk/Hotel_Review-g293916-d300434-Reviews-Amari_Bangkok-Bangkok.html',
-  'Amari Phuket': 'https://www.tripadvisor.co.uk/Hotel_Review-g297930-d305178-Reviews-Amari_Phuket-Patong_Kathu_Phuket.html',
-  'ibis budget Phnom Penh Riverside': 'https://www.tripadvisor.co.uk/Hotel_Review-g293940-d25164294-Reviews-Ibis_budget_Phnom_Penh_Riverside-Phnom_Penh.html',
-  'ibis Styles Siem Reap': 'https://www.tripadvisor.co.uk/Hotel_Review-g297390-d13569015-Reviews-Ibis_Styles_Siem_Reap-Siem_Reap_Siem_Reap_Province.html',
-  'Sofitel Phnom Penh Phokeethra': 'https://www.tripadvisor.co.uk/Hotel_Review-g293940-d1784730-Reviews-Sofitel_Phnom_Penh_Phokeethra-Phnom_Penh.html',
-  'Sofitel Angkor Phokeethra Golf & Spa Resort': 'https://www.tripadvisor.co.uk/Hotel_Review-g297390-d299583-Reviews-Sofitel_Angkor_Phokeethra_Golf_and_Spa_Resort-Siem_Reap_Siem_Reap_Province.html',
+const hotelImages: Record<string,string> = {
+  'ibis Bangkok Sathorn': '/images/hotels/ibis-bangkok-sathorn.jpg',
+  'ibis Phuket Patong': '/images/hotels/ibis-phuket-patong.jpg',
+  'Amari Bangkok': '/images/hotels/amari-bangkok.jpg',
+  'Amari Phuket': '/images/hotels/amari-phuket.jpg',
 };
 
 const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
@@ -74,8 +70,8 @@ export default function HolidayDetails({ trip }: { trip: TripIdea }) {
       {tab==='hotels' && <>
         <p className={styles.note}>These are proposed hotels, not confirmed reservations. Room types and availability will be reconfirmed in your personalised quotation.</p>
         <div className={styles.hotels}>{trip.tiers.flatMap(tier=>tier.hotels.map(hotel=><article className={styles.hotel} key={tier.id+hotel.name}>
-          <div className={styles.hotelText}><span className={styles.tag}>{tier.label} · {hotel.place}</span><h3>{hotel.name}</h3><p>{(data.hotelCopy as Record<string,string>)[hotel.name]}</p><p className={styles.room}>{hotel.nights} nights · {hotel.room}</p><a href={hotelGalleries[hotel.name]} target="_blank" rel="noopener noreferrer">View real hotel photos on Tripadvisor ↗</a></div>
-          <div className={styles.hotelVisual}><img src={hotel.place === 'Bangkok' ? '/images/inspiration/bangkok-wat-arun.webp' : hotel.place === 'Phuket' ? '/images/inspiration/phuket-coast.webp' : hotel.place === 'Phnom Penh' ? '/images/inspiration/phnom-penh.webp' : '/images/inspiration/angkor-wat.webp'} alt={`Destination scenery in ${hotel.place}, not a photograph of ${hotel.name}`} loading="lazy"/><span>Destination imagery · Hotel photographs to follow</span></div>
+          <div className={styles.hotelText}><span className={styles.tag}>{tier.label} · {hotel.place}</span><h3>{hotel.name}</h3><p>{(data.hotelCopy as Record<string,string>)[hotel.name]}</p><p className={styles.room}>{hotel.nights} nights · {hotel.room}</p></div>
+          <div className={styles.hotelVisual}><img src={hotelImages[hotel.name] || (hotel.place === 'Phnom Penh' ? '/images/inspiration/phnom-penh.webp' : '/images/inspiration/angkor-wat.webp')} alt={hotelImages[hotel.name] ? `Photograph supplied for ${hotel.name}; pictured room or facilities may differ from quoted category` : `Illustrative destination scenery in ${hotel.place}, not a photograph of ${hotel.name}`} loading="lazy"/><span>{hotelImages[hotel.name] ? "Illustrative hotel photograph · Exact room type may differ" : "Destination imagery · Hotel photographs to follow"}</span></div>
         </article>))}</div>
       </>}
       {tab==='weather' && <>
