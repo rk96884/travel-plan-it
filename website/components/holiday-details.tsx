@@ -77,11 +77,43 @@ const excursionImages: Record<string,string> = {
 
 const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
 
+const toUnit = (value: number, unit: 'C' | 'F') => unit === 'C' ? value : value * 9 / 5 + 32;
+
+function ClimateChart({ weather, unit }: { weather: { city: string; months: readonly string[]; wet: readonly number[] }; unit: 'C' | 'F' }) {
+  const temps = weather.months.map(range => range.split('–').map(Number));
+  const averages = temps.map(([low, high]) => (low + high) / 2);
+  const plot = { left: 55, right: 760, top: 24, bottom: 280 };
+  const x = (i: number) => plot.left + (plot.right - plot.left) * (i + .5) / 12;
+  const y = (temp: number) => plot.bottom - (toUnit(temp, unit) - (unit === 'C' ? 15 : 59)) / (unit === 'C' ? 25 : 45) * (plot.bottom - plot.top);
+  const points = (values: number[]) => values.map((value, i) => `${x(i)},${y(value)}`).join(' ');
+  const series = [
+    { name: 'Min', values: temps.map(t => t[0]), color: '#1555b5' },
+    { name: 'Average', values: averages, color: '#e5a10a' },
+    { name: 'Max', values: temps.map(t => t[1]), color: '#c42a25' },
+  ];
+  return <div className={styles.climateChart}>
+    <div className={styles.chartLegend} aria-hidden="true">
+      {series.map(s => <span key={s.name}><i style={{backgroundColor:s.color}}/>{s.name} temp</span>)}
+      <span><i style={{backgroundColor:'#9dd9e8'}}/>Rainfall (mm)</span>
+    </div>
+    <svg viewBox="0 0 820 350" role="img" aria-label={`Monthly minimum, average and maximum temperatures in degrees ${unit === 'C' ? 'Celsius' : 'Fahrenheit'}, plus rainfall in millimetres, for ${weather.city}`} className={styles.climateSvg}>
+      {[0,1,2,3,4,5].map(i => { const temp = unit === 'C' ? 15+i*5 : 59+i*9; const yy = plot.bottom - i*(plot.bottom-plot.top)/5; return <g key={i}><line x1={plot.left} x2={plot.right} y1={yy} y2={yy} stroke="#d4ded9"/><text x={plot.left-10} y={yy+4} textAnchor="end" fontSize="12" fill="#526b63">{temp}°</text></g>; })}
+      {weather.wet.map((rain,i) => <g key={i}><rect x={x(i)-15} y={plot.bottom-rain/400*(plot.bottom-plot.top)} width="30" height={rain/400*(plot.bottom-plot.top)} fill="#9dd9e8" opacity=".78"/><text x={x(i)} y="303" textAnchor="middle" fontSize="12" fill="#526b63">{months[i]}</text></g>)}
+      {series.map(s => <g key={s.name}><polyline points={points(s.values)} fill="none" stroke={s.color} strokeWidth="3" strokeLinejoin="round"/>{s.values.map((v,i)=><circle key={i} cx={x(i)} cy={y(v)} r="3.5" fill={s.color}/>)}</g>)}
+      <text x="15" y="152" transform="rotate(-90 15 152)" fontSize="12" fill="#526b63">Temperature (°{unit})</text>
+      <text x="788" y="152" transform="rotate(90 788 152)" fontSize="12" fill="#526b63">Rainfall (mm)</text>
+      {[0,100,200,300,400].map(r=><text key={r} x="770" y={plot.bottom-r/400*(plot.bottom-plot.top)+4} fontSize="11" fill="#526b63">{r}</text>)}
+    </svg>
+    <div className={styles.chartTableScroll}><table className={styles.chartTable}><caption>Monthly climate figures for {weather.city}</caption><thead><tr><th>Month</th><th>Min</th><th>Average</th><th>Max</th><th>Rain</th></tr></thead><tbody>{months.map((month,i)=><tr key={month}><th>{month}</th><td>{Math.round(toUnit(temps[i][0],unit))}°</td><td>{Math.round(toUnit(averages[i],unit))}°</td><td>{Math.round(toUnit(temps[i][1],unit))}°</td><td>{weather.wet[i]} mm</td></tr>)}</tbody></table></div>
+  </div>;
+}
+
 export default function HolidayDetails({ trip }: { trip: TripIdea }) {
   const country = trip.country === 'Cambodia' ? 'Cambodia' : 'Thailand';
   const data = info[country];
   const [tab, setTab] = useState<'hotels'|'weather'|'excursions'>('hotels');
   const [city, setCity] = useState(0);
+  const [unit, setUnit] = useState<'C' | 'F'>('C');
   const weather = data.weather[city];
 
   return <section className={styles.section} aria-labelledby="explore-heading">
@@ -100,8 +132,9 @@ export default function HolidayDetails({ trip }: { trip: TripIdea }) {
       {tab==='weather' && <>
         <div className={styles.citySwitch}>{data.weather.map((item,i)=><button type="button" key={item.city} className={city===i?styles.selected:''} aria-pressed={city===i} onClick={()=>setCity(i)}>{item.city}</button>)}</div>
         <h3>{weather.city} throughout the year</h3><p className={styles.weatherIntro}>{weather.intro}</p>
-        <div className={styles.weatherGrid} aria-label={`Typical temperature ranges and monthly average rainfall for ${weather.city}`}>{months.map((month,i)=><div className={styles.month} key={month}><div className={styles.barArea}><div className={styles.rainBar} style={{height:`${Math.round(weather.wet[i]/400*100)}%`}}/></div><strong>{month}</strong><span>{weather.months[i]}°C</span><span>{weather.wet[i]} mm</span></div>)}</div>
-        <p className={styles.note}>Typical monthly low–high temperatures (°C) and average monthly rainfall (mm), converted and rounded from historical weather-station observations. These are climate averages, not forecasts. Weather varies year to year. Source: <a href={weather.source} target="_blank" rel="noopener noreferrer">Time and Date climate averages</a> (2012–2021 for Phuket and Cambodia; 1992–2021 for Bangkok).</p>
+        <div className={styles.unitSwitch} role="group" aria-label="Temperature unit"><button type="button" aria-pressed={unit==='C'} className={unit==='C'?styles.selected:''} onClick={()=>setUnit('C')}>°C Celsius</button><button type="button" aria-pressed={unit==='F'} className={unit==='F'?styles.selected:''} onClick={()=>setUnit('F')}>°F Fahrenheit</button></div>
+        <ClimateChart weather={weather} unit={unit}/>
+        <p className={styles.note}>Typical monthly minimum and maximum temperatures, calculated mid-point averages, and average monthly rainfall (mm), converted and rounded from historical weather-station observations. These are climate averages, not forecasts. Weather varies year to year. Source: <a href={weather.source} target="_blank" rel="noopener noreferrer">Time and Date climate averages</a> (2012–2021 for Phuket and Cambodia; 1992–2021 for Bangkok).</p>
       </>}
       {tab==='excursions' && <>
         <p className={styles.note}>Some experiences are included in your itinerary; others may cost extra. Your personalised quotation will confirm what's included and any additional charges.</p>
