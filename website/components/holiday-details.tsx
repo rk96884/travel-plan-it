@@ -52,6 +52,17 @@ const hotelImages: Record<string,string> = {
   'Amari Phuket': '/images/hotels/amari-phuket.jpg',
 };
 
+const excursionImages: Record<string,string> = {
+  'Chao Phraya evening cruise': '/images/inspiration/bangkok-wat-arun.webp',
+  'Thai food and neighbourhood walk': '/images/inspiration/bangkok-wat-arun.webp',
+  'Phang Nga Bay by boat': '/images/inspiration/phuket-coast.webp',
+  'Old Phuket Town and local culture': '/images/inspiration/phuket-coast.webp',
+  'Royal Palace and Silver Pagoda': '/images/inspiration/phnom-penh.webp',
+  'Riverside food and market experience': '/images/inspiration/phnom-penh.webp',
+  'Tonlé Sap lake communities': '/images/inspiration/angkor-wat.webp',
+  'Banteay Srei and countryside': '/images/inspiration/angkor-wat.webp',
+};
+
 const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
 
 export default function HolidayDetails({ trip }: { trip: TripIdea }) {
@@ -71,7 +82,7 @@ export default function HolidayDetails({ trip }: { trip: TripIdea }) {
         <p className={styles.note}>These are proposed hotels, not confirmed reservations. Room types and availability will be reconfirmed in your personalised quotation.</p>
         <div className={styles.hotels}>{trip.tiers.flatMap(tier=>tier.hotels.map(hotel=><article className={styles.hotel} key={tier.id+hotel.name}>
           <div className={styles.hotelText}><span className={styles.tag}>{tier.label} · {hotel.place}</span><h3>{hotel.name}</h3><p>{(data.hotelCopy as Record<string,string>)[hotel.name]}</p><p className={styles.room}>{hotel.nights} nights · {hotel.room}</p></div>
-          <div className={styles.hotelVisual}><img src={hotelImages[hotel.name] || (hotel.place === 'Phnom Penh' ? '/images/inspiration/phnom-penh.webp' : '/images/inspiration/angkor-wat.webp')} alt={hotelImages[hotel.name] ? `Photograph supplied for ${hotel.name}; pictured room or facilities may differ from quoted category` : `Illustrative destination scenery in ${hotel.place}, not a photograph of ${hotel.name}`} loading="lazy"/><span>{hotelImages[hotel.name] ? "Illustrative hotel photograph · Exact room type may differ" : "Destination imagery · Hotel photographs to follow"}</span></div>
+          <div className={styles.hotelVisual}><img src={hotelImages[hotel.name] || (hotel.place === 'Phnom Penh' ? '/images/inspiration/phnom-penh.webp' : '/images/inspiration/angkor-wat.webp')} alt={hotelImages[hotel.name] ? `Photograph supplied for ${hotel.name}; pictured room or facilities may differ from quoted category` : `Illustrative destination scenery in ${hotel.place}, not a photograph of ${hotel.name}`} loading="lazy"/><span>{hotelImages[hotel.name] ? "Hotel photograph · Room category subject to confirmation" : "Destination imagery · Hotel photographs to follow"}</span></div>
         </article>))}</div>
       </>}
       {tab==='weather' && <>
@@ -82,7 +93,7 @@ export default function HolidayDetails({ trip }: { trip: TripIdea }) {
       </>}
       {tab==='excursions' && <>
         <p className={styles.note}>Optional experiences are not included in the advertised holiday price. We can discuss availability, suitability and costs when tailoring your itinerary.</p>
-        <div className={styles.excursions}>{data.excursions.map(item=><article key={item.name}><span className={styles.tag}>{item.place}</span><h3>{item.name}</h3><p>{item.detail}</p></article>)}</div>
+        <div className={styles.excursions}>{data.excursions.map(item=><article key={item.name}><div className={styles.excursionVisual}><img src={excursionImages[item.name]} alt={`Illustrative destination scenery for ${item.place}; not a photograph of the specific excursion`} loading="lazy"/><span>Destination illustration</span></div><div className={styles.excursionBody}><span className={styles.tag}>{item.place}</span><h3>{item.name}</h3><p>{item.detail}</p></div></article>)}</div>
       </>}
     </div>
   </section>;
