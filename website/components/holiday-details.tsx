@@ -96,12 +96,12 @@ function ClimateChart({ weather, unit }: { weather: { city: string; months: read
       {series.map(s => <span key={s.name}><i style={{backgroundColor:s.color}}/>{s.name} temp</span>)}
       <span><i style={{backgroundColor:'#9dd9e8'}}/>Rainfall (mm)</span>
     </div>
-    <svg viewBox="0 0 820 350" role="img" aria-label={`Monthly minimum, average and maximum temperatures in degrees ${unit === 'C' ? 'Celsius' : 'Fahrenheit'}, plus rainfall in millimetres, for ${weather.city}`} className={styles.climateSvg}>
+    <svg viewBox="0 0 845 350" role="img" aria-label={`Monthly minimum, average and maximum temperatures in degrees ${unit === 'C' ? 'Celsius' : 'Fahrenheit'}, plus rainfall in millimetres, for ${weather.city}`} className={styles.climateSvg}>
       {[0,1,2,3,4,5].map(i => { const temp = unit === 'C' ? 15+i*5 : 59+i*9; const yy = plot.bottom - i*(plot.bottom-plot.top)/5; return <g key={i}><line x1={plot.left} x2={plot.right} y1={yy} y2={yy} stroke="#d4ded9"/><text x={plot.left-10} y={yy+4} textAnchor="end" fontSize="12" fill="#526b63">{temp}°</text></g>; })}
       {weather.wet.map((rain,i) => <g key={i}><rect x={x(i)-15} y={plot.bottom-rain/400*(plot.bottom-plot.top)} width="30" height={rain/400*(plot.bottom-plot.top)} fill="#9dd9e8" opacity=".78"/><text x={x(i)} y="303" textAnchor="middle" fontSize="12" fill="#526b63">{months[i]}</text></g>)}
       {series.map(s => <g key={s.name}><polyline points={points(s.values)} fill="none" stroke={s.color} strokeWidth="3" strokeLinejoin="round"/>{s.values.map((v,i)=><circle key={i} cx={x(i)} cy={y(v)} r="3.5" fill={s.color}/>)}</g>)}
       <text x="15" y="152" transform="rotate(-90 15 152)" fontSize="12" fill="#526b63">Temperature (°{unit})</text>
-      <text x="788" y="152" transform="rotate(90 788 152)" fontSize="12" fill="#526b63">Rainfall (mm)</text>
+      <text x="813" y="152" transform="rotate(90 813 152)" fontSize="12" textAnchor="middle" fill="#526b63">Rainfall (mm)</text>
       {[0,100,200,300,400].map(r=><text key={r} x="770" y={plot.bottom-r/400*(plot.bottom-plot.top)+4} fontSize="11" fill="#526b63">{r}</text>)}
     </svg>
     <div className={styles.chartTableScroll}><table className={styles.chartTable}><caption>Monthly climate figures for {weather.city}</caption><thead><tr><th>Month</th><th>Min</th><th>Average</th><th>Max</th><th>Rain</th></tr></thead><tbody>{months.map((month,i)=><tr key={month}><th>{month}</th><td>{Math.round(toUnit(temps[i][0],unit))}°</td><td>{Math.round(toUnit(averages[i],unit))}°</td><td>{Math.round(toUnit(temps[i][1],unit))}°</td><td>{weather.wet[i]} mm</td></tr>)}</tbody></table></div>
