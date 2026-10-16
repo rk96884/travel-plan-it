@@ -54,6 +54,10 @@ const hotelImages: Record<string,string> = {
   'ibis Phuket Patong': '/images/hotels/ibis-phuket-patong.jpg',
   'Amari Bangkok': '/images/hotels/amari-bangkok.jpg',
   'Amari Phuket': '/images/hotels/amari-phuket.jpg',
+  'ibis budget Phnom Penh Riverside': '/images/hotels/ibis-budget-phnom-penh-riverside.webp',
+  'ibis Styles Siem Reap': '/images/hotels/ibis-styles-siem-reap.webp',
+  'Sofitel Phnom Penh Phokeethra': '/images/hotels/sofitel-phnom-penh-phokeethra.webp',
+  'Sofitel Angkor Phokeethra Golf & Spa Resort': '/images/hotels/sofitel-angkor-phokeethra.webp',
 };
 
 const excursionImages: Record<string,string> = {
