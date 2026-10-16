@@ -6,3 +6,10 @@
 .excursionVisual span{position:absolute;bottom:0;left:0;background:rgba(23,63,58,.83);color:#fff;padding:5px 9px;font-size:10px}
 .excursionBody{padding:25px 28px 28px}
 @media(max-width:650px){.excursionVisual{height:220px}}
+
+/* Three columns make excursion photography closer to square. */
+.excursions{grid-template-columns:repeat(3,minmax(0,1fr))}
+.excursionVisual{height:auto;aspect-ratio:1/1;overflow:hidden}
+.excursionVisual img{object-position:center}
+@media(max-width:900px){.excursions{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.excursions{grid-template-columns:1fr}.excursionVisual{height:auto;aspect-ratio:4/3}}
