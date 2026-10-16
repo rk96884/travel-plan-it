@@ -65,10 +65,10 @@ const excursionImages: Record<string,string> = {
   'Riverside food and market experience': '/images/excursions/phnom-penh-market-food.webp',
   'Tonlé Sap lake communities': '/images/excursions/tonle-sap-lake.webp',
   'Banteay Srei and countryside': '/images/excursions/banteay-srei.webp',
-  'Bangkok temples and riverside': '/images/excursions/chao-phraya-evening-cruise.webp',
-  'Phuket scenic coastal tour': '/images/excursions/phang-nga-bay-boat.webp',
-  'Phnom Penh heritage highlights': '/images/excursions/phnom-penh-royal-palace.webp',
-  'Angkor temples discovery': '/images/excursions/banteay-srei.webp',
+  'Bangkok temples and riverside': '/images/excursions/bangkok-temples-riverside.webp',
+  'Phuket scenic coastal tour': '/images/excursions/phuket-coastal-tour.webp',
+  'Phnom Penh heritage highlights': '/images/excursions/phnom-penh-heritage.webp',
+  'Angkor temples discovery': '/images/excursions/angkor-temples-discovery.webp',
 };
 
 const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
