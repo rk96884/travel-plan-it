@@ -104,7 +104,7 @@ export default function HolidayDetails({ trip }: { trip: TripIdea }) {
         <p className={styles.note}>Typical monthly low–high temperatures (°C) and average monthly rainfall (mm), converted and rounded from historical weather-station observations. These are climate averages, not forecasts. Weather varies year to year. Source: <a href={weather.source} target="_blank" rel="noopener noreferrer">Time and Date climate averages</a> (2012–2021 for Phuket and Cambodia; 1992–2021 for Bangkok).</p>
       </>}
       {tab==='excursions' && <>
-        <p className={styles.note}>Optional experiences are not included in the advertised holiday price. We can discuss availability, suitability and costs when tailoring your itinerary.</p>
+        <p className={styles.note}>Some experiences may already be included in the advertised itinerary, while others can be added at an additional cost. We'll confirm exactly what's included, along with availability and any extra charges, in your personalised quotation.</p>
         <div className={styles.excursions}>{data.excursions.map(item=><article key={item.name}><div className={styles.excursionVisual}><img src={excursionImages[item.name]} alt={`AI-generated illustration of ${item.name} in ${item.place}`} loading="lazy"/></div><div className={styles.excursionBody}><span className={styles.tag}>{item.place}</span><h3>{item.name}</h3><p>{item.detail}</p></div></article>)}</div>
       </>}
     </div>
