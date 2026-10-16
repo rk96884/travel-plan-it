@@ -15,6 +15,8 @@ const info = {
       { place: 'Bangkok', name: 'Thai food and neighbourhood walk', detail: 'Explore local flavours and quieter streets with a knowledgeable guide.' },
       { place: 'Phuket', name: 'Phang Nga Bay by boat', detail: 'Limestone scenery, sheltered waterways and island views; routing depends on sea conditions.' },
       { place: 'Phuket', name: 'Old Phuket Town and local culture', detail: 'Colourful Sino-Portuguese architecture, cafés and neighbourhood markets.' },
+      { place: 'Bangkok', name: 'Bangkok temples and riverside', detail: 'Discover the city’s historic temples and riverside landmarks with a local guide.' },
+      { place: 'Phuket', name: 'Phuket scenic coastal tour', detail: 'Explore island viewpoints and coastal scenery at a relaxed pace.' },
     ],
     hotelCopy: {
       'ibis Bangkok Sathorn': 'A straightforward city base for Bangkok sightseeing, with a practical location for exploring the capital.',
@@ -34,6 +36,8 @@ const info = {
       { place: 'Phnom Penh', name: 'Riverside food and market experience', detail: 'Discover local flavours, markets and neighbourhood life with a guide.' },
       { place: 'Siem Reap', name: 'Tonlé Sap lake communities', detail: 'A guided visit exploring life around the lake; the experience varies by water level and season.' },
       { place: 'Siem Reap', name: 'Banteay Srei and countryside', detail: 'Visit an intricately carved Angkor-era temple and see rural landscapes beyond the main circuit.' },
+      { place: 'Phnom Penh', name: 'Phnom Penh heritage highlights', detail: 'A guided introduction to the capital’s architecture and cultural landmarks.' },
+      { place: 'Siem Reap', name: 'Angkor temples discovery', detail: 'Explore the iconic temples of Angkor with a knowledgeable local guide.' },
     ],
     hotelCopy: {
       'ibis budget Phnom Penh Riverside': 'A simple, value-focused base for discovering the capital and its riverside neighbourhoods.',
@@ -61,6 +65,10 @@ const excursionImages: Record<string,string> = {
   'Riverside food and market experience': '/images/excursions/phnom-penh-market-food.webp',
   'Tonlé Sap lake communities': '/images/excursions/tonle-sap-lake.webp',
   'Banteay Srei and countryside': '/images/excursions/banteay-srei.webp',
+  'Bangkok temples and riverside': '/images/excursions/chao-phraya-evening-cruise.webp',
+  'Phuket scenic coastal tour': '/images/excursions/phang-nga-bay-boat.webp',
+  'Phnom Penh heritage highlights': '/images/excursions/phnom-penh-royal-palace.webp',
+  'Angkor temples discovery': '/images/excursions/banteay-srei.webp',
 };
 
 const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
@@ -93,7 +101,7 @@ export default function HolidayDetails({ trip }: { trip: TripIdea }) {
       </>}
       {tab==='excursions' && <>
         <p className={styles.note}>Optional experiences are not included in the advertised holiday price. We can discuss availability, suitability and costs when tailoring your itinerary.</p>
-        <div className={styles.excursions}>{data.excursions.map(item=><article key={item.name}><div className={styles.excursionVisual}><img src={excursionImages[item.name]} alt={`AI-generated illustration of ${item.name} in ${item.place}`} loading="lazy"/><span>AI-generated illustration</span></div><div className={styles.excursionBody}><span className={styles.tag}>{item.place}</span><h3>{item.name}</h3><p>{item.detail}</p></div></article>)}</div>
+        <div className={styles.excursions}>{data.excursions.map(item=><article key={item.name}><div className={styles.excursionVisual}><img src={excursionImages[item.name]} alt={`AI-generated illustration of ${item.name} in ${item.place}`} loading="lazy"/></div><div className={styles.excursionBody}><span className={styles.tag}>{item.place}</span><h3>{item.name}</h3><p>{item.detail}</p></div></article>)}</div>
       </>}
     </div>
   </section>;
