@@ -35,8 +35,8 @@ export const bangkokPhuket: TripIdea = {
     creditUrl: '',
   },
   secondImage: {
-    src: '/images/inspiration/phuket-coast.webp',
-    alt: 'Natural beach coastline with waves and forested hills in Phuket',
+    src: '/images/excursions/bangkok-temples-riverside.webp',
+    alt: 'Illustration of Bangkok temples and historic riverside landmarks',
     credit: '',
     creditUrl: '',
   },
