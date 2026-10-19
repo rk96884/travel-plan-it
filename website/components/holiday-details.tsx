@@ -5,6 +5,27 @@ import type { TripIdea } from '../lib/trip-ideas';
 import styles from './holiday-details.module.css';
 
 const info = {
+  Laos: {
+    weather: [
+      { city: 'Luang Prabang', intro: 'Generally cooler and drier from November to February, with hot conditions in March and April. Rain increases sharply through the summer monsoon.', months: ['15–27','16–32','19–35','22–36','24–36','24–34','24–33','24–32','23–33','22–32','19–31','15–27'], wet: [29,13,45,134,173,164,277,289,184,81,35,36], source: 'https://www.timeanddate.com/weather/laos/luang-prabang/climate' },
+      { city: 'Vientiane', intro: 'Warm to hot year-round. November to February is usually drier; the wettest months tend to be July to September.', months: ['17–29','19–32','22–34','24–36','25–35','25–33','25–32','25–32','24–33','23–32','22–32','17–29'], wet: [13,19,48,100,213,263,273,351,276,91,41,18], source: 'https://www.timeanddate.com/weather/laos/vientiane/climate' },
+    ],
+    excursions: [
+      { place: 'Luang Prabang', name: 'Kuang Si Waterfalls', detail: 'Visit the striking turquoise pools and forest scenery outside Luang Prabang.' },
+      { place: 'Luang Prabang', name: 'Mekong sunset cruise', detail: 'See the riverside landscape from the water on a relaxed evening cruise.' },
+      { place: 'Luang Prabang', name: 'Pak Ou Caves', detail: 'Explore the riverside caves and their Buddhist heritage on a guided excursion.' },
+      { place: 'Vientiane', name: 'Pha That Luang and temples', detail: 'Discover the capital’s sacred stupa and significant Buddhist landmarks.' },
+      { place: 'Vientiane', name: 'Buddha Park', detail: 'Explore the distinctive outdoor sculpture park on the outskirts of the capital.' },
+      { place: 'Vientiane', name: 'Vientiane food and night market', detail: 'Sample local flavours and explore the evening atmosphere along the Mekong.' },
+    ],
+    hotelCopy: {
+      'MyBanLao': 'A characterful hotel in Luang Prabang, with a Courtyard Suite proposed for your stay.',
+      'Crowne Plaza Vientiane': 'A contemporary city hotel offering a comfortable base for exploring the capital.',
+      'Avani+ Luang Prabang': 'A refined central stay in Luang Prabang, with a Deluxe room proposed.',
+      'Avani+ Lanexang Vientiane': 'An upscale hotel option for discovering Vientiane, with a Deluxe room proposed.',
+    },
+    image: '/images/hotels/mybanlao.webp',
+  },
   Thailand: {
     weather: [
       { city: 'Bangkok', intro: 'Hot throughout the year. November to February is generally drier and more comfortable for sightseeing; April is often especially hot. Rainfall increases during the southwest monsoon.', months: ['23–32','24–34','26–35','27–36','27–35','26–34','26–34','26–33','26–33','26–33','24–33','23–32'], wet: [24,14,60,119,203,210,189,200,317,200,43,18], source: 'https://www.timeanddate.com/weather/%401609348/climate' },
@@ -71,6 +92,10 @@ const info = {
 } as const;
 
 const hotelImages: Record<string,string> = {
+  'MyBanLao': '/images/hotels/mybanlao.webp',
+  'Crowne Plaza Vientiane': '/images/hotels/crowne-plaza-vientiane.webp',
+  'Avani+ Luang Prabang': '/images/hotels/avani-luang-prabang.webp',
+  'Avani+ Lanexang Vientiane': '/images/hotels/avani-lanexang-vientiane.webp',
   'Pullman Hanoi': '/images/hotels/pullman-hanoi.webp',
   'Pullman Saigon Centre': '/images/hotels/pullman-saigon-centre.webp',
   'Grand Mercure Hanoi': '/images/hotels/grand-mercure-hanoi.webp',
@@ -142,7 +167,7 @@ function ClimateChart({ weather, unit }: { weather: { city: string; months: read
 }
 
 export default function HolidayDetails({ trip }: { trip: TripIdea }) {
-  const country = trip.country === 'Cambodia' ? 'Cambodia' : trip.country === 'Vietnam' ? 'Vietnam' : 'Thailand';
+  const country = trip.country === 'Cambodia' ? 'Cambodia' : trip.country === 'Vietnam' ? 'Vietnam' : trip.country === 'Laos' ? 'Laos' : 'Thailand';
   const data = info[country];
   const [tab, setTab] = useState<'hotels'|'weather'|'excursions'>('hotels');
   const [city, setCity] = useState(0);
@@ -167,7 +192,7 @@ export default function HolidayDetails({ trip }: { trip: TripIdea }) {
         <h3>{weather.city} throughout the year</h3><p className={styles.weatherIntro}>{weather.intro}</p>
         <div className={styles.unitSwitch} role="group" aria-label="Temperature unit"><button type="button" aria-pressed={unit==='C'} className={unit==='C'?styles.selected:''} onClick={()=>setUnit('C')}>°C Celsius</button><button type="button" aria-pressed={unit==='F'} className={unit==='F'?styles.selected:''} onClick={()=>setUnit('F')}>°F Fahrenheit</button></div>
         <ClimateChart weather={weather} unit={unit}/>
-        <p className={styles.note}>Typical monthly minimum and maximum temperatures, calculated mid-point averages, and average monthly rainfall (mm), converted and rounded from historical weather-station observations. These are climate averages, not forecasts. Weather varies year to year. Source: <a href={weather.source} target="_blank" rel="noopener noreferrer">Time and Date climate averages</a> {country === 'Vietnam' ? '(2012–2021 for Hanoi; 1992–2021 for Ho Chi Minh City).' : '(2012–2021 for Phuket and Cambodia; 1992–2021 for Bangkok).'}</p>
+        <p className={styles.note}>Typical monthly minimum and maximum temperatures, calculated mid-point averages, and average monthly rainfall (mm), converted and rounded from historical weather-station observations. These are climate averages, not forecasts. Weather varies year to year. Source: <a href={weather.source} target="_blank" rel="noopener noreferrer">Time and Date climate averages</a> {country === 'Laos' ? '(2012–2021 for Luang Prabang and Vientiane).' : country === 'Vietnam' ? '(2012–2021 for Hanoi; 1992–2021 for Ho Chi Minh City).' : '(2012–2021 for Phuket and Cambodia; 1992–2021 for Bangkok).'}</p>
       </>}
       {tab==='excursions' && <>
         <p className={styles.note}>Some experiences are included in your itinerary; others may cost extra. Your personalised quotation will confirm what's included and any additional charges.</p>
