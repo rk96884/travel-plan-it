@@ -37,7 +37,7 @@ export default function SiteHeader({ back = false }: { back?: boolean }) {
           </div>
           <nav id="mobile-primary-nav" className={`primary-nav ${menuOpen ? 'is-open' : ''}`} aria-label="Primary navigation" >
             <Link onClick={() => setMenuOpen(false)} href="/travel-planning/">Travel Planning</Link>
-            <Link onClick={() => setMenuOpen(false)} href="/why-us/">Why us</Link>
+            <Link onClick={() => setMenuOpen(false)} href="/why-us/">Why Us</Link>
             <Link onClick={() => setMenuOpen(false)} href="/tailor-made-holidays/">Tailor-Made Holidays</Link>
             <Link onClick={() => setMenuOpen(false)} href="/inspiration/">Inspiration</Link>
             <Link className="nav-enquiry" href="/plan-my-trip/">Enquiries</Link>

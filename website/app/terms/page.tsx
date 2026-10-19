@@ -9,10 +9,7 @@ export default function Terms() {
       <main id="main" className="enquiry-page legal-page">
         <p className="eyebrow">WEBSITE INFORMATION</p>
         <h1>Terms of use</h1>
-        <p className="legal-date">Draft for review · 19 September 2026</p>
-        <aside className="form-notice">
-          These website terms remain a draft for review.
-        </aside>
+        <p className="legal-date">19 September 2026</p>
         <section>
           <h2>About this website</h2>
           <p>Travel Plan It presents travel inspiration and lets you contact us about a possible trip. We are preparing to launch. These terms cover use of this website and our tailor-made planning service; separate booking terms will apply when you book travel arrangements.</p>
@@ -61,7 +58,7 @@ export default function Terms() {
         </section>
         <section>
           <h2>Privacy and updates</h2>
-          <p>Our privacy notice explains how enquiry information is handled. We may update these website terms as the service develops; the date above identifies the current draft. Any future booking will have its own applicable terms.</p>
+          <p>Our privacy notice explains how enquiry information is handled. We may update these website terms as the service develops; the date above identifies the current version. Any future booking will have its own applicable terms.</p>
         </section>
       </main>
       <SiteFooter contained />
