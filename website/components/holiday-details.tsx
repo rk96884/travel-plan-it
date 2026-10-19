@@ -86,6 +86,12 @@ const hotelImages: Record<string,string> = {
 };
 
 const excursionImages: Record<string,string> = {
+  'Hanoi street food discovery': '/images/excursions/hanoi-street-food-discovery.webp',
+  'Ninh Binh river and countryside': '/images/excursions/ninh-binh-river-countryside.webp',
+  'Ha Long Bay cruise upgrade': '/images/excursions/ha-long-bay-cruise-upgrade.webp',
+  'Evening Saigon food tour': '/images/excursions/saigon-evening-food-tour.webp',
+  'Mekong Delta village experiences': '/images/excursions/mekong-delta-village-experiences.webp',
+  'Cu Chi Tunnels private visit': '/images/excursions/cu-chi-tunnels-private-visit.webp',
   'Chao Phraya evening cruise': '/images/excursions/chao-phraya-evening-cruise.webp',
   'Thai food and neighbourhood walk': '/images/excursions/bangkok-food-walk.webp',
   'Phang Nga Bay by boat': '/images/excursions/phang-nga-bay-boat.webp',
