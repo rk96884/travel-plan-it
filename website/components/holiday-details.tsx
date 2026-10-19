@@ -109,7 +109,9 @@ function ClimateChart({ weather, unit }: { weather: { city: string; months: read
   const averages = temps.map(([low, high]) => (low + high) / 2);
   const plot = { left: 55, right: 760, top: 24, bottom: 280 };
   const x = (i: number) => plot.left + (plot.right - plot.left) * (i + .5) / 12;
-  const y = (temp: number) => plot.bottom - (toUnit(temp, unit) - (unit === 'C' ? 15 : 59)) / (unit === 'C' ? 25 : 45) * (plot.bottom - plot.top);
+  const minC = weather.city === 'Hanoi' ? 10 : 15;
+  const maxC = 40;
+  const y = (temp: number) => plot.bottom - (temp - minC) / (maxC - minC) * (plot.bottom - plot.top);
   const points = (values: number[]) => values.map((value, i) => `${x(i)},${y(value)}`).join(' ');
   const series = [
     { name: 'Min', values: temps.map(t => t[0]), color: '#1555b5' },
@@ -122,7 +124,7 @@ function ClimateChart({ weather, unit }: { weather: { city: string; months: read
       <span><i style={{backgroundColor:'#9dd9e8'}}/>Rainfall (mm)</span>
     </div>
     <svg viewBox="0 0 845 350" role="img" aria-label={`Monthly minimum, average and maximum temperatures in degrees ${unit === 'C' ? 'Celsius' : 'Fahrenheit'}, plus rainfall in millimetres, for ${weather.city}`} className={styles.climateSvg}>
-      {[0,1,2,3,4,5].map(i => { const temp = unit === 'C' ? 15+i*5 : 59+i*9; const yy = plot.bottom - i*(plot.bottom-plot.top)/5; return <g key={i}><line x1={plot.left} x2={plot.right} y1={yy} y2={yy} stroke="#d4ded9"/><text x={plot.left-10} y={yy+4} textAnchor="end" fontSize="12" fill="#526b63">{temp}°</text></g>; })}
+      {[0,1,2,3,4,5].map(i => { const temp = Math.round(toUnit(minC + i*(maxC-minC)/5, unit)); const yy = plot.bottom - i*(plot.bottom-plot.top)/5; return <g key={i}><line x1={plot.left} x2={plot.right} y1={yy} y2={yy} stroke="#d4ded9"/><text x={plot.left-10} y={yy+4} textAnchor="end" fontSize="12" fill="#526b63">{temp}°</text></g>; })}
       {weather.wet.map((rain,i) => <g key={i}><rect x={x(i)-15} y={plot.bottom-rain/400*(plot.bottom-plot.top)} width="30" height={rain/400*(plot.bottom-plot.top)} fill="#9dd9e8" opacity=".78"/><text x={x(i)} y="303" textAnchor="middle" fontSize="12" fill="#526b63">{months[i]}</text></g>)}
       {series.map(s => <g key={s.name}><polyline points={points(s.values)} fill="none" stroke={s.color} strokeWidth="3" strokeLinejoin="round"/>{s.values.map((v,i)=><circle key={i} cx={x(i)} cy={y(v)} r="3.5" fill={s.color}/>)}</g>)}
       <text x="15" y="152" transform="rotate(-90 15 152)" fontSize="12" fill="#526b63">Temperature (°{unit})</text>
