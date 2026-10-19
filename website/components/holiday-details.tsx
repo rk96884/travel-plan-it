@@ -26,6 +26,27 @@ const info = {
     },
     image: '/images/inspiration/phuket-coast.webp',
   },
+  Vietnam: {
+    weather: [
+      { city: 'Hanoi', intro: 'Northern Vietnam has distinct seasons: cooler, relatively drier winters and hot, humid summers. March can be mild, with occasional drizzle; summer rain peaks around July and August.', months: ['14–20','16–22','19–24','22–28','26–33','27–34','27–34','26–33','25–32','23–29','20–26','15–22'], wet: [39,22,55,110,185,196,299,381,244,158,46,28], source: 'https://www.timeanddate.com/weather/vietnam/hanoi/climate' },
+      { city: 'Ho Chi Minh City', intro: 'Warm throughout the year. December to April is usually drier, while the wetter season typically runs from May to November. March and April can be especially hot.', months: ['22–32','23–33','24–34','26–35','26–34','25–33','24–33','24–33','24–32','24–32','23–32','22–32'], wet: [11,5,27,52,166,179,202,223,217,245,117,37], source: 'https://www.timeanddate.com/weather/vietnam/ho-chi-minh/climate' },
+    ],
+    excursions: [
+      { place: 'Hanoi', name: 'Hanoi street food discovery', detail: 'Taste regional specialities and discover the city’s lively food culture with a local guide.' },
+      { place: 'Hanoi', name: 'Ninh Binh river and countryside', detail: 'Explore limestone landscapes and riverside scenery, with boat-trip options depending on your interests.' },
+      { place: 'Northern Vietnam', name: 'Ha Long Bay cruise upgrade', detail: 'Consider a boat experience among the bay’s dramatic limestone islands, subject to weather and availability.' },
+      { place: 'Ho Chi Minh City', name: 'Evening Saigon food tour', detail: 'Discover markets, local dishes and vibrant neighbourhoods after dark.' },
+      { place: 'Southern Vietnam', name: 'Mekong Delta village experiences', detail: 'Explore local waterways and riverside communities with an extended or private experience.' },
+      { place: 'Ho Chi Minh City', name: 'Cu Chi Tunnels private visit', detail: 'Explore this significant wartime site at your own pace with a private guide instead of the proposed shared tour.' },
+    ],
+    hotelCopy: {
+      'Pullman Hanoi': 'A comfortable city hotel for exploring Hanoi and returning to after northern Vietnam day trips.',
+      'Pullman Saigon Centre': 'A contemporary city base for Ho Chi Minh City sightseeing and excursions.',
+      'Grand Mercure Hanoi': 'An elegant, higher-end option with thoughtfully styled rooms for your Hanoi stay.',
+      'La Siesta Premium Saigon Central': 'A boutique-style premium hotel option in the heart of Ho Chi Minh City.',
+    },
+    image: '/images/hotels/grand-mercure-hanoi.webp',
+  },
   Cambodia: {
     weather: [
       { city: 'Phnom Penh', intro: 'Warm to hot throughout the year. November to February is generally drier; March and April are typically the hottest months. Most rain falls during May to October.', months: ['23–32','23–33','25–35','26–36','27–36','26–34','26–34','26–34','25–33','25–32','25–32','23–31'], wet: [13,4,11,85,180,180,216,245,315,222,137,28], source: 'https://www.timeanddate.com/weather/cambodia/phnom-penh/climate' },
@@ -50,6 +71,10 @@ const info = {
 } as const;
 
 const hotelImages: Record<string,string> = {
+  'Pullman Hanoi': '/images/hotels/pullman-hanoi.webp',
+  'Pullman Saigon Centre': '/images/hotels/pullman-saigon-centre.webp',
+  'Grand Mercure Hanoi': '/images/hotels/grand-mercure-hanoi.webp',
+  'La Siesta Premium Saigon Central': '/images/hotels/la-siesta-premium-saigon-central.webp',
   'ibis Bangkok Sathorn': '/images/hotels/ibis-bangkok-sathorn.jpg',
   'ibis Phuket Patong': '/images/hotels/ibis-phuket-patong.jpg',
   'Amari Bangkok': '/images/hotels/amari-bangkok.jpg',
@@ -109,7 +134,7 @@ function ClimateChart({ weather, unit }: { weather: { city: string; months: read
 }
 
 export default function HolidayDetails({ trip }: { trip: TripIdea }) {
-  const country = trip.country === 'Cambodia' ? 'Cambodia' : 'Thailand';
+  const country = trip.country === 'Cambodia' ? 'Cambodia' : trip.country === 'Vietnam' ? 'Vietnam' : 'Thailand';
   const data = info[country];
   const [tab, setTab] = useState<'hotels'|'weather'|'excursions'>('hotels');
   const [city, setCity] = useState(0);
@@ -134,11 +159,11 @@ export default function HolidayDetails({ trip }: { trip: TripIdea }) {
         <h3>{weather.city} throughout the year</h3><p className={styles.weatherIntro}>{weather.intro}</p>
         <div className={styles.unitSwitch} role="group" aria-label="Temperature unit"><button type="button" aria-pressed={unit==='C'} className={unit==='C'?styles.selected:''} onClick={()=>setUnit('C')}>°C Celsius</button><button type="button" aria-pressed={unit==='F'} className={unit==='F'?styles.selected:''} onClick={()=>setUnit('F')}>°F Fahrenheit</button></div>
         <ClimateChart weather={weather} unit={unit}/>
-        <p className={styles.note}>Typical monthly minimum and maximum temperatures, calculated mid-point averages, and average monthly rainfall (mm), converted and rounded from historical weather-station observations. These are climate averages, not forecasts. Weather varies year to year. Source: <a href={weather.source} target="_blank" rel="noopener noreferrer">Time and Date climate averages</a> (2012–2021 for Phuket and Cambodia; 1992–2021 for Bangkok).</p>
+        <p className={styles.note}>Typical monthly minimum and maximum temperatures, calculated mid-point averages, and average monthly rainfall (mm), converted and rounded from historical weather-station observations. These are climate averages, not forecasts. Weather varies year to year. Source: <a href={weather.source} target="_blank" rel="noopener noreferrer">Time and Date climate averages</a> {country === 'Vietnam' ? '(2012–2021 for Hanoi; 1992–2021 for Ho Chi Minh City).' : '(2012–2021 for Phuket and Cambodia; 1992–2021 for Bangkok).'}</p>
       </>}
       {tab==='excursions' && <>
         <p className={styles.note}>Some experiences are included in your itinerary; others may cost extra. Your personalised quotation will confirm what's included and any additional charges.</p>
-        <div className={styles.excursions}>{data.excursions.map(item=><article key={item.name}><div className={styles.excursionVisual}><img src={excursionImages[item.name]} alt={`AI-generated illustration of ${item.name} in ${item.place}`} loading="lazy"/></div><div className={styles.excursionBody}><span className={styles.tag}>{item.place}</span><h3>{item.name}</h3><p>{item.detail}</p></div></article>)}</div>
+        <div className={styles.excursions}>{data.excursions.map(item=><article key={item.name}><div className={styles.excursionVisual}>{excursionImages[item.name] ? <img src={excursionImages[item.name]} alt={`Illustration of ${item.name} in ${item.place}`} loading="lazy"/> : <div className={styles.excursionPlaceholder} role="img" aria-label={`Photography for ${item.name} to follow`}><span>{item.place}</span></div>}</div><div className={styles.excursionBody}><span className={styles.tag}>{item.place}</span><h3>{item.name}</h3><p>{item.detail}</p></div></article>)}</div>
       </>}
     </div>
   </section>;
