@@ -207,8 +207,8 @@ export const laosTwinCentre: TripIdea = {
   introText: 'Spend five nights in UNESCO-listed Luang Prabang, with a privately guided city tour and time to enjoy the Mekong and surrounding countryside. Then fly to Vientiane for five nights, including a guided city tour and days at leisure.',
   journeyTitle: 'From Luang Prabang to Vientiane.',
   journeyAside: 'Five nights in each destination, with a private Luang Prabang tour, a shared Vientiane tour and plenty of time to explore independently.',
-  hero: { src: '/images/hotels/mybanlao.webp', alt: 'Guest room at MyBanLao, a proposed hotel in Luang Prabang; destination imagery to follow', credit: '', creditUrl: '' },
-  secondImage: { src: '/images/hotels/avani-lanexang-vientiane.webp', alt: 'Guest room at Avani+ Lanexang Vientiane; destination imagery to follow', credit: '', creditUrl: '' },
+  hero: { src: '/images/excursions/luang-prabang-heritage.webp', alt: 'Illustration of Luang Prabang temple architecture and local Buddhist traditions', credit: '', creditUrl: '' },
+  secondImage: { src: '/images/excursions/pha-that-luang-temples.webp', alt: 'Illustration of the golden Pha That Luang stupa in Vientiane', credit: '', creditUrl: '' },
   tiers: [
     { id: 'essential', label: 'Essential escape', price: 1999, hotels: [
       { place: 'Luang Prabang', name: 'MyBanLao', room: 'Courtyard Suite · breakfast', nights: 5 },
