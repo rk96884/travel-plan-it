@@ -146,8 +146,8 @@ export const vietnamTwinCentre: TripIdea = {
   introText: 'Begin with five nights in Hanoi and discover Ninh Binh and Ha Long City. Fly south for five nights in Ho Chi Minh City, with guided city touring, a Mekong Delta and Cu Chi Tunnels excursion and a day beside the sea at Vung Tau. The same experiences are proposed for both hotel options.',
   journeyTitle: 'From Hanoi to Ho Chi Minh City.',
   journeyAside: 'Five nights in each city, with private airport transfers and a mixture of private and shared excursions. Day-trip timings and inclusions will be confirmed when quoting.',
-  hero: { src: '/images/hotels/grand-mercure-hanoi.webp', alt: 'Guest room at Grand Mercure Hanoi, one of the proposed premium accommodation options', credit: '', creditUrl: '' },
-  secondImage: { src: '/images/hotels/la-siesta-premium-saigon-central.webp', alt: 'Guest room at La Siesta Premium Saigon Central, the proposed premium stay in Ho Chi Minh City', credit: '', creditUrl: '' },
+  hero: { src: '/images/excursions/hanoi-street-food-discovery.webp', alt: 'Illustrative Hanoi Old Quarter street scene with lanterns and historic architecture', credit: '', creditUrl: '' },
+  secondImage: { src: '/images/excursions/vung-tau-beach-excursion.webp', alt: 'Illustrative view of Vung Tau beach on Vietnam’s southern coast', credit: '', creditUrl: '' },
   tiers: [
     { id: 'essential', label: 'Essential escape', price: 1949, hotels: [
       { place: 'Hanoi', name: 'Pullman Hanoi', room: 'Deluxe room · breakfast', nights: 5 },
