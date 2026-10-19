@@ -11,12 +11,12 @@ const info = {
       { city: 'Vientiane', intro: 'Warm to hot year-round. November to February is usually drier; the wettest months tend to be July to September.', months: ['17–29','19–32','22–34','24–36','25–35','25–33','25–32','25–32','24–33','23–32','22–32','17–29'], wet: [13,19,48,100,213,263,273,351,276,91,41,18], source: 'https://www.timeanddate.com/weather/laos/vientiane/climate' },
     ],
     excursions: [
+      { place: 'Luang Prabang', name: 'Luang Prabang heritage walk', detail: 'Discover the city’s historic temples, traditional streets and Buddhist heritage with a knowledgeable guide.' },
       { place: 'Luang Prabang', name: 'Kuang Si Waterfalls', detail: 'Visit the striking turquoise pools and forest scenery outside Luang Prabang.' },
       { place: 'Luang Prabang', name: 'Mekong sunset cruise', detail: 'See the riverside landscape from the water on a relaxed evening cruise.' },
-      { place: 'Luang Prabang', name: 'Pak Ou Caves', detail: 'Explore the riverside caves and their Buddhist heritage on a guided excursion.' },
       { place: 'Vientiane', name: 'Pha That Luang and temples', detail: 'Discover the capital’s sacred stupa and significant Buddhist landmarks.' },
-      { place: 'Vientiane', name: 'Buddha Park', detail: 'Explore the distinctive outdoor sculpture park on the outskirts of the capital.' },
-      { place: 'Vientiane', name: 'Vientiane food and night market', detail: 'Sample local flavours and explore the evening atmosphere along the Mekong.' },
+      { place: 'Laos', name: 'Mekong riverside boat experience', detail: 'Enjoy a gentle river excursion and take in Laos’s beautiful waterside scenery; routes depend on your chosen destination.' },
+      { place: 'Laos', name: 'Traditional Lao textile weaving', detail: 'Visit a local weaving workshop to learn about traditional patterns and textile-making techniques.' },
     ],
     hotelCopy: {
       'MyBanLao': 'A characterful hotel in Luang Prabang, with a Courtyard Suite proposed for your stay.',
@@ -111,6 +111,12 @@ const hotelImages: Record<string,string> = {
 };
 
 const excursionImages: Record<string,string> = {
+  'Luang Prabang heritage walk': '/images/excursions/luang-prabang-heritage.webp',
+  'Kuang Si Waterfalls': '/images/excursions/kuang-si-waterfalls.webp',
+  'Mekong sunset cruise': '/images/excursions/mekong-sunset-cruise.webp',
+  'Pha That Luang and temples': '/images/excursions/pha-that-luang-temples.webp',
+  'Mekong riverside boat experience': '/images/excursions/mekong-riverside-boat.webp',
+  'Traditional Lao textile weaving': '/images/excursions/laos-textile-weaving.webp',
   'Hanoi street food discovery': '/images/excursions/hanoi-street-food-discovery.webp',
   'Ninh Binh river and countryside': '/images/excursions/ninh-binh-river-countryside.webp',
   'Ha Long Bay cruise upgrade': '/images/excursions/ha-long-bay-cruise-upgrade.webp',
