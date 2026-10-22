@@ -2,9 +2,13 @@
 
 ## Name and idea
 
-Use **Travel Plan It** in prose and metadata. A wordmark may use TRAVEL PLAN IT. Keep the spacing and avoid PlanIT. The user specifically favoured exploring the Plan It/Planet wordplay typographically. No final logo has been approved in the reviewed conversation.
+Use **Travel Plan It** in prose and metadata. A wordmark may use TRAVEL PLAN IT. Keep the spacing and avoid PlanIT. The Plan It/Planet wordplay may be reflected subtly in typography, but should not be explained beneath the logo.
 
-Explore subtle spacing, weight or a restrained circular detail that suggests a journey or planet without making the name hard to read. A readable text wordmark is sufficient for the first build. Avoid a crowded mountains/water/sun/aircraft emblem. Do not explain the pun beneath the logo.
+## Official logo and wordmark
+
+The **official Travel Plan It brand symbol** is the approved round mountain logo: a circular travel emblem featuring layered teal mountains and a winding river, an orange sun, and an aircraft in flight. The production logo asset is **`website/public/images/logo-circle.png`**. This symbol is an approved part of the brand identity, not an exploratory concept.
+
+On the website, display the circular emblem alongside the established **travel plan it.** text wordmark, preserving its current typography and spacing. Use the emblem alone where a compact brand mark is appropriate, such as an avatar or social profile, while keeping the full brand name legible in contexts that need it. Preserve the original logo artwork, proportions, colours and transparent background; do not redraw, distort, recolour, crop important elements, or substitute another mountain/aircraft design. Do not add explanatory text beneath the logo.
 
 ## Brand language
 
@@ -68,4 +72,4 @@ The original logo and brand board is saved at [initial-brand-concept.jpg](brand-
 
 Public contact address supplied by the user: enquiries@mytravelplanit.co.uk. Preserve this exact spelling.
 
-The user subsequently requested the circular graphic beside the existing text wordmark. An isolated transparent PNG derived from the initial concept is used at website/public/images/logo-circle.png. The corrected public address is enquiries@mytravelplanit.co.uk.
+The user subsequently approved the round mountain logo as the official brand symbol beside the existing text wordmark. Its production transparent PNG is at `website/public/images/logo-circle.png`. The corrected public address is enquiries@mytravelplanit.co.uk.
