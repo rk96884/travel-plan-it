@@ -104,8 +104,9 @@ export default function EnquiryForm({ siteKey }: { siteKey: string }) {
   // Prefill only recognised published itineraries; keep every field editable.
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
-    const trip = tripPrefills[params.get('trip') || ''];
-    if (!trip) return;
+    const slug = params.get('trip') || '';
+    if (!Object.prototype.hasOwnProperty.call(tripPrefills, slug)) return;
+    const trip = tripPrefills[slug];
     const tier = params.get('tier') || '';
     const accommodation = Object.prototype.hasOwnProperty.call(trip.options, tier)
       ? trip.options[tier]
