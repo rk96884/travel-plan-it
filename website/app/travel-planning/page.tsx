@@ -6,7 +6,7 @@ import SiteFooter from '../../components/site-footer';
 import styles from './travel-planning.module.css';
 
 export const metadata: Metadata = {
-  title: 'Travel Planning | Tailor-Made Holidays & Complex Itineraries | Travel Plan It',
+  title: 'Travel Planning | Tailor-Made Holidays & Complex Itineraries',
   description: 'Personal travel planning for tailor-made long-haul holidays, complex itineraries and multi-centre journeys, with particular expertise in Asia.',
   alternates: { canonical: 'https://mytravelplanit.co.uk/travel-planning' },
   robots: { index: true, follow: true },

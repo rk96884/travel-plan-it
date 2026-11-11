@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Phnom Penh & Siem Reap: Cambodia Twin-Centre Holiday',
     description: 'Tailor-made 12-day Cambodia itinerary with private guided tours and two accommodation styles.',
-    url: '/inspiration/phnom-penh-siem-reap-twin-centre/',
+    url: '/inspiration/phnom-penh-siem-reap-twin-centre',
     type: 'article',
   },
 };

@@ -39,7 +39,7 @@ export default function Home() {
         <section className="proposition inspiration-preview" aria-labelledby="inspiration-title">
           <div className="heading"><p className="eyebrow">TRAVEL INSPIRATION</p><h2 id="inspiration-title">Ideas to make your own.</h2></div>
           <div className="inspiration-preview-body">
-            <p className="intro">Explore a few of the places and experiences that inspire us. They’re not fixed packages — they’re starting points for a journey designed around you.</p>
+            <p className="intro">Explore a few of the places and experiences that inspire us. They’re not fixed packages — they’re starting points for a journey designed around you. Discover our <Link href="/tailor-made-holidays/">tailor-made holidays</Link> and choose a journey to make your own.</p>
             <div className="contact"><Link className="button" href="/inspiration/">Explore travel inspiration ↗</Link></div>
           </div>
         </section>

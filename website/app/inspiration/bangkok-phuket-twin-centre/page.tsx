@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Bangkok & Phuket: temples, markets and tropical shores',
     description: 'A tailor-made 12-day Thailand twin-centre holiday idea, with two accommodation budgets.',
-    url: '/inspiration/bangkok-phuket-twin-centre/',
+    url: '/inspiration/bangkok-phuket-twin-centre',
     type: 'article',
   },
 };
