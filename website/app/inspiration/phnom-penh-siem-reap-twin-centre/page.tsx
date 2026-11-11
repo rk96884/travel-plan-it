@@ -5,8 +5,8 @@ import TripIdeaPage from '../../../components/trip-idea-page';
 import { cambodiaTwinCentre } from '../../../lib/trip-ideas';
 
 export const metadata: Metadata = {
-  title: 'Cambodia Twin-Centre Holiday | Phnom Penh & Siem Reap | 12 Days',
-  description: 'Explore a 12-day Cambodia twin-centre holiday: five nights in Phnom Penh, five in Siem Reap, private Angkor tours and two hotel options. From £1,699pp indicative.',
+  title: 'Tailor-Made Cambodia Holiday | Phnom Penh & Siem Reap',
+  description: 'Explore a tailor-made Cambodia holiday with Phnom Penh, Siem Reap and private Angkor tours. Two hotel choices on a 12-day itinerary; indicative from £1,699pp.',
   alternates: { canonical: '/inspiration/phnom-penh-siem-reap-twin-centre' },
   openGraph: {
     title: 'Phnom Penh & Siem Reap: Cambodia Twin-Centre Holiday',
