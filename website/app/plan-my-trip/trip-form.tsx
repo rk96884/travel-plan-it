@@ -48,22 +48,76 @@ const hints: Partial<Record<Field, string>> = {
     'Please do not include passport details, payment information or sensitive health information.',
 };
 const longFields: Field[] = ['destination', 'style', 'accommodation', 'notes'];
+type TripPrefill = {
+  destination: string;
+  style: string;
+  duration: string;
+  notes: string;
+  options: Record<string, string>;
+};
+
+const tripPrefills: Record<string, TripPrefill> = {
+  'bangkok-phuket-twin-centre': {
+    destination: 'Thailand — Bangkok & Phuket twin-centre holiday',
+    style: 'Private Bangkok temple and market tours, followed by a Phuket beach stay',
+    duration: '12 days / 10 nights',
+    notes: 'Interested in the Bangkok & Phuket trip idea. Please provide a personalised quotation; example prices are indicative.',
+    options: {
+      essential: 'Essential escape (ibis Bangkok Sathorn + ibis Phuket Patong)',
+      premium: 'Premium escape (Amari Bangkok + Amari Phuket)',
+    },
+  },
+  'phnom-penh-siem-reap-twin-centre': {
+    destination: 'Cambodia — Phnom Penh & Siem Reap twin-centre holiday',
+    style: 'Private guided sightseeing in Phnom Penh and the Angkor temples near Siem Reap',
+    duration: '12 days / 10 nights',
+    notes: 'Interested in the Phnom Penh & Siem Reap trip idea. Please provide a personalised quotation; example prices are indicative.',
+    options: {
+      essential: 'Essential escape (ibis budget Phnom Penh Riverside + ibis Styles Siem Reap)',
+      premium: 'Luxury escape (Sofitel Phnom Penh Phokeethra + Sofitel Angkor Phokeethra Golf & Spa Resort)',
+    },
+  },
+  'hanoi-ho-chi-minh-city-twin-centre': {
+    destination: 'Vietnam — Hanoi & Ho Chi Minh City twin-centre holiday',
+    style: 'Guided sightseeing in Hanoi and Ho Chi Minh City, with regional excursions',
+    duration: '12 days / 10 nights',
+    notes: 'Interested in the Hanoi & Ho Chi Minh City trip idea. Please provide a personalised quotation; example prices are indicative.',
+    options: {
+      essential: 'Essential escape (Pullman Hanoi + Pullman Saigon Centre)',
+      premium: 'Premium escape (Grand Mercure Hanoi + La Siesta Premium Saigon Central)',
+    },
+  },
+  'luang-prabang-vientiane-twin-centre': {
+    destination: 'Laos — Luang Prabang & Vientiane twin-centre holiday',
+    style: 'Guided cultural sightseeing in Luang Prabang and Vientiane, with time at leisure',
+    duration: '12 days / 10 nights',
+    notes: 'Interested in the Luang Prabang & Vientiane trip idea. Please provide a personalised quotation; example prices are indicative.',
+    options: {
+      essential: 'Essential escape (MyBanLao + Crowne Plaza Vientiane)',
+      premium: 'Premium escape (Avani+ Luang Prabang + Avani+ Lanexang Vientiane)',
+    },
+  },
+};
+
 export default function EnquiryForm({ siteKey }: { siteKey: string }) {
   const [data, setData] = useState({ ...emptyEnquiry });
-  // Preserve trip context in the existing validated enquiry flow; no new API fields.
+  // Prefill only recognised published itineraries; keep every field editable.
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
-    if (params.get('trip') !== 'bangkok-phuket-twin-centre') return;
-    const tier = params.get('tier');
-    const choice = tier === 'premium' ? 'Premium escape (Amari Bangkok + Amari Phuket)' :
-      tier === 'essential' ? 'Essential escape (ibis Bangkok Sathorn + ibis Phuket Patong)' : '';
+    const slug = params.get('trip') || '';
+    if (!Object.prototype.hasOwnProperty.call(tripPrefills, slug)) return;
+    const trip = tripPrefills[slug];
+    const tier = params.get('tier') || '';
+    const accommodation = Object.prototype.hasOwnProperty.call(trip.options, tier)
+      ? trip.options[tier]
+      : '';
     setData(previous => ({
       ...previous,
-      destination: 'Thailand — Bangkok & Phuket twin-centre holiday',
-      style: 'Private Bangkok temple and market tours, followed by a Phuket beach stay',
-      duration: '12 days / 10 nights',
-      ...(choice ? { accommodation: choice } : {}),
-      notes: 'Interested in the Bangkok & Phuket trip idea. Please provide a personalised quotation; example prices are indicative.',
+      destination: trip.destination,
+      style: trip.style,
+      duration: trip.duration,
+      ...(accommodation ? { accommodation } : {}),
+      notes: trip.notes,
     }));
   }, []);
   const [step, setStep] = useState(0);
