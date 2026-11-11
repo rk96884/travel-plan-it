@@ -5,8 +5,8 @@ import TripIdeaPage from '../../../components/trip-idea-page';
 import { vietnamTwinCentre } from '../../../lib/trip-ideas';
 
 export const metadata: Metadata = {
-  title: 'Vietnam Twin-Centre Holiday | Hanoi & Ho Chi Minh City | 12 Days',
-  description: 'Explore 12 days in Vietnam: Hanoi, Ninh Binh, Ha Long City, Ho Chi Minh City, Mekong Delta and Vung Tau. Two hotel options from £1,949pp indicative.',
+  title: 'Tailor-Made Vietnam Holiday | Hanoi & Ho Chi Minh City',
+  description: 'Discover a 12-day tailor-made Vietnam holiday linking Hanoi and Ho Chi Minh City, with guided sightseeing and two hotel styles. Indicative from £1,949pp.',
   alternates: { canonical: '/inspiration/hanoi-ho-chi-minh-city-twin-centre' },
   openGraph: {
     title: 'Hanoi & Ho Chi Minh City: Vietnam Twin-Centre Holiday',
