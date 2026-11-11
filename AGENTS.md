@@ -34,6 +34,12 @@ The current task establishes documentation only. Subsequent implementation shoul
 - Keep marketing opt-in separate from the trip enquiry. No preselected marketing consent. Do not request passports, payment details or exact birth dates in the initial brief.
 - Keep confidential supplier terms and internal business planning out of public bundles and generated routes.
 
+## New holiday itinerary pages and enquiry prefilling
+
+- Every new bookable-*idea* / twin-centre itinerary page must link its enquiry CTAs to `/plan-my-trip/?trip=<slug>`, adding `&tier=<tier-id>` when a visitor selects an accommodation tier. These remain enquiries, not confirmed bookings.
+- When introducing a new itinerary in `website/lib/trip-ideas.ts`, add the matching slug to the recognised `tripPrefills` in `website/app/plan-my-trip/trip-form.tsx`. Provide accurate destination, trip style, duration, a clear indicative-quotation note and accommodation descriptions for each published tier, using the itinerary's actual details rather than inventing prices, availability or hotels.
+- Verify the main enquiry CTA and *every* tier CTA prefill the correct, editable fields. Also verify direct visits to `/plan-my-trip/` remain blank and unknown trip/tier parameters are safely ignored. Keep the existing validated submission flow and privacy safeguards.
+
 ## Verification and documentation
 
 Run the actual project build and available type/lint checks once implemented. Verify holding-page links, mobile layout and keyboard navigation. For the enquiry engine test validation, success, backend failure, repeated submission and lead receipt. Test useful outcomes rather than mirroring implementation.
