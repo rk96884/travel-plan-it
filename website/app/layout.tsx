@@ -10,6 +10,10 @@ export const metadata: Metadata = {
   description:
     'Independent UK travel planning for tailor-made long-haul holidays, complex itineraries and journeys across Asia and beyond.',
   alternates: { canonical: '/' },
+  icons: {
+    icon: [{ url: '/images/logo-circle.png', type: 'image/png' }],
+    apple: [{ url: '/images/logo-circle.png', type: 'image/png' }],
+  },
   robots: { index: true, follow: true },
 };
 
