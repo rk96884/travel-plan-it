@@ -7,7 +7,7 @@ import styles from './holidays.module.css';
 
 export const metadata: Metadata = {
   title: 'Tailor-Made Holidays | Twin-Centre & Multi-Centre Trips',
-  description: 'Explore tailor-made twin-centre and multi-centre holiday ideas from Travel Plan It. Explore Thailand, Cambodia, Vietnam and Laos twin-centre holidays, then personalise your route, hotels and experiences.',
+  description: 'Explore tailor-made holidays in Thailand, Cambodia, Vietnam and Laos. Compare twin-centre itinerary ideas and personalise your hotels, experiences and route.',
   alternates: { canonical: '/tailor-made-holidays' },
 };
 
@@ -18,7 +18,7 @@ export default function TailorMadeHolidays() {
     <section className={styles.intro}>
       <p className={styles.eyebrow}>TAILOR-MADE HOLIDAYS · ASIA & BEYOND</p>
       <h1>Journeys to make <em>your own.</em></h1>
-      <p>Discover thoughtfully planned twin-centre and multi-centre holidays. Every itinerary is an inspiration, not a fixed departure: choose your hotels, refine the route and travel in your own way.</p>
+      <p>Explore tailor-made holidays in Thailand, Cambodia, Vietnam and Laos, with thoughtfully planned twin-centre routes and the flexibility to make them your own. These are itinerary ideas, not fixed departures: choose your hotels, refine the route and travel in your own way.</p>
       <Link className={styles.button} href="/plan-my-trip/">Plan a tailor-made journey ↗</Link>
     </section>
     <section className={styles.collection} aria-labelledby="journeys-heading">

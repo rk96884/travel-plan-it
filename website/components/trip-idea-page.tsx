@@ -12,6 +12,33 @@ function TripPhoto({ image, className = '' }: { image: TripIdea['hero']; classNa
   </figure>;
 }
 
+const destinationGuidance: Record<string, { heading: string; detail: string; relatedHref: string; relatedLabel: string }> = {
+  Thailand: {
+    heading: 'A tailor-made Thailand holiday, from Bangkok to Phuket',
+    detail: 'Combine Bangkok’s riverside temples and markets with a slower-paced stay in Phuket. The suggested route includes private sightseeing in the capital and time to explore the coast at your own pace. Accommodation, activities and the length of your stay can be adjusted in your personalised quotation.',
+    relatedHref: '/inspiration/phnom-penh-siem-reap-twin-centre/',
+    relatedLabel: 'Cambodia twin-centre holiday',
+  },
+  Cambodia: {
+    heading: 'A tailor-made Cambodia holiday, from capital to temples',
+    detail: 'Pair time in Phnom Penh with a stay in Siem Reap for the Angkor temples. This example combines private guided experiences with room to explore independently; the choice of hotels, sightseeing and pace can be refined to suit you.',
+    relatedHref: '/inspiration/hanoi-ho-chi-minh-city-twin-centre/',
+    relatedLabel: 'Vietnam twin-centre holiday',
+  },
+  Vietnam: {
+    heading: 'A tailor-made Vietnam holiday, north and south',
+    detail: 'Travel between Hanoi and Ho Chi Minh City, with a route that introduces two contrasting cities and optional experiences beyond them. Use this twin-centre itinerary as a starting point, then adapt the accommodation, excursions and time in each place.',
+    relatedHref: '/inspiration/luang-prabang-vientiane-twin-centre/',
+    relatedLabel: 'Laos twin-centre holiday',
+  },
+  Laos: {
+    heading: 'A tailor-made Laos holiday, heritage and riverside life',
+    detail: 'Discover Luang Prabang and Vientiane on a two-centre journey that balances historic sights with time to unwind. The suggested hotels and guided experiences are examples; your final route and travel arrangements can be tailored to your interests and dates.',
+    relatedHref: '/inspiration/bangkok-phuket-twin-centre/',
+    relatedLabel: 'Thailand twin-centre holiday',
+  },
+};
+
 export default function TripIdeaPage({ trip }: { trip: TripIdea }) {
   const enquiry = (tier?: string) => `/plan-my-trip/?trip=${encodeURIComponent(trip.slug)}${tier ? `&tier=${encodeURIComponent(tier)}` : ''}`;
   return <main id="main" className={`${styles.page} ${trip.country === "Cambodia" || trip.country === "Vietnam" || trip.country === "Laos" ? styles.cambodia : styles.thailand}`}>
@@ -29,6 +56,12 @@ export default function TripIdeaPage({ trip }: { trip: TripIdea }) {
       <TripPhoto image={trip.hero} className={styles.heroPhoto}/>
     </section>
     <section className={styles.intro}><p className={styles.eyebrow}>{trip.introEyebrow || "ONE JOURNEY, TWO SIDES OF THAILAND"}</p><h2>{trip.introTitle || "City energy. Island ease."}</h2><p>{trip.introText || "Start among Bangkok’s riverside temples, gilded palaces and colourful markets. Then fly south to Phuket for unhurried days by the coast. The guided experiences and transfers stay the same whichever accommodation style you choose."}</p></section>
+    <section className={styles.intro}>
+      <p className={styles.eyebrow}>MAKE THIS JOURNEY YOUR OWN</p>
+      <h2>{destinationGuidance[trip.country || 'Thailand'].heading}</h2>
+      <p>{destinationGuidance[trip.country || 'Thailand'].detail}</p>
+      <p>Considering another destination? See our <Link href={destinationGuidance[trip.country || 'Thailand'].relatedHref}>{destinationGuidance[trip.country || 'Thailand'].relatedLabel}</Link>, or <Link href="/tailor-made-holidays/">compare all our tailor-made holiday ideas</Link>.</p>
+    </section>
     <section className={styles.tiers} aria-labelledby="tiers-heading">
       <div className={styles.sectionHead}><p className={styles.eyebrow}>YOUR STAY, YOUR STYLE</p><h2 id="tiers-heading">Choose your accommodation.</h2></div>
       <div className={styles.tierGrid}>{trip.tiers.map(tier => <article className={styles.tier} key={tier.id}>

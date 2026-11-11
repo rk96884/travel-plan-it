@@ -5,8 +5,8 @@ import TripIdeaPage from '../../../components/trip-idea-page';
 import { bangkokPhuket } from '../../../lib/trip-ideas';
 
 export const metadata: Metadata = {
-  title: 'Bangkok & Phuket Twin Centre Holiday | 12-Day Thailand Itinerary',
-  description: 'Explore a 12-day Bangkok and Phuket twin centre holiday idea with private Bangkok tours, seven nights by the beach and two hotel options. Indicative prices from £1,599pp.',
+  title: 'Tailor-Made Thailand Holiday | Bangkok & Phuket | 12 Days',
+  description: 'Plan a tailor-made Thailand holiday combining Bangkok and Phuket: private guided city tours, seven beach nights and two hotel styles. Indicative from £1,599pp.',
   alternates: { canonical: '/inspiration/bangkok-phuket-twin-centre' },
   openGraph: {
     title: 'Bangkok & Phuket: temples, markets and tropical shores',

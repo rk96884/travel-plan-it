@@ -25,5 +25,6 @@ export default function InspirationPage() {
     <section className={styles.grid} aria-label="Travel inspiration">
       {stories.map((story) => <Link className={styles.card} href={story.href} key={story.href}><div className={styles.cardImage}><Image src={story.image} alt="" fill sizes="(max-width: 800px) 90vw, 30vw" /></div><div className={styles.cardCopy}><span>{story.label}</span><h2>{story.title}</h2><p>{story.text}</p></div></Link>)}
     </section>
+    <p style={{ marginTop: 28 }}>Thinking about combining cities and coast? Explore our <Link href="/inspiration/bangkok-phuket-twin-centre/">tailor-made Bangkok and Phuket holiday</Link>, or browse <Link href="/tailor-made-holidays/">all tailor-made holiday ideas</Link>.</p>
   </main><SiteFooter /></>;
 }
