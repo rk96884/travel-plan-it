@@ -53,3 +53,9 @@ footer{background:#173f3a;color:#f6f2e9;padding:55px 5% 24px}.footer-top,.footer
 }
 @media(max-width:370px){.site-header-inner{padding-left:3%;padding-right:3%}.mobile-header-actions{gap:5px}.mobile-enquiry{padding:7px 8px;font-size:12px}}
 @media(prefers-reduced-motion:reduce){.mobile-menu-toggle span,.site-header .primary-nav{transition:none}}
+
+/* Clear rhythm for the confirmed enquiry message, without changing the form. */
+.trip-confirmation h2{margin:0 0 24px;width:auto}
+.trip-confirmation p{margin:0 0 16px}
+.trip-confirmation .reference{margin-top:20px}
+.trip-confirmation>a{display:inline-block;margin-top:26px;font-weight:600;text-underline-offset:5px}
