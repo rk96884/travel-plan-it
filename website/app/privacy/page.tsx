@@ -104,11 +104,16 @@ export default function Privacy() {
         <section>
           <h2>Cookies and browser storage</h2>
           <p>
-            The current page implementation does not add marketing analytics or
-            advertising cookies and does not persist your form entries in
-            browser storage. Hosting and security services may use technical
-            storage or process network information. The final cookie information
-            will reflect the services actually enabled on the public domain.
+            With your permission, we use Google Analytics 4 to understand website
+            visits and improve Travel Plan It. Analytics only loads after you
+            select “Accept analytics” in our cookie notice. If you decline,
+            Google Analytics is not loaded. Your choice is stored in browser
+            local storage under the key travel-plan-it-analytics-consent.
+            You can withdraw consent by clearing this site’s browser storage
+            and selecting “Decline analytics” when the notice appears again.
+            We do not use Google Analytics for advertising here and do not
+            persist your trip enquiry form entries in browser storage.
+            Hosting and security services may process technical information.
           </p>
         </section>
         <section>
