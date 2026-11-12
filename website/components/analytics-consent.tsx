@@ -28,11 +28,11 @@ export default function AnalyticsConsent() {
     window.dataLayer = window.dataLayer || [];
     // Match Google's official gtag snippet: commands are Arguments objects,
     // not ordinary arrays. The tag library consumes this queue.
-    function gtag(..._args: unknown[]) {
+    window.gtag = function (..._args: unknown[]) {
       window.dataLayer.push(arguments);
-    }
-    gtag('js', new Date());
-    gtag('config', measurementId, { anonymize_ip: true });
+    };
+    window.gtag('js', new Date());
+    window.gtag('config', measurementId, { anonymize_ip: true });
 
     const script = document.createElement('script');
     script.id = 'travel-plan-it-ga4';
@@ -85,5 +85,6 @@ export default function AnalyticsConsent() {
 declare global {
   interface Window {
     dataLayer: unknown[];
+    gtag?: (...args: unknown[]) => void;
   }
 }
