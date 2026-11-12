@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import './globals.css';
+import AnalyticsConsent from '../components/analytics-consent';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://mytravelplanit.co.uk'),
@@ -22,7 +23,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en-GB">
-      <body>{children}</body>
+      <body>{children}<AnalyticsConsent /></body>
     </html>
   );
 }
