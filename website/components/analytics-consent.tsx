@@ -26,8 +26,10 @@ export default function AnalyticsConsent() {
     if (document.getElementById('travel-plan-it-ga4')) return;
 
     window.dataLayer = window.dataLayer || [];
-    function gtag(...args: unknown[]) {
-      window.dataLayer.push(args);
+    // Match Google's official gtag snippet: commands are Arguments objects,
+    // not ordinary arrays. The tag library consumes this queue.
+    function gtag(..._args: unknown[]) {
+      window.dataLayer.push(arguments);
     }
     gtag('js', new Date());
     gtag('config', measurementId, { anonymize_ip: true });
@@ -82,6 +84,6 @@ export default function AnalyticsConsent() {
 
 declare global {
   interface Window {
-    dataLayer: unknown[][];
+    dataLayer: unknown[];
   }
 }
