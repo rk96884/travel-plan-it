@@ -11,6 +11,7 @@ import {
   type Field,
 } from '../../lib/enquiry';
 import { site } from '../../lib/site';
+import { trackEnquiryGenerated } from '../../lib/analytics';
 
 type Turnstile = {
   render: (node: HTMLElement, options: Record<string, unknown>) => string;
@@ -235,6 +236,7 @@ export default function EnquiryForm({ siteKey }: { siteKey: string }) {
         error?: string;
       };
       if (response.ok && body.reference) {
+        trackEnquiryGenerated();
         setReference(body.reference);
         setTimeout(() => heading.current?.focus(), 0);
       } else
