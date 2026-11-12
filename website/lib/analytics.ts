@@ -10,7 +10,11 @@ export function trackEnquiryGenerated() {
     return;
   }
   // gtag is installed by AnalyticsConsent after permission is granted.
-  window.gtag?.('event', 'generate_lead', {
-    lead_source: 'plan_my_trip_form',
-  });
+  try {
+    window.gtag?.('event', 'generate_lead', {
+      lead_source: 'plan_my_trip_form',
+    });
+  } catch {
+    // Analytics must never interfere with the confirmed enquiry flow.
+  }
 }
