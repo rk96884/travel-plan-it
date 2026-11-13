@@ -278,7 +278,7 @@ export const singaporeBatamJohor: TripIdea = {
       { place: 'Singapore', name: 'Hilton Singapore Orchard', room: 'Five-star accommodation · room category and breakfast to be confirmed', nights: 7 },
       { place: 'Batam, Indonesia', name: 'Montigo Resorts Nongsa', room: 'Five-star resort villa · room category and breakfast to be confirmed', nights: 3 },
       { place: 'Johor Bahru, Malaysia', name: 'Amari Johor Bahru', room: 'Five-star accommodation · room category and breakfast to be confirmed', nights: 3 },
-    ], note: 'Five-star alternatives selected for location and experience. Indicative premium price £3,749 per person based on two adults sharing, subject to flights, hotel availability, room categories, transfers and a final personalised quotation.' },
+    ], note: 'Five-star alternatives selected for location and experience.' },
   ],
   days: [
     { heading: 'DAY 1', title: 'Fly from London', description: 'Proposed Saturday 1 May 2027 departure from London Gatwick at 13:15 on Singapore Airlines SQ313. The published seasonal schedule matches this timing; individual flight availability and fare remain subject to confirmation.' },
