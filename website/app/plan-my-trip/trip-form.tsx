@@ -62,10 +62,10 @@ const tripPrefills: Record<string, TripPrefill> = {
     destination: 'Singapore, Indonesia & Malaysia — Singapore, Batam and Johor Bahru',
     style: 'Private Singapore city and Sentosa tour, Big Bus sightseeing, Batam resort stay and Johor Bahru exploration with ferries and private transfers',
     duration: '16 days / 13 nights',
-    notes: 'Interested in the three-country Singapore, Batam & Johor Bahru holiday. Essential from £2,749pp based on two sharing; premium price on request. Please provide a personalised quotation; availability and schedules are unconfirmed.',
+    notes: 'Interested in the three-country Singapore, Batam & Johor Bahru holiday. Essential from £2,749pp or Premium from £3,749pp, based on two sharing. Both prices are indicative. Please provide a personalised quotation; availability and schedules are unconfirmed.',
     options: {
       essential: 'Essential escape (Holiday Inn Singapore Orchard City Centre + Holiday Inn Resort Batam + Holiday Inn Johor Bahru City Centre)',
-      premium: 'Premium escape (Hilton Singapore Orchard + Montigo Resorts Nongsa + Amari Johor Bahru; price on request)',
+      premium: 'Premium escape (Hilton Singapore Orchard + Montigo Resorts Nongsa + Amari Johor Bahru; indicative £3,749pp)',
     },
   },
   'bangkok-phuket-twin-centre': {
