@@ -4,3 +4,5 @@
 .photoLink{height:auto;aspect-ratio:4 / 3}
 .photoLink img{object-position:center}
 @media(max-width:750px){.photoLink{height:auto}}
+
+.imagePending { display:flex; align-items:center; justify-content:center; min-height:230px; height:100%; padding:22px; background:linear-gradient(135deg,#143e48,#167c83 48%,#f0b57c); color:white; text-align:center; font:400 clamp(1.3rem,2.5vw,2rem)/1.3 Georgia,serif; }
