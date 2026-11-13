@@ -1,4 +1,6 @@
 /** Consent-aware GA4 events. Never send enquiry form content or identifiers. */
+import { isAnalyticsExcluded } from './analytics-control';
+
 const consentKey = 'travel-plan-it-analytics-consent';
 
 const knownItineraries = new Set([
@@ -12,7 +14,7 @@ const knownItineraries = new Set([
 export type ItineraryCtaPosition = 'hero' | 'accommodation' | 'footer';
 
 function sendAnalyticsEvent(name: string, parameters: Record<string, string>) {
-  if (typeof window === 'undefined') return;
+  if (typeof window === 'undefined' || isAnalyticsExcluded()) return;
   try {
     if (window.localStorage.getItem(consentKey) !== 'accepted') return;
     // Installed by AnalyticsConsent only after opt-in.

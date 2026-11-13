@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { applyAnalyticsExclusionCommand, isAnalyticsExcluded } from '../lib/analytics-control';
 
 const measurementId = 'G-W96BJ7JYMF';
 const consentKey = 'travel-plan-it-analytics-consent';
@@ -10,8 +11,10 @@ type Consent = 'accepted' | 'declined';
 export default function AnalyticsConsent() {
   const [choice, setChoice] = useState<Consent | null>(null);
   const [ready, setReady] = useState(false);
+  const [excluded, setExcluded] = useState(false);
 
   useEffect(() => {
+    setExcluded(applyAnalyticsExclusionCommand());
     try {
       const stored = window.localStorage.getItem(consentKey);
       if (stored === 'accepted' || stored === 'declined') setChoice(stored);
@@ -22,7 +25,7 @@ export default function AnalyticsConsent() {
   }, []);
 
   useEffect(() => {
-    if (!ready || choice !== 'accepted') return;
+    if (!ready || choice !== 'accepted' || excluded || isAnalyticsExcluded()) return;
     if (document.getElementById('travel-plan-it-ga4')) return;
 
     window.dataLayer = window.dataLayer || [];
@@ -39,7 +42,7 @@ export default function AnalyticsConsent() {
     script.async = true;
     script.src = `https://www.googletagmanager.com/gtag/js?id=${measurementId}`;
     document.head.appendChild(script);
-  }, [ready, choice]);
+  }, [ready, choice, excluded]);
 
   const decide = (value: Consent) => {
     try {
@@ -50,7 +53,7 @@ export default function AnalyticsConsent() {
     setChoice(value);
   };
 
-  if (!ready || choice !== null) return null;
+  if (!ready || choice !== null || excluded) return null;
 
   return (
     <aside
