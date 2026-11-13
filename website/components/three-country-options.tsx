@@ -31,11 +31,77 @@ const excursionImages: Record<string,string> = {
   'Johor Bahru heritage and food': '/images/excursions/johor-bahru-heritage-food.webp',
 };
 
-const weather = [
-  { place: 'Singapore', title: 'Singapore in May', range: '26–32°C', detail: 'Hot and humid. The official Singapore climate normals show a May daily high around 32.3°C, low around 25.7°C and approximately 164 mm of monthly rainfall. Afternoon thunderstorms are common.', source: 'https://www.weather.gov.sg/climate-climate-of-singapore/', sourceLabel: 'Meteorological Service Singapore' },
-  { place: 'Batam', title: 'Batam in May', range: 'Warm and tropical', detail: 'Expect heat, humidity and tropical showers in May. Ferry movements and waterside activities depend on sea conditions. Discuss the forecast shortly before travel.', source: 'https://www.bmkg.go.id/', sourceLabel: 'Indonesian BMKG weather service' },
-  { place: 'Johor Bahru', title: 'Johor Bahru in May', range: '23–33°C', detail: 'Malaysian meteorological observations put typical May daily temperatures around 23.1–32.5°C and average monthly rainfall at about 215 mm. Showers and thunderstorms are possible.', source: 'https://worldweather.wmo.int/en/city.html?cityId=78', sourceLabel: 'World Meteorological Organization' },
+type Climate = {
+  place: string; intro: string; low: number[]; high: number[]; rain: number[]; source: string; sourceLabel: string; period: string;
+};
+
+// Climate normals for each destination, not forecasts; all three datasets are
+// published sources and each uses its own observation/reference period.
+const weather: Climate[] = [
+  {
+    place: 'Singapore',
+    intro: 'Warm and humid throughout the year, with the highest average temperatures around April to June. The wettest months are generally November to January.',
+    low: [24.3,24.6,24.9,25.3,25.7,25.7,25.4,25.3,25.2,25.0,24.6,24.3],
+    high:[30.6,31.5,32.2,32.4,32.3,31.9,31.4,31.4,31.6,31.8,31.2,30.5],
+    rain:[221.6,105.1,151.7,164.3,164.3,135.3,146.6,146.9,124.9,168.3,252.3,331.9],
+    source: 'https://www.weather.gov.sg/climate-climate-of-singapore/',
+    sourceLabel: 'Meteorological Service Singapore', period: '1991–2020',
+  },
+  {
+    place: 'Batam',
+    intro: 'Batam stays tropical throughout the year. Historical averages show hot days and regular showers; rainfall varies significantly between individual years.',
+    low: [25,25,25,25,25,25,25,25,24,24,24,25],
+    high:[30,31,32,32,32,32,32,31,32,32,31,31],
+    rain:[130.3,55.0,67.8,114.1,157.9,124.5,108.1,112.3,127.2,114.0,175.4,154.3],
+    source: 'https://www.timeanddate.com/weather/indonesia/batam/climate',
+    sourceLabel: 'Time and Date (Batam/Hang Nadim station)', period: '2012–2021',
+  },
+  {
+    place: 'Johor Bahru',
+    intro: 'Johor Bahru is hot and humid throughout the year. Showers and thunderstorms are possible in every month, with rainfall often higher late in the year.',
+    low:[21.9,22.0,22.4,22.9,23.1,22.9,22.4,22.4,22.4,22.6,22.7,22.4],
+    high:[31.0,32.0,32.5,32.8,32.5,32.1,31.5,31.5,31.5,31.8,31.3,30.6],
+    rain:[162.6,139.8,203.4,232.8,215.3,148.1,177.0,185.9,190.8,217.7,237.6,244.5],
+    source: 'https://worldweather.wmo.int/en/city.html?cityId=78',
+    sourceLabel: 'World Meteorological Organization / Malaysian Meteorological Department', period: '1974–2000',
+  },
 ];
+
+const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+const convert = (n:number, unit:'C'|'F') => unit === 'C' ? n : n*9/5 + 32;
+
+function YearRoundClimate({ climate, unit }: { climate: Climate; unit: 'C'|'F' }) {
+  const layout = { left: 55, right: 760, top: 24, bottom: 280 };
+  const x = (index: number) => layout.left + (layout.right-layout.left)*(index+.5)/12;
+  const y = (value: number) => layout.bottom-(value-20)/15*(layout.bottom-layout.top);
+  const rainHeight = (value: number) => value/400*(layout.bottom-layout.top);
+  const averages = climate.low.map((low,index) => (low+climate.high[index])/2);
+  const series = [
+    { name: 'Min', values: climate.low, color:'#1555b5' },
+    { name: 'Average', values: averages, color:'#e5a10a' },
+    { name: 'Max', values: climate.high, color:'#c42a25' },
+  ];
+  return <div className={styles.climateChart}>
+    <div className={styles.chartLegend} aria-hidden="true">
+      {series.map(item => <span key={item.name}><i style={{backgroundColor:item.color}}/>{item.name} temp</span>)}
+      <span><i style={{backgroundColor:'#9dd9e8'}}/>Rainfall (mm)</span>
+    </div>
+    <svg viewBox="0 0 845 350" role="img" aria-label={`Monthly minimum, midpoint average and maximum temperature in degrees ${unit === 'C' ? 'Celsius' : 'Fahrenheit'}, with monthly rainfall in millimetres for ${climate.place}`} className={styles.climateSvg}>
+      {[0,1,2,3,4,5].map(i => { const v=20+i*3; const yy=y(v); return <g key={v}><line x1={layout.left} x2={layout.right} y1={yy} y2={yy} stroke="#d4ded9"/><text x={layout.left-10} y={yy+4} textAnchor="end" fontSize="12" fill="#526b63">{Math.round(convert(v,unit))}°</text></g>; })}
+      {climate.rain.map((v,i) => <g key={months[i]}><rect x={x(i)-15} y={layout.bottom-rainHeight(v)} width="30" height={rainHeight(v)} fill="#9dd9e8" opacity=".78"/><text x={x(i)} y="303" textAnchor="middle" fontSize="12" fill="#526b63">{months[i]}</text></g>)}
+      {series.map(item => <g key={item.name}><polyline points={item.values.map((v,i) => `${x(i)},${y(v)}`).join(' ')} fill="none" stroke={item.color} strokeWidth="3" strokeLinejoin="round"/>{item.values.map((v,i) => <circle key={i} cx={x(i)} cy={y(v)} r="3.5" fill={item.color}/>)}</g>)}
+      <text x="15" y="152" transform="rotate(-90 15 152)" fontSize="12" fill="#526b63">Temperature (°{unit})</text>
+      <text x="813" y="152" transform="rotate(90 813 152)" fontSize="12" textAnchor="middle">Rainfall (mm)</text>
+      {[0,100,200,300,400].map(v => <text key={v} x="770" y={layout.bottom-rainHeight(v)+4} fontSize="11" fill="#526b63">{v}</text>)}
+    </svg>
+    <div className={styles.chartTableScroll}>
+      <table className={styles.chartTable}><caption>Monthly climate averages for {climate.place}</caption>
+        <thead><tr><th>Month</th><th>Min</th><th>Average*</th><th>Max</th><th>Rain</th></tr></thead>
+        <tbody>{months.map((month,i) => <tr key={month}><th>{month}</th><td>{Math.round(convert(climate.low[i],unit))}°</td><td>{Math.round(convert(averages[i],unit))}°</td><td>{Math.round(convert(climate.high[i],unit))}°</td><td>{Math.round(climate.rain[i])} mm</td></tr>)}</tbody>
+      </table>
+    </div>
+  </div>;
+}
 
 const experiences = [
   { place: 'Singapore', title: 'Gardens by the Bay', detail: 'Discover the Supertree Grove and consider adding tickets for the climate-controlled conservatories.' },
@@ -49,6 +115,7 @@ const experiences = [
 export default function ThreeCountryOptions({ trip }: { trip: TripIdea }) {
   const [tab,setTab]=useState<'hotels'|'weather'|'excursions'>('hotels');
   const [city,setCity]=useState(0);
+  const [unit,setUnit]=useState<'C'|'F'>('C');
   return <section className={styles.section} aria-labelledby="explore-heading">
     <div className={styles.heading}>
       <p className={styles.eyebrow}>EXPLORE YOUR OPTIONS</p>
@@ -56,7 +123,7 @@ export default function ThreeCountryOptions({ trip }: { trip: TripIdea }) {
       <p>Compare your hotels, explore the climate and choose optional experiences across three countries.</p>
     </div>
     <div className={styles.tabs} role="tablist" aria-label="Holiday details">
-      {([['hotels','Your hotels'],['weather','May weather'],['excursions','Optional experiences']] as const).map(([id,label])=><button key={id} id={`three-country-tab-${id}`} type="button" role="tab" aria-selected={tab===id} aria-controls="three-country-panel" className={tab===id?styles.active:''} onClick={()=>setTab(id)}>{label}</button>)}
+      {([['hotels','Your hotels'],['weather','Year-round weather'],['excursions','Optional experiences']] as const).map(([id,label])=><button key={id} id={`three-country-tab-${id}`} type="button" role="tab" aria-selected={tab===id} aria-controls="three-country-panel" className={tab===id?styles.active:''} onClick={()=>setTab(id)}>{label}</button>)}
     </div>
     <div id="three-country-panel" role="tabpanel" aria-labelledby={`three-country-tab-${tab}`} className={styles.panel}>
       {tab==='hotels' && <>
@@ -67,11 +134,13 @@ export default function ThreeCountryOptions({ trip }: { trip: TripIdea }) {
         </article>))}</div>
       </>}
       {tab==='weather' && <>
-        <p className={styles.note}>Seasonal guidance for travel in May 2027, based on historical climate rather than a forecast. The weather tab is initially focused on the proposed travel month.</p>
+        <p className={styles.note}>Explore historical monthly climate averages in Singapore, Batam and Johor Bahru. These are not forecasts for May 2027.</p>
         <div className={styles.citySwitch}>{weather.map((item,i)=><button type="button" key={item.place} className={city===i?styles.selected:''} aria-pressed={city===i} onClick={()=>setCity(i)}>{item.place}</button>)}</div>
-        <h3>{weather[city].title} · {weather[city].range}</h3>
-        <p className={styles.weatherIntro}>{weather[city].detail}</p>
-        <p className={styles.note}>Source: <a href={weather[city].source} rel="noopener noreferrer" target="_blank">{weather[city].sourceLabel}</a>. Climate averages are not a forecast.</p>
+        <h3>{weather[city].place} throughout the year</h3>
+        <p className={styles.weatherIntro}>{weather[city].intro}</p>
+        <div className={styles.unitSwitch} role="group" aria-label="Temperature unit"><button type="button" className={unit==='C'?styles.selected:''} aria-pressed={unit==='C'} onClick={()=>setUnit('C')}>°C Celsius</button><button type="button" className={unit==='F'?styles.selected:''} aria-pressed={unit==='F'} onClick={()=>setUnit('F')}>°F Fahrenheit</button></div>
+        <YearRoundClimate climate={weather[city]} unit={unit}/>
+        <p className={styles.note}>Historical climate averages, not a forecast. Minimum and maximum temperatures are sourced; the middle line is the calculated midpoint of those values (not the official 24-hour mean). Rainfall is the average monthly total. Source: <a href={weather[city].source} rel="noopener noreferrer" target="_blank">{weather[city].sourceLabel}</a> ({weather[city].period}). Data periods vary by destination.</p>
       </>}
       {tab==='excursions' && <>
         <p className={styles.note}>These are suggested additional experiences, not included in the £2,749pp itinerary. Availability, tickets and guide fees will be confirmed on request.</p>
