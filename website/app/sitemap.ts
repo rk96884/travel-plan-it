@@ -12,6 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/press`, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${baseUrl}/tailor-made-holidays`, changeFrequency: 'monthly', priority: 0.9 },
     { url: `${baseUrl}/inspiration`, changeFrequency: 'weekly', priority: 0.9 },
+    { url: `${baseUrl}/inspiration/singapore-batam-johor-three-country`, changeFrequency: 'monthly', priority: 0.9 },
     { url: `${baseUrl}/inspiration/luang-prabang-vientiane-twin-centre`, changeFrequency: 'monthly', priority: 0.9 },
     { url: `${baseUrl}/inspiration/hanoi-ho-chi-minh-city-twin-centre`, changeFrequency: 'monthly', priority: 0.9 },
     { url: `${baseUrl}/inspiration/phnom-penh-siem-reap-twin-centre`, changeFrequency: 'monthly', priority: 0.9 },
