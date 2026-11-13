@@ -128,10 +128,13 @@ export default function ThreeCountryOptions({ trip }: { trip: TripIdea }) {
     <div id="three-country-panel" role="tabpanel" aria-labelledby={`three-country-tab-${tab}`} className={styles.panel}>
       {tab==='hotels' && <>
         <p className={styles.note}>Hotels and room types are proposed, not booked. Premium pricing, breakfast arrangements, availability and terminal-to-resort transfers will be confirmed in a personalised quotation. Photographs are supplied for illustration; the room pictured may differ from the room quoted. Please ensure permission for commercial reuse before publishing.</p>
-        <div className={styles.hotels}>{trip.tiers.flatMap(tier=>tier.hotels.map(hotel=><article className={styles.hotel} key={tier.id+hotel.name}>
-          <div className={styles.hotelText}><span className={styles.tag}>{tier.label} · {hotel.place}</span><h3>{hotel.name}</h3><p>{hotelSummaries[hotel.name]}</p><p className={styles.room}>{hotel.nights} nights · {hotel.room}</p></div>
-          <div className={styles.hotelVisual}>{/* eslint-disable-next-line @next/next/no-img-element */}<img src={hotelImages[hotel.name]} alt={`Photograph provided for ${hotel.name}; room category subject to confirmation`} loading="lazy" /><span>Room category subject to confirmation</span></div>
-        </article>))}</div>
+        {trip.tiers.map(tier => <section className={styles.hotelTierGroup} key={tier.id} aria-label={tier.label}>
+          <h3 className={styles.hotelTierHeading}>{tier.label}</h3>
+          <div className={styles.hotels}>{tier.hotels.map(hotel => <article className={styles.hotel} key={hotel.name}>
+            <div className={styles.hotelText}><span className={styles.tag}>{hotel.place}</span><h3>{hotel.name}</h3><p>{hotelSummaries[hotel.name]}</p><p className={styles.room}>{hotel.nights} nights · {hotel.room}</p></div>
+            <div className={styles.hotelVisual}>{/* eslint-disable-next-line @next/next/no-img-element */}<img src={hotelImages[hotel.name]} alt={`Photograph provided for ${hotel.name}; room category subject to confirmation`} loading="lazy" /><span>Room category subject to confirmation</span></div>
+          </article>)}</div>
+        </section>)}
       </>}
       {tab==='weather' && <>
         <p className={styles.note}>Explore historical monthly climate averages in Singapore, Batam and Johor Bahru. These are not forecasts for May 2027.</p>
