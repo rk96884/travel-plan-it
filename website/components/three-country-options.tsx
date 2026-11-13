@@ -38,7 +38,7 @@ export default function ThreeCountryOptions({ trip }: { trip: TripIdea }) {
       <p>Compare your hotels, explore the climate and choose optional experiences across three countries.</p>
     </div>
     <div className={styles.tabs} role="tablist" aria-label="Holiday details">
-      {([['hotels','Your hotels'],['weather','Year-round weather'],['excursions','Optional experiences']] as const).map(([id,label])=><button key={id} id={`three-country-tab-${id}`} type="button" role="tab" aria-selected={tab===id} aria-controls="three-country-panel" className={tab===id?styles.active:''} onClick={()=>setTab(id)}>{label}</button>)}
+      {([['hotels','Your hotels'],['weather','May weather'],['excursions','Optional experiences']] as const).map(([id,label])=><button key={id} id={`three-country-tab-${id}`} type="button" role="tab" aria-selected={tab===id} aria-controls="three-country-panel" className={tab===id?styles.active:''} onClick={()=>setTab(id)}>{label}</button>)}
     </div>
     <div id="three-country-panel" role="tabpanel" aria-labelledby={`three-country-tab-${tab}`} className={styles.panel}>
       {tab==='hotels' && <>
