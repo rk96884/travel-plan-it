@@ -36,3 +36,9 @@
 /* Group the three essential stays separately from the three premium alternatives. */
 .hotelTierGroup { margin: 28px 0 40px; }
 .hotelTierHeading { font: 400 clamp(24px, 3vw, 32px)/1.2 Georgia,serif; margin: 0 0 20px; padding-bottom: 12px; border-bottom: 1px solid #b7c8bd; color: #173f3a; }
+
+/* Keep Essential hotels in the left column, Premium hotels in the right. */
+.hotelTierColumns { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 24px; align-items: start; }
+.hotelTierColumns .hotelTierGroup { min-width: 0; margin: 24px 0 32px; }
+.hotelTierColumns .hotels { display: grid; grid-template-columns: minmax(0,1fr); gap: 18px; }
+@media(max-width: 760px) { .hotelTierColumns { grid-template-columns: 1fr; } }
