@@ -266,8 +266,8 @@ export const singaporeBatamJohor: TripIdea = {
   introText: 'Begin near Singapore’s Orchard Road with a private city and Sentosa tour, then unwind on Batam in Indonesia before crossing to Johor Bahru in Malaysia. Your hotels and activities can be tailored to your interests.',
   journeyTitle: 'From Singapore to Batam and Johor Bahru.',
   journeyAside: 'Seven nights in Singapore, three nights in Batam and three nights in Johor Bahru — with transfers and two international ferry crossings.',
-  hero: { src: '', alt: '', credit: '', creditUrl: '' },
-  secondImage: { src: '', alt: '', credit: '', creditUrl: '' },
+  hero: { src: '/images/inspiration/singapore-marina-bay-hero.webp', alt: 'Illustrative skyline of Singapore Marina Bay at dusk with Gardens by the Bay', credit: '', creditUrl: '' },
+  secondImage: { src: '/images/inspiration/batam-island-resort.webp', alt: 'Illustrative tropical coastal resort and ferry scene inspired by Batam, Indonesia', credit: '', creditUrl: '' },
   tiers: [
     { id: 'essential', label: 'Essential escape', price: 2749, hotels: [
       { place: 'Singapore', name: 'Holiday Inn Singapore Orchard City Centre', room: 'King Standard Room · breakfast', nights: 7 },
