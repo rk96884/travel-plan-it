@@ -14,12 +14,12 @@ const hotelSummaries: Record<string,string> = {
 };
 
 const hotelImages: Record<string,string> = {
-  'Holiday Inn Singapore Orchard City Centre': '/images/hotels/originals/holiday-inn-singapore-orchard-original.webp',
-  'Hilton Singapore Orchard': '/images/hotels/originals/hilton-singapore-orchard-original.webp',
-  'Holiday Inn Resort Batam': '/images/hotels/originals/holiday-inn-resort-batam-original.webp',
-  'Montigo Resorts Nongsa': '/images/hotels/originals/montigo-resorts-nongsa-original.webp',
-  'Holiday Inn Johor Bahru City Centre': '/images/hotels/originals/holiday-inn-johor-bahru-original.webp',
-  'Amari Johor Bahru': '/images/hotels/originals/amari-johor-bahru-original.webp',
+  'Holiday Inn Singapore Orchard City Centre': '/images/hotels/holiday-inn-singapore-orchard-enhanced.webp',
+  'Hilton Singapore Orchard': '/images/hotels/hilton-singapore-orchard-enhanced.webp',
+  'Holiday Inn Resort Batam': '/images/hotels/holiday-inn-resort-batam-enhanced.webp',
+  'Montigo Resorts Nongsa': '/images/hotels/montigo-resorts-nongsa-enhanced.webp',
+  'Holiday Inn Johor Bahru City Centre': '/images/hotels/holiday-inn-johor-bahru-enhanced.webp',
+  'Amari Johor Bahru': '/images/hotels/amari-johor-bahru-enhanced.webp',
 };
 
 const excursionImages: Record<string,string> = {
