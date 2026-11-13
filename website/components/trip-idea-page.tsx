@@ -73,7 +73,7 @@ export default function TripIdeaPage({ trip }: { trip: TripIdea }) {
         <ul>{tier.hotels.map(hotel => <li key={hotel.name}><strong>{hotel.place} · {hotel.nights} nights</strong><span>{hotel.name}</span><small>{hotel.room}</small></li>)}</ul>
         <TrackedEnquiryLink className={styles.button} href={enquiry(tier.id)} tripSlug={trip.slug} position="accommodation" tier={tier.id}>Enquire about {tier.label.toLowerCase()} ↗</TrackedEnquiryLink>
       </article>)}</div>
-      <p className={styles.fine}>*Example prices are per person based on two sharing a twin/double room, and include the proposed itinerary. Dates, availability and final prices will be confirmed in a personalised quotation; premium pricing is on request.</p>
+      <p className={styles.fine}>*Example prices are per person based on two sharing a twin/double room, and include the proposed itinerary. Both accommodation prices are indicative examples, not live guaranteed offers. Dates, availability and the final price will be confirmed in a personalised quotation.</p>
     </section>
     {trip.country === "Singapore, Indonesia & Malaysia" ? <ThreeCountryOptions trip={trip} /> : <HolidayDetails trip={trip} />}
     <section className={styles.journey} aria-labelledby="journey-heading">
