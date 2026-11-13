@@ -13,6 +13,24 @@ const hotelSummaries: Record<string,string> = {
   'Amari Johor Bahru': 'An upscale city-centre alternative with dining, spa and pool facilities.',
 };
 
+const hotelImages: Record<string,string> = {
+  'Holiday Inn Singapore Orchard City Centre': '/images/hotels/originals/holiday-inn-singapore-orchard-original.webp',
+  'Hilton Singapore Orchard': '/images/hotels/originals/hilton-singapore-orchard-original.webp',
+  'Holiday Inn Resort Batam': '/images/hotels/originals/holiday-inn-resort-batam-original.webp',
+  'Montigo Resorts Nongsa': '/images/hotels/originals/montigo-resorts-nongsa-original.webp',
+  'Holiday Inn Johor Bahru City Centre': '/images/hotels/originals/holiday-inn-johor-bahru-original.webp',
+  'Amari Johor Bahru': '/images/hotels/originals/amari-johor-bahru-original.webp',
+};
+
+const excursionImages: Record<string,string> = {
+  'Gardens by the Bay': '/images/excursions/singapore-gardens-by-the-bay.webp',
+  'Singapore Botanic Gardens': '/images/excursions/singapore-botanic-gardens.webp',
+  'Hawker food discovery': '/images/excursions/singapore-hawker-food.webp',
+  'Wellness and spa': '/images/excursions/batam-spa-wellness.webp',
+  'Coastal and local discovery': '/images/excursions/batam-coastal-discovery.webp',
+  'Johor Bahru heritage and food': '/images/excursions/johor-bahru-heritage-food.webp',
+};
+
 const weather = [
   { place: 'Singapore', title: 'Singapore in May', range: '26–32°C', detail: 'Hot and humid. The official Singapore climate normals show a May daily high around 32.3°C, low around 25.7°C and approximately 164 mm of monthly rainfall. Afternoon thunderstorms are common.', source: 'https://www.weather.gov.sg/climate-climate-of-singapore/', sourceLabel: 'Meteorological Service Singapore' },
   { place: 'Batam', title: 'Batam in May', range: 'Warm and tropical', detail: 'Expect heat, humidity and tropical showers in May. Ferry movements and waterside activities depend on sea conditions. Discuss the forecast shortly before travel.', source: 'https://www.bmkg.go.id/', sourceLabel: 'Indonesian BMKG weather service' },
@@ -42,10 +60,10 @@ export default function ThreeCountryOptions({ trip }: { trip: TripIdea }) {
     </div>
     <div id="three-country-panel" role="tabpanel" aria-labelledby={`three-country-tab-${tab}`} className={styles.panel}>
       {tab==='hotels' && <>
-        <p className={styles.note}>Hotels and room types are proposed, not booked. Premium pricing, breakfast arrangements, availability and terminal-to-resort transfers will be confirmed in a personalised quotation. Photographs will be added once approved for commercial use.</p>
+        <p className={styles.note}>Hotels and room types are proposed, not booked. Premium pricing, breakfast arrangements, availability and terminal-to-resort transfers will be confirmed in a personalised quotation. Photographs are supplied for illustration; the room pictured may differ from the room quoted. Please ensure permission for commercial reuse before publishing.</p>
         <div className={styles.hotels}>{trip.tiers.flatMap(tier=>tier.hotels.map(hotel=><article className={styles.hotel} key={tier.id+hotel.name}>
           <div className={styles.hotelText}><span className={styles.tag}>{tier.label} · {hotel.place}</span><h3>{hotel.name}</h3><p>{hotelSummaries[hotel.name]}</p><p className={styles.room}>{hotel.nights} nights · {hotel.room}</p></div>
-          <div className={styles.hotelVisual}><div className={styles.excursionPlaceholder} role="img" aria-label={`Hotel photo for ${hotel.name} to be added`}>{hotel.place}</div><span>Hotel photography to follow</span></div>
+          <div className={styles.hotelVisual}>{/* eslint-disable-next-line @next/next/no-img-element */}<img src={hotelImages[hotel.name]} alt={`Photograph provided for ${hotel.name}; room category subject to confirmation`} loading="lazy" /><span>Room category subject to confirmation</span></div>
         </article>))}</div>
       </>}
       {tab==='weather' && <>
@@ -58,7 +76,7 @@ export default function ThreeCountryOptions({ trip }: { trip: TripIdea }) {
       {tab==='excursions' && <>
         <p className={styles.note}>These are suggested additional experiences, not included in the £2,749pp itinerary. Availability, tickets and guide fees will be confirmed on request.</p>
         <div className={styles.excursions}>{experiences.map(item=><article key={item.title}>
-          <div className={styles.excursionVisual}><div className={styles.excursionPlaceholder} role="img" aria-label={`Photography for ${item.title} to follow`}>{item.place}</div></div>
+          <div className={styles.excursionVisual}>{/* eslint-disable-next-line @next/next/no-img-element */}<img src={excursionImages[item.title]} alt={`AI-generated illustration representing ${item.title} in ${item.place}`} loading="lazy" /></div>
           <div className={styles.excursionBody}><span className={styles.tag}>{item.place}</span><h3>{item.title}</h3><p>{item.detail}</p></div>
         </article>)}</div>
       </>}
