@@ -2,23 +2,23 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import SiteHeader from '../../components/site-header';
 import SiteFooter from '../../components/site-footer';
-import { bangkokPhuket, cambodiaTwinCentre, vietnamTwinCentre, laosTwinCentre } from '../../lib/trip-ideas';
+import { bangkokPhuket, cambodiaTwinCentre, vietnamTwinCentre, laosTwinCentre, singaporeBatamJohor } from '../../lib/trip-ideas';
 import styles from './holidays.module.css';
 
 export const metadata: Metadata = {
   title: 'Tailor-Made Holidays | Twin-Centre & Multi-Centre Trips',
-  description: 'Explore tailor-made holidays in Thailand, Cambodia, Vietnam and Laos. Compare twin-centre itinerary ideas and personalise your hotels, experiences and route.',
+  description: 'Explore tailor-made holidays in Thailand, Cambodia, Vietnam, Laos, Singapore, Indonesia and Malaysia. Compare twin-centre itinerary ideas and personalise your hotels, experiences and route.',
   alternates: { canonical: '/tailor-made-holidays' },
 };
 
-const journeys = [bangkokPhuket, cambodiaTwinCentre, vietnamTwinCentre, laosTwinCentre];
+const journeys = [singaporeBatamJohor, bangkokPhuket, cambodiaTwinCentre, vietnamTwinCentre, laosTwinCentre];
 
 export default function TailorMadeHolidays() {
   return <><SiteHeader/><main id="main" className={styles.page}>
     <section className={styles.intro}>
       <p className={styles.eyebrow}>TAILOR-MADE HOLIDAYS · ASIA & BEYOND</p>
       <h1>Journeys to make <em>your own.</em></h1>
-      <p>Explore tailor-made holidays in Thailand, Cambodia, Vietnam and Laos, with thoughtfully planned twin-centre routes and the flexibility to make them your own. These are itinerary ideas, not fixed departures: choose your hotels, refine the route and travel in your own way.</p>
+      <p>Explore tailor-made holidays in Thailand, Cambodia, Vietnam, Laos, Singapore, Indonesia and Malaysia, with thoughtfully planned twin-centre and multi-country routes and the flexibility to make them your own. These are itinerary ideas, not fixed departures: choose your hotels, refine the route and travel in your own way.</p>
       <Link className={styles.button} href="/plan-my-trip/">Plan a tailor-made journey ↗</Link>
     </section>
     <section className={styles.collection} aria-labelledby="journeys-heading">
@@ -26,10 +26,10 @@ export default function TailorMadeHolidays() {
       <div className={styles.grid}>{journeys.map(trip=><article className={styles.card} key={trip.slug}>
         <Link href={`/inspiration/${trip.slug}/`} className={styles.photoLink}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={trip.secondImage.src} alt={trip.secondImage.alt} loading="lazy" referrerPolicy="no-referrer"/>
+          {trip.secondImage.src ? <img src={trip.secondImage.src} alt={trip.secondImage.alt} loading="lazy" referrerPolicy="no-referrer"/> : <div className={styles.imagePending} role="img" aria-label="Destination photography to follow">Singapore · Batam · Johor Bahru</div>}
         </Link>
         <div className={styles.copy}><p className={styles.eyebrow}>{trip.eyebrow}</p><h3><Link href={`/inspiration/${trip.slug}/`}>{trip.title}</Link></h3>
-          <p>{trip.summary}</p><div className={styles.meta}><span>{trip.duration} / {trip.nights}</span><span>From £{Math.min(...trip.tiers.map(t=>t.price)).toLocaleString('en-GB')}pp*</span></div>
+          <p>{trip.summary}</p><div className={styles.meta}><span>{trip.duration} / {trip.nights}</span><span>From £{Math.min(...trip.tiers.map(t=>t.price).filter((p): p is number => p !== null)).toLocaleString('en-GB')}pp*</span></div>
           <Link className={styles.textLink} href={`/inspiration/${trip.slug}/`}>Explore this journey →</Link>
         </div>
         {trip.secondImage.credit && trip.secondImage.creditUrl && <p className={styles.credit}><a href={trip.secondImage.creditUrl} target="_blank" rel="license noreferrer">{trip.secondImage.credit}</a></p>}

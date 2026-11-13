@@ -14,7 +14,7 @@ export type TripIdea = {
   nights: string;
   hero: { src: string; alt: string; credit: string; creditUrl: string };
   secondImage: { src: string; alt: string; credit: string; creditUrl: string };
-  tiers: { id: string; label: string; price: number; hotels: { place: string; name: string; room: string; nights: number }[]; note: string }[];
+  tiers: { id: string; label: string; price: number | null; hotels: { place: string; name: string; room: string; nights: number }[]; note: string }[];
   days: { heading: string; title: string; description: string }[];
   included: string[];
   excluded: string[];
@@ -249,5 +249,70 @@ export const laosTwinCentre: TripIdea = {
     { question: 'Are the Bangkok flight connections guaranteed?', answer: 'No. The example routing may involve separate bookings and check-in. Connection times, baggage arrangements, entry formalities and disruption protection need to be assessed before booking.' },
     { question: 'Are the advertised prices guaranteed?', answer: 'No. £1,999 and £2,299 per person are indicative examples based on two adults sharing. Your personalised quotation will confirm current fares, availability and package arrangements.' },
     { question: 'Do I need a visa for Laos?', answer: 'Requirements depend on your nationality and can change. Check official Laos entry guidance before travel and discuss the route and passport details when planning.' },
+  ],
+};
+
+/** Flexible 13-night, three-country itinerary. The premium option is quotation-only. */
+export const singaporeBatamJohor: TripIdea = {
+  slug: 'singapore-batam-johor-three-country',
+  country: 'Singapore, Indonesia & Malaysia',
+  title: 'Singapore, Batam & Johor Bahru: three countries, one remarkable journey',
+  eyebrow: 'SINGAPORE · INDONESIA · MALAYSIA',
+  summary: 'Combine seven nights in vibrant Singapore, three nights at a relaxed Batam island resort and three nights in Johor Bahru. Travel between countries by ferry, with private transfers and time to explore at your own pace.',
+  duration: '16 days',
+  nights: '13 nights',
+  introEyebrow: 'THREE COUNTRIES, ONE JOURNEY',
+  introTitle: 'City discoveries. Island downtime. Malaysian flavours.',
+  introText: 'Begin near Singapore’s Orchard Road with a private city and Sentosa tour, then unwind on Batam in Indonesia before crossing to Johor Bahru in Malaysia. Your hotels and activities can be tailored to your interests.',
+  journeyTitle: 'From Singapore to Batam and Johor Bahru.',
+  journeyAside: 'Seven nights in Singapore, three nights in Batam and three nights in Johor Bahru — with transfers and two international ferry crossings.',
+  hero: { src: '/images/inspiration/singapore-marina-bay-hero.webp', alt: 'Illustrative skyline of Singapore Marina Bay at dusk with Gardens by the Bay', credit: '', creditUrl: '' },
+  secondImage: { src: '/images/inspiration/batam-island-resort.webp', alt: 'Illustrative tropical coastal resort and ferry scene inspired by Batam, Indonesia', credit: '', creditUrl: '' },
+  tiers: [
+    { id: 'essential', label: 'Essential escape', price: 2749, hotels: [
+      { place: 'Singapore', name: 'Holiday Inn Singapore Orchard City Centre', room: 'King Standard Room · breakfast', nights: 7 },
+      { place: 'Batam, Indonesia', name: 'Holiday Inn Resort Batam', room: 'Standard Room · breakfast', nights: 3 },
+      { place: 'Johor Bahru, Malaysia', name: 'Holiday Inn Johor Bahru City Centre', room: 'King Standard City View · breakfast', nights: 3 },
+    ], note: 'The proposed 13-night itinerary, including flights, ferry crossings, private transfers and the specified Singapore sightseeing.' },
+    { id: 'premium', label: 'Premium escape', price: 3749, hotels: [
+      { place: 'Singapore', name: 'Hilton Singapore Orchard', room: 'Five-star accommodation · room category and breakfast to be confirmed', nights: 7 },
+      { place: 'Batam, Indonesia', name: 'Montigo Resorts Nongsa', room: 'Five-star resort villa · room category and breakfast to be confirmed', nights: 3 },
+      { place: 'Johor Bahru, Malaysia', name: 'Amari Johor Bahru', room: 'Five-star accommodation · room category and breakfast to be confirmed', nights: 3 },
+    ], note: 'Five-star alternatives selected for location and experience. Indicative premium price £3,749 per person based on two adults sharing, subject to flights, hotel availability, room categories, transfers and a final personalised quotation.' },
+  ],
+  days: [
+    { heading: 'DAY 1', title: 'Fly from London', description: 'Proposed Saturday 1 May 2027 departure from London Gatwick at 13:15 on Singapore Airlines SQ313. The published seasonal schedule matches this timing; individual flight availability and fare remain subject to confirmation.' },
+    { heading: 'DAY 2', title: 'Welcome to Singapore', description: 'Sunday 2 May 2027: proposed 09:30 arrival at Singapore Changi. After immigration, baggage and customs, meet your named driver for a private air-conditioned transfer to your hotel near Orchard Road. Begin your seven-night stay and enjoy the rest of the day at leisure.' },
+    { heading: 'DAY 3', title: 'Singapore at your own pace', description: 'A full leisure day. Explore Orchard Road, nearby shopping and dining, or relax after your journey.' },
+    { heading: 'DAY 4', title: 'Private Singapore city and Sentosa tour', description: 'A proposed full-day private city tour, including a half-day on Sentosa Island. Hotel pickup and drop-off are included; the exact visits, admissions and timings will be confirmed when quoting.' },
+    { heading: 'DAYS 5–6', title: 'Two days for further discovery', description: 'Days at leisure. Optional ideas include Gardens by the Bay, the Botanic Gardens or a guided food walk through Singapore’s neighbourhoods. These activities are not included in the advertised price.' },
+    { heading: 'DAY 7', title: 'Explore with the Big Bus', description: 'Enjoy proposed Big Bus Singapore hop-on, hop-off tickets for its two routes. This is a shared sightseeing service, not a private tour. Confirm current stops, timetable, ticket coverage and the closest Orchard Road stop before travelling.' },
+    { heading: 'DAY 8', title: 'A final Singapore leisure day', description: 'Enjoy more time to explore the city independently before tomorrow’s island crossing.' },
+    { heading: 'DAY 9', title: 'Singapore to Batam, Indonesia', description: 'Private late-morning transfer to the ferry terminal for a crossing to Batam in the Riau Islands. After arrival formalities, meet your driver for a private transfer to your resort for three nights.' },
+    { heading: 'DAYS 10–11', title: 'Batam island relaxation', description: 'Two days at leisure at your resort. Enjoy the pool, wellness facilities and island atmosphere. Optional activities are available by request at additional cost.' },
+    { heading: 'DAY 12', title: 'Batam to Johor Bahru, Malaysia', description: 'Private transfer to the Batam ferry terminal and ferry crossing to Johor Bahru, subject to operating schedules. Meet your driver after arrival formalities for a private transfer to your city-centre hotel near the Singapore Causeway. Stay three nights.' },
+    { heading: 'DAYS 13–14', title: 'Discover Johor Bahru', description: 'Two days at leisure to enjoy Johor Bahru’s food, shopping and local culture, with optional guided experiences on request.' },
+    { heading: 'DAY 15', title: 'Road transfer to Changi and flight home', description: 'Saturday 15 May 2027: proposed 18:00 private pickup from your Johor Bahru hotel for an international road transfer across the Singapore border to Changi Airport. Proposed Singapore Airlines departure at 23:00; allow for immigration and variable border queues.' },
+    { heading: 'DAY 16', title: 'Arrive in London', description: 'Sunday 16 May 2027: proposed 05:55 arrival at London Heathrow. Airports, flight numbers and timings will be confirmed in your personalised quotation.' },
+  ],
+  included: [
+    'Proposed return Singapore Airlines economy flights between the UK and Singapore, with 25 kg checked baggage per person, subject to airline fare confirmation',
+    'Seven nights in Singapore, three nights in Batam and three nights in Johor Bahru, sharing a twin or double room',
+    'Breakfast at the proposed hotels, with breakfast boxes where arranged',
+    'Private air-conditioned airport, hotel and ferry-terminal transfers described in the itinerary',
+    'Ferry crossings Singapore–Batam and Batam–Johor Bahru, subject to confirmed sailings',
+    'International road transfer from Johor Bahru to Singapore Changi Airport',
+    'Private Singapore city and Sentosa excursion, subject to confirmed itinerary and admission inclusions',
+    'Big Bus Singapore hop-on, hop-off sightseeing tickets, subject to route and ticket confirmation',
+  ],
+  excluded: ['Visas, entry permits or immigration fees where applicable', 'Travel insurance', 'Tips and gratuities', 'Optional tours and excursions', 'Personal expenses and meals not specified'],
+  entryAdviceUrl: 'https://www.gov.uk/foreign-travel-advice/singapore/entry-requirements',
+  faqs: [
+    { question: 'Is £2,749 per person a live offer?', answer: 'No. It is an indicative starting price supplied for two people sharing twin/double accommodation, subject to flight, ferry and hotel availability and a final personalised quotation.' },
+    { question: 'How much is the premium five-star option?', answer: 'The indicative premium price is £3,749 per person based on two adults sharing and is not a guaranteed offer. The final price must be verified for your travel dates. The suggested alternatives are Hilton Singapore Orchard, Montigo Resorts Nongsa and Amari Johor Bahru; hotel availability, room types, breakfast and the total supplement must be confirmed.' },
+    { question: 'Are Singapore tours and transfers private?', answer: 'The Singapore city and Sentosa excursion and the stated road transfers are proposed as private. Big Bus sightseeing is shared and follows its published routes and operating times.' },
+    { question: 'Can I choose different dates or hotels?', answer: 'Yes. This is a flexible tailor-made itinerary, not a fixed dated departure. We can revise the hotels, travel dates, length of stay and optional experiences.' },
+    { question: 'What entry formalities apply across the three countries?', answer: 'Immigration and visa rules differ across Singapore, Indonesia and Malaysia, and depend on nationality. Check the relevant UK government travel advice for all three countries before travel; ferry and road crossings require passport formalities.' },
+    { question: 'Are the proposed flight and ferry timings confirmed?', answer: 'No. Flight schedules, ferry ports, sailings, border-crossing time and transport arrangements are subject to reconfirmation for your chosen travel dates.' },
   ],
 };

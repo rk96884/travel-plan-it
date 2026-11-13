@@ -2,6 +2,7 @@
 const consentKey = 'travel-plan-it-analytics-consent';
 
 const knownItineraries = new Set([
+  'singapore-batam-johor-three-country',
   'bangkok-phuket-twin-centre',
   'phnom-penh-siem-reap-twin-centre',
   'hanoi-ho-chi-minh-city-twin-centre',
