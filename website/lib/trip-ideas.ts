@@ -274,11 +274,11 @@ export const singaporeBatamJohor: TripIdea = {
       { place: 'Batam, Indonesia', name: 'Holiday Inn Resort Batam', room: 'Standard Room · breakfast', nights: 3 },
       { place: 'Johor Bahru, Malaysia', name: 'Holiday Inn Johor Bahru City Centre', room: 'King Standard City View · breakfast', nights: 3 },
     ], note: 'The proposed 13-night itinerary, including flights, ferry crossings, private transfers and the specified Singapore sightseeing.' },
-    { id: 'premium', label: 'Premium escape', price: null, hotels: [
+    { id: 'premium', label: 'Premium escape', price: 3749, hotels: [
       { place: 'Singapore', name: 'Hilton Singapore Orchard', room: 'Five-star accommodation · room category and breakfast to be confirmed', nights: 7 },
       { place: 'Batam, Indonesia', name: 'Montigo Resorts Nongsa', room: 'Five-star resort villa · room category and breakfast to be confirmed', nights: 3 },
       { place: 'Johor Bahru, Malaysia', name: 'Amari Johor Bahru', room: 'Five-star accommodation · room category and breakfast to be confirmed', nights: 3 },
-    ], note: 'Five-star alternatives selected for location and experience. Premium pricing is on request, subject to dates, room categories and availability.' },
+    ], note: 'Five-star alternatives selected for location and experience. Indicative premium price £3,749 per person based on two adults sharing, subject to flights, hotel availability, room categories, transfers and a final personalised quotation.' },
   ],
   days: [
     { heading: 'DAY 1', title: 'Fly from London', description: 'Proposed Saturday 1 May 2027 departure from London Gatwick at 13:15 on Singapore Airlines SQ313. The published seasonal schedule matches this timing; individual flight availability and fare remain subject to confirmation.' },
@@ -309,7 +309,7 @@ export const singaporeBatamJohor: TripIdea = {
   entryAdviceUrl: 'https://www.gov.uk/foreign-travel-advice/singapore/entry-requirements',
   faqs: [
     { question: 'Is £2,749 per person a live offer?', answer: 'No. It is an indicative starting price supplied for two people sharing twin/double accommodation, subject to flight, ferry and hotel availability and a final personalised quotation.' },
-    { question: 'How much is the premium five-star option?', answer: 'Premium pricing is on request and must be verified for your travel dates. The suggested alternatives are Hilton Singapore Orchard, Montigo Resorts Nongsa and Amari Johor Bahru; hotel availability, room types, breakfast and the total supplement must be confirmed.' },
+    { question: 'How much is the premium five-star option?', answer: 'The indicative premium price is £3,749 per person based on two adults sharing and is not a guaranteed offer. The final price must be verified for your travel dates. The suggested alternatives are Hilton Singapore Orchard, Montigo Resorts Nongsa and Amari Johor Bahru; hotel availability, room types, breakfast and the total supplement must be confirmed.' },
     { question: 'Are Singapore tours and transfers private?', answer: 'The Singapore city and Sentosa excursion and the stated road transfers are proposed as private. Big Bus sightseeing is shared and follows its published routes and operating times.' },
     { question: 'Can I choose different dates or hotels?', answer: 'Yes. This is a flexible tailor-made itinerary, not a fixed dated departure. We can revise the hotels, travel dates, length of stay and optional experiences.' },
     { question: 'What entry formalities apply across the three countries?', answer: 'Immigration and visa rules differ across Singapore, Indonesia and Malaysia, and depend on nationality. Check the relevant UK government travel advice for all three countries before travel; ferry and road crossings require passport formalities.' },
