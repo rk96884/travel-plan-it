@@ -26,7 +26,7 @@ export default function TailorMadeHolidays() {
       <div className={styles.grid}>{journeys.map(trip=><article className={styles.card} key={trip.slug}>
         <Link href={`/inspiration/${trip.slug}/`} className={styles.photoLink}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={trip.secondImage.src} alt={trip.secondImage.alt} loading="lazy" referrerPolicy="no-referrer"/>
+          {trip.secondImage.src ? <img src={trip.secondImage.src} alt={trip.secondImage.alt} loading="lazy" referrerPolicy="no-referrer"/> : <div className={styles.imagePending} role="img" aria-label="Destination photography to follow">Singapore · Batam · Johor Bahru</div>}
         </Link>
         <div className={styles.copy}><p className={styles.eyebrow}>{trip.eyebrow}</p><h3><Link href={`/inspiration/${trip.slug}/`}>{trip.title}</Link></h3>
           <p>{trip.summary}</p><div className={styles.meta}><span>{trip.duration} / {trip.nights}</span><span>From £{Math.min(...trip.tiers.map(t=>t.price).filter((p): p is number => p !== null)).toLocaleString('en-GB')}pp*</span></div>
