@@ -58,6 +58,7 @@ export default function TravelPlanningPage() {
             <div className={styles.actions}>
               <Link className={styles.button} href="/plan-my-trip/">Start planning your trip ↗</Link>
               <Link className={styles.textLink} href="/inspiration/">Explore travel inspiration</Link>
+              <Link className={styles.textLink} href="/travel-advice/how-we-find-flights/">How we research flights</Link>
             </div>
           </div>
           <div className={styles.heroImage}><Image src="/images/travel-planning-overwhelm.webp" alt="Traveller comparing flights, hotels, transfers and experiences across multiple browser tabs while planning a complex holiday" fill priority sizes="(max-width: 800px) 100vw, 42vw" /></div>
