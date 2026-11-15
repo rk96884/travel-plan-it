@@ -50,7 +50,6 @@ export default function HowWeFindFlightsPage() {
             </div>
             <figure className={styles.heroImage}>
               <Image src="/images/flight-planning-guide.webp" alt="Limestone islands in Ha Long Bay, a destination that can form part of a multi-centre itinerary" fill sizes="(max-width: 900px) 100vw, 43vw" priority />
-              <figcaption>Better travel starts before take-off.</figcaption>
             </figure>
           </header>
 
