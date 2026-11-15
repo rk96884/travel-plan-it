@@ -49,7 +49,7 @@ export default function HowWeFindFlightsPage() {
               <a className={styles.jump} href="#how-we-compare">Explore how we compare flights ↓</a>
             </div>
             <figure className={styles.heroImage}>
-              <Image src="/images/ha-long-bay.webp" alt="Limestone islands in Ha Long Bay, a destination that can form part of a multi-centre itinerary" fill sizes="(max-width: 900px) 100vw, 43vw" priority />
+              <Image src="/images/flight-planning-guide.webp" alt="Limestone islands in Ha Long Bay, a destination that can form part of a multi-centre itinerary" fill sizes="(max-width: 900px) 100vw, 43vw" priority />
               <figcaption>Better travel starts before take-off.</figcaption>
             </figure>
           </header>
@@ -99,7 +99,7 @@ export default function HowWeFindFlightsPage() {
               <p className={styles.eyebrow}>QUESTIONS WE OFTEN HEAR</p>
               <h2>Flight-planning questions, answered.</h2>
               <div className={styles.faqs}>
-                {faqs.map(({q,a}) => <details key={q}><summary>{q}<span aria-hidden="true">+</span></summary><p>{a}</p></details>)}
+                {faqs.map(({ q, a }) => <details key={q}><summary>{q}<span aria-hidden="true">+</span></summary><p>{a}</p></details>)}
               </div>
             </section>
 
