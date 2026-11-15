@@ -1,0 +1,371 @@
+.page {
+    max-width: 1600px;
+    margin: 0 auto;
+    color: #173f3a
+}
+
+.hero {
+    display: grid;
+    grid-template-columns: 57% 43%;
+    min-height: 610px
+}
+
+.heroCopy {
+    padding: 56px 10% 80px 13%;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center
+}
+
+.breadcrumb {
+    font-size: 13px;
+    margin-bottom: 44px;
+    color: #4e635e
+}
+
+.breadcrumb a {
+    color: inherit;
+    text-underline-offset: 4px
+}
+
+.eyebrow {
+    font-size: 12px;
+    letter-spacing: 2px;
+    font-weight: 700;
+    color: #9a4936;
+    margin: 0 0 24px
+}
+
+.hero h1 {
+    font: 400 clamp(58px, 6vw, 94px)/.99 Georgia, serif;
+    letter-spacing: -3px;
+    margin: 0 0 32px
+}
+
+.hero h1 em {
+    color: #326d68
+}
+
+.lede {
+    font-size: 20px;
+    line-height: 1.6;
+    color: #4e635e;
+    max-width: 650px;
+    margin: 0 0 32px
+}
+
+.jump {
+    color: #173f3a;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 7px;
+    font-weight: 600
+}
+
+.heroImage {
+    position: relative;
+    margin: 0;
+    min-height: 500px;
+    overflow: hidden
+}
+
+.heroImage img {
+    object-fit: cover;
+    transition: transform 1.2s cubic-bezier(.2, .7, .2, 1);
+}
+
+.heroImage:hover img {
+    transform: scale(1.025);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .heroImage img {
+        transition: none;
+    }
+
+    .heroImage:hover img {
+        transform: none;
+    }
+}
+
+.heroImage figcaption {
+    position: absolute;
+    bottom: 24px;
+    left: 24px;
+    background: rgba(23, 63, 58, .88);
+    color: white;
+    font-size: 13px;
+    letter-spacing: .6px;
+    padding: 11px 15px
+}
+
+.article {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 5% 95px
+}
+
+.leadSection {
+    padding: 90px 0 40px
+}
+
+.leadSection h2 {
+    font: 400 clamp(39px, 4.8vw, 60px)/1.12 Georgia, serif;
+    letter-spacing: -1.2px;
+    max-width: 900px;
+    margin: 0 0 32px
+}
+
+.leadSection p:not(.eyebrow),
+.section>p:not(.eyebrow),
+.band p,
+.next p:not(.eyebrow) {
+    font-size: 18px;
+    line-height: 1.75;
+    color: #4e635e;
+    max-width: 850px
+}
+
+.section {
+    padding: 65px 0;
+    border-top: 1px solid #b6c5bb;
+    scroll-margin-top: 30px
+}
+
+.section h2,
+.band h2,
+.next h2 {
+    font: 400 clamp(34px, 4vw, 51px)/1.16 Georgia, serif;
+    letter-spacing: -1px;
+    margin: 0 0 26px;
+    max-width: 850px
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px 34px;
+    margin-top: 45px
+}
+
+.card {
+    border-top: 1px solid #9daaa0;
+    padding-top: 21px
+}
+
+.card span {
+    font-size: 13px;
+    color: #9a4936
+}
+
+.card h3 {
+    font: 400 30px/1.2 Georgia, serif;
+    margin: 17px 0
+}
+
+.card p {
+    line-height: 1.7;
+    color: #4e635e;
+    margin: 0
+}
+
+.afterWidget {
+    margin-top: 25px
+}
+
+.band {
+    background: #173f3a;
+    color: #f6f2e9;
+    padding: 60px 7%;
+    margin: 22px -3% 60px
+}
+
+.band .eyebrow {
+    color: #f0b19f
+}
+
+.band p {
+    color: #e4e9e2
+}
+
+.band a {
+    color: #f6f2e9;
+    text-underline-offset: 5px
+}
+
+.route {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 35px 0;
+    background: #254d47;
+    padding: 22px
+}
+
+.route span {
+    border: 1px solid #9db7aa;
+    padding: 10px 14px;
+    font-weight: 600
+}
+
+.route b {
+    color: #f0b19f
+}
+
+.faqs {
+    margin-top: 30px
+}
+
+.faqs details {
+    border-top: 1px solid #aab9ae
+}
+
+.faqs details:last-child {
+    border-bottom: 1px solid #aab9ae
+}
+
+.faqs summary {
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 22px 0;
+    font: 400 24px Georgia, serif
+}
+
+.faqs summary::-webkit-details-marker {
+    display: none
+}
+
+.faqs summary span {
+    font-family: Arial, sans-serif;
+    color: #c9664f
+}
+
+.faqs details p {
+    max-width: 780px;
+    color: #4e635e;
+    line-height: 1.7;
+    margin: 0 0 24px
+}
+
+.next {
+    text-align: center;
+    background: #f0ebe0;
+    padding: 72px 8%;
+    margin-top: 40px
+}
+
+.next .eyebrow {
+    margin-bottom: 15px
+}
+
+.next h2 {
+    margin: 0 auto 25px
+}
+
+.next p:not(.eyebrow) {
+    margin: 0 auto 27px
+}
+
+.actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 23px;
+    flex-wrap: wrap
+}
+
+.button {
+    display: inline-block;
+    background: #173f3a;
+    color: white;
+    padding: 17px 22px;
+    text-decoration: none
+}
+
+.button:hover {
+    background: #326d68
+}
+
+.secondary {
+    color: #173f3a;
+    text-underline-offset: 5px
+}
+
+.next small {
+    display: block;
+    margin-top: 25px;
+    color: #4e635e
+}
+
+@media(max-width:900px) {
+    .hero {
+        grid-template-columns: 1fr
+    }
+
+    .heroCopy {
+        padding: 55px 7%
+    }
+
+    .heroImage {
+        min-height: 340px
+    }
+
+    .article {
+        padding: 0 6% 70px
+    }
+}
+
+@media(max-width:620px) {
+    .hero h1 {
+        font-size: 56px;
+        letter-spacing: -2px
+    }
+
+    .heroImage {
+        min-height: 275px
+    }
+
+    .lede {
+        font-size: 18px
+    }
+
+    .leadSection {
+        padding-top: 65px
+    }
+
+    .section {
+        padding: 50px 0
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+        gap: 30px
+    }
+
+    .band {
+        margin: 10px -5% 40px;
+        padding: 48px 7%
+    }
+
+    .route {
+        gap: 8px;
+        padding: 15px
+    }
+
+    .route span {
+        padding: 8px 10px
+    }
+
+    .next {
+        padding: 55px 6%
+    }
+
+    .faqs summary {
+        font-size: 21px
+    }
+}

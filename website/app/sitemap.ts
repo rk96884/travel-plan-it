@@ -8,6 +8,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     { url: baseUrl, changeFrequency: 'weekly', priority: 1 },
     { url: `${baseUrl}/travel-planning`, changeFrequency: 'monthly', priority: 0.9 },
+    { url: `${baseUrl}/travel-advice/how-we-find-flights`, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${baseUrl}/why-us`, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${baseUrl}/press`, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${baseUrl}/tailor-made-holidays`, changeFrequency: 'monthly', priority: 0.9 },
