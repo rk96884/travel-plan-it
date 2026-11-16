@@ -19,7 +19,7 @@ export type TripIdea = {
   included: string[];
   excluded: string[];
   faqs: { question: string; answer: string }[];
-  optionalExperiences?: { name: string; detail: string; image?: string }[];
+  optionalExperiences?: { name: string; destination?: string; detail: string; image?: string }[];
 };
 
 export const bangkokPhuket: TripIdea = {
@@ -393,15 +393,15 @@ export const mumbaiWinterSunshine: TripIdea = {
     'Personal expenses',
   ],
   optionalExperiences: [
-    { name: 'Amsterdam canal cruise and historic centre', image: '/images/excursions/amsterdam-canal-cruise.webp', detail: 'Make the most of your Amsterdam stopover with a relaxed canal cruise past the city’s historic canal houses and bridges, followed by time to explore the surrounding streets and cafés. Can be arranged for either stopover, subject to timing and availability.' },
-    { name: 'Mumbai highlights with a private local guide', image: '/images/excursions/mumbai-highlights-gateway-of-india.webp', detail: 'Explore signature sights such as the Gateway of India, the historic Fort district, Chhatrapati Shivaji Maharaj Terminus and the Kala Ghoda arts quarter, with the route shaped around your interests.' },
-    { name: 'Elephanta Caves and the harbour', image: '/images/excursions/mumbai-elephanta-caves.webp', detail: 'Take a boat across Mumbai Harbour to the UNESCO-listed Elephanta Caves, known for their remarkable rock-cut temples and sculptures. Boat operations and island access are subject to conditions and opening arrangements.' },
-    { name: 'A taste of Mumbai', image: '/images/excursions/mumbai-street-food.webp', detail: 'Discover the city through its food, from much-loved street-food specialities to traditional cafés and regional dishes, with a knowledgeable guide and carefully chosen stops.' },
-    { name: 'Markets, shopping and hidden lanes', image: '/images/excursions/mumbai-markets-shopping.webp', detail: 'Explore the colour and character of Mumbai’s markets and neighbourhoods, from historic bazaars to independent boutiques and local shopping streets.' },
-    { name: 'Dharavi community-led experience', image: '/images/excursions/mumbai-dharavi-community-workshop.webp', detail: 'If of interest, consider a responsible, locally led visit that focuses on the area’s enterprise and community life, with a respectful approach to residents and photography.' },
-    { name: 'Bollywood behind the scenes', image: '/images/excursions/mumbai-bollywood-behind-the-scenes.webp', detail: 'Discover Mumbai’s film heritage with a studio or Bollywood-themed experience, subject to access, schedules and availability.' },
-    { name: 'Bandra, the seafront and city viewpoints', image: '/images/excursions/mumbai-bandra-worli-sea-link.webp', detail: 'Explore Bandra’s cafés, street art and heritage corners, and take in views across the coastline and the Bandra–Worli Sea Link.' },
-    { name: 'A slower day in Juhu', image: '/images/excursions/mumbai-juhu-beach-sunset.webp', detail: 'Keep a day free for the beach, hotel pool and spa, a sunset stroll and dinner overlooking the Arabian Sea.' },
+    { name: 'Amsterdam canal cruise and historic centre', destination: 'AMSTERDAM', image: '/images/excursions/amsterdam-canal-cruise.webp', detail: 'Make the most of your Amsterdam stopover with a relaxed canal cruise past the city’s historic canal houses and bridges, followed by time to explore the surrounding streets and cafés. Can be arranged for either stopover, subject to timing and availability.' },
+    { name: 'Mumbai highlights with a private local guide', destination: 'MUMBAI', image: '/images/excursions/mumbai-highlights-gateway-of-india.webp', detail: 'Explore signature sights such as the Gateway of India, the historic Fort district, Chhatrapati Shivaji Maharaj Terminus and the Kala Ghoda arts quarter, with the route shaped around your interests.' },
+    { name: 'Elephanta Caves and the harbour', destination: 'MUMBAI', image: '/images/excursions/mumbai-elephanta-caves.webp', detail: 'Take a boat across Mumbai Harbour to the UNESCO-listed Elephanta Caves, known for their remarkable rock-cut temples and sculptures. Boat operations and island access are subject to conditions and opening arrangements.' },
+    { name: 'A taste of Mumbai', destination: 'MUMBAI', image: '/images/excursions/mumbai-street-food.webp', detail: 'Discover the city through its food, from much-loved street-food specialities to traditional cafés and regional dishes, with a knowledgeable guide and carefully chosen stops.' },
+    { name: 'Markets, shopping and hidden lanes', destination: 'MUMBAI', image: '/images/excursions/mumbai-markets-shopping.webp', detail: 'Explore the colour and character of Mumbai’s markets and neighbourhoods, from historic bazaars to independent boutiques and local shopping streets.' },
+    { name: 'Dharavi community-led experience', destination: 'MUMBAI', image: '/images/excursions/mumbai-dharavi-community-workshop.webp', detail: 'If of interest, consider a responsible, locally led visit that focuses on the area’s enterprise and community life, with a respectful approach to residents and photography.' },
+    { name: 'Bollywood behind the scenes', destination: 'MUMBAI', image: '/images/excursions/mumbai-bollywood-behind-the-scenes.webp', detail: 'Discover Mumbai’s film heritage with a studio or Bollywood-themed experience, subject to access, schedules and availability.' },
+    { name: 'Bandra, the seafront and city viewpoints', destination: 'MUMBAI', image: '/images/excursions/mumbai-bandra-worli-sea-link.webp', detail: 'Explore Bandra’s cafés, street art and heritage corners, and take in views across the coastline and the Bandra–Worli Sea Link.' },
+    { name: 'A slower day in Juhu', destination: 'MUMBAI', image: '/images/excursions/mumbai-juhu-beach-sunset.webp', detail: 'Keep a day free for the beach, hotel pool and spa, a sunset stroll and dinner overlooking the Arabian Sea.' },
   ],
   entryAdviceUrl: 'https://www.gov.uk/foreign-travel-advice/india/entry-requirements',
   faqs: [
