@@ -28,3 +28,39 @@
 @media(max-width:900px){.hotelGrid{grid-template-columns:1fr}.hotelCard{min-height:230px}.hotelImage img{min-height:230px}}
 @media(max-width:620px){.section{padding:54px 5%}.tabs button{padding:13px 16px;font-size:13px}.hotelCard{grid-template-columns:1fr}.hotelImage{min-height:210px;grid-row:1}.hotelImage img{min-height:210px;max-height:240px}.hotelCopy{padding:22px}.hotelMeta{margin-top:12px}.experienceGrid{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){.hotelImage img{transition:none}}
+
+
+/* Keep this options intro stacked like the approved reference.
+   The shared site header rules otherwise cause nested headers to inherit a three-column grid. */
+.section .header {
+    display: block;
+    width: 100%;
+    max-width: 1320px;
+    margin: 0 auto 32px;
+    padding: 0;
+    text-align: left;
+    grid-template-columns: none;
+    grid-template-rows: none;
+    align-items: initial;
+    justify-items: initial;
+    gap: 0;
+}
+
+.section .header .eyebrow {
+    display: block;
+    margin: 0 0 8px;
+}
+
+.section .header h2 {
+    display: block;
+    width: auto;
+    max-width: none;
+    margin: 0 0 16px;
+}
+
+.section .header > p:last-child {
+    display: block;
+    width: auto;
+    max-width: none;
+    margin: 0;
+}
