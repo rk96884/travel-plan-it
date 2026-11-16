@@ -46,7 +46,7 @@ const destinationGuidance: Record<string, { heading: string; detail: string; rel
 export default function TripIdeaPage({ trip }: { trip: TripIdea }) {
   const enquiry = (tier?: string) => `/plan-my-trip/?trip=${encodeURIComponent(trip.slug)}${tier ? `&tier=${encodeURIComponent(tier)}` : ''}`;
   return <main id="main" className={`${styles.page} ${trip.country === "Cambodia" || trip.country === "Vietnam" || trip.country === "Laos" ? styles.cambodia : styles.thailand}`}>
-    <div className={styles.breadcrumb}><Link href="/tailor-made-holidays/">← All tailor-made holidays</Link><span> / {trip.country || "Thailand"} / {trip.country === "Singapore, Indonesia & Malaysia" ? "Singapore, Batam & Johor Bahru" : trip.country === "Laos" ? "Luang Prabang & Vientiane" : trip.country === "Vietnam" ? "Hanoi & Ho Chi Minh City" : trip.country ? "Phnom Penh & Siem Reap" : "Bangkok & Phuket"}</span></div>
+    <div className={styles.breadcrumb}><Link href="/tailor-made-holidays/">← All tailor-made holidays</Link><span> / {trip.country || "Thailand"} / {trip.country === "Singapore, Indonesia & Malaysia" ? "Singapore, Batam & Johor Bahru" : trip.country === "Laos" ? "Luang Prabang & Vientiane" : trip.country === "Vietnam" ? "Hanoi & Ho Chi Minh City" : trip.country === "India" ? "Mumbai" : trip.country ? "Phnom Penh & Siem Reap" : "Bangkok & Phuket"}</span></div>
     <section className={styles.hero}>
       <div className={styles.heroCopy}>
         <p className={styles.eyebrow}>{trip.eyebrow}</p>
