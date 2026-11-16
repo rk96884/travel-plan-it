@@ -101,7 +101,7 @@ export default function WeatherClimate() {
                 );
               })}
             </div>
-            <p className={styles.source}>Source: <a href="https://www.timeanddate.com/weather/{destination.name === 'Mumbai' ? 'india/mumbai' : 'netherlands/amsterdam'}/climate" target="_blank" rel="noreferrer">{destination.source}</a>. Figures are historical climate averages, not a forecast.</p>
+            <p className={styles.source}>Source: <a href={`https://www.timeanddate.com/weather/${destination.name === 'Mumbai' ? 'india/mumbai' : 'netherlands/amsterdam'}/climate`} target="_blank" rel="noreferrer">{destination.source}</a>. Figures are historical climate averages, not a forecast.</p>
           </article>
         ))}
       </div>
