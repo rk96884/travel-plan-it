@@ -76,6 +76,7 @@ export default function MumbaiOptions({ tiers, optionalExperiences = [] }: Props
               <article className={styles.experienceCard} key={item.name}>
                 {item.image && <img className={styles.experienceImage} src={item.image} alt="" loading="lazy" />}
                 <div className={styles.experienceCopy}>
+                  {item.destination && <p className={styles.experienceDestination}>{item.destination}</p>}
                   <h3>{item.name}</h3>
                 <p>{item.detail}</p>
                 </div>
