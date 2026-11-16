@@ -46,14 +46,14 @@ const destinationGuidance: Record<string, { heading: string; detail: string; rel
 
 export default function TripIdeaPage({ trip }: { trip: TripIdea }) {
   const enquiry = (tier?: string) => `/plan-my-trip/?trip=${encodeURIComponent(trip.slug)}${tier ? `&tier=${encodeURIComponent(tier)}` : ''}`;
-  return <main id="main" className={`${styles.page} ${trip.country === "Cambodia" || trip.country === "Vietnam" || trip.country === "Laos" ? styles.cambodia : styles.thailand}`}>
+  return <main id="main" className={`${styles.page} ${trip.country === "India" ? styles.mumbai : trip.country === "Cambodia" || trip.country === "Vietnam" || trip.country === "Laos" ? styles.cambodia : styles.thailand}`}>
     <div className={styles.breadcrumb}><Link href="/tailor-made-holidays/">← All tailor-made holidays</Link><span> / {trip.country || "Thailand"} / {trip.country === "Singapore, Indonesia & Malaysia" ? "Singapore, Batam & Johor Bahru" : trip.country === "Laos" ? "Luang Prabang & Vientiane" : trip.country === "Vietnam" ? "Hanoi & Ho Chi Minh City" : trip.country === "India" ? "Mumbai" : trip.country ? "Phnom Penh & Siem Reap" : "Bangkok & Phuket"}</span></div>
     <section className={styles.hero}>
       <div className={styles.heroCopy}>
         <p className={styles.eyebrow}>{trip.eyebrow}</p>
         <h1>{trip.title}</h1>
         <p className={styles.lead}>{trip.summary}</p>
-        <div className={styles.stats}><span>{trip.duration} / {trip.nights}</span><span>{trip.country === "Singapore, Indonesia & Malaysia" ? "Three countries" : trip.country === "India" ? "City and beach escape" : "Private guided tours"}</span><span>{trip.tiers.length} accommodation options</span></div>
+        <div className={styles.stats}><span>{trip.duration} / {trip.nights}</span><span>{trip.country === "Singapore, Indonesia & Malaysia" ? "Three countries" : trip.country === "India" ? "City and beach escape" : "Private guided tours"}</span><span>{trip.tiers.length} package options</span></div>
         <p className={styles.from}>From <strong>£{Math.min(...trip.tiers.map(t => t.price).filter((p): p is number => p !== null)).toLocaleString('en-GB')}</strong> <span>per person* · indicative, dates flexible</span></p>
         <TrackedEnquiryLink className={styles.button} href={enquiry()} tripSlug={trip.slug} position="hero">Enquire about this journey ↗</TrackedEnquiryLink>
         <p className={styles.fine}>*Indicative price based on two adults sharing. Indicative only; not a live or guaranteed offer. Flights, accommodation and availability require reconfirmation.</p>
