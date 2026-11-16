@@ -74,8 +74,11 @@ export default function MumbaiOptions({ tiers, optionalExperiences = [] }: Props
           <div className={styles.experienceGrid}>
             {optionalExperiences.map((item) => (
               <article className={styles.experienceCard} key={item.name}>
-                <h3>{item.name}</h3>
+                {item.image && <img className={styles.experienceImage} src={item.image} alt="" loading="lazy" />}
+                <div className={styles.experienceCopy}>
+                  <h3>{item.name}</h3>
                 <p>{item.detail}</p>
+                </div>
               </article>
             ))}
           </div>
