@@ -40,7 +40,7 @@ export default function MumbaiOptions({ tiers, optionalExperiences = [] }: Props
               return (
                 <article className={styles.hotelCard} key={tier.id + hotel.name}>
                   <div className={styles.hotelCopy}>
-                    <p className={styles.hotelLabel}>{tier.label} · {hotel.place}</p>
+                    <p className={styles.hotelLabel}>{tier.label} · {tier.price === null ? "Price on request" : `£${tier.price.toLocaleString("en-GB")}pp`} · {hotel.place}</p>
                     <h3>{hotel.name}</h3>
                     <p className={styles.hotelDescription}>{hotel.name === 'Hotel Boat & Co.'
                       ? 'A stylish waterfront hotel in Amsterdam’s Houthavens district, with a relaxed design-led feel.'
