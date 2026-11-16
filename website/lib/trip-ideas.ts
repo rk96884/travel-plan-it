@@ -357,7 +357,7 @@ export const mumbaiWinterSunshine: TripIdea = {
     },
     {
       id: 'premium-jw-marriott',
-      label: 'Premium escape · Hotel Boat & Co. + JW Marriott',
+      label: 'Premium escape',
       price: 2629,
       hotels: [
         { place: 'Amsterdam', name: 'Hotel Boat & Co.', room: 'Premium room · breakfast · one night on each side of the journey', nights: 2 },
