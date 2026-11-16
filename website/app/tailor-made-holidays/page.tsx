@@ -18,7 +18,7 @@ export default function TailorMadeHolidays() {
     <section className={styles.intro}>
       <p className={styles.eyebrow}>TAILOR-MADE HOLIDAYS · ASIA & BEYOND</p>
       <h1>Journeys to make <em>your own.</em></h1>
-      <p>Explore tailor-made holidays in Thailand, Cambodia, Vietnam, Laos, Singapore, Indonesia and Malaysia, with thoughtfully planned twin-centre and multi-country routes and the flexibility to make them your own. These are itinerary ideas, not fixed departures: choose your hotels, refine the route and travel in your own way.</p>
+      <p>Explore tailor-made holidays in India, Thailand, Cambodia, Vietnam, Laos, Singapore, Indonesia and Malaysia, with thoughtfully planned twin-centre and multi-country routes and the flexibility to make them your own. These are itinerary ideas, not fixed departures: choose your hotels, refine the route and travel in your own way.</p>
       <Link className={styles.button} href="/plan-my-trip/">Plan a tailor-made journey ↗</Link>
     </section>
     <section className={styles.collection} aria-labelledby="journeys-heading">
@@ -26,7 +26,7 @@ export default function TailorMadeHolidays() {
       <div className={styles.grid}>{journeys.map(trip=><article className={styles.card} key={trip.slug}>
         <Link href={`/inspiration/${trip.slug}/`} className={styles.photoLink}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          {trip.secondImage.src ? <img src={trip.secondImage.src} alt={trip.secondImage.alt} loading="lazy" referrerPolicy="no-referrer"/> : <div className={styles.imagePending} role="img" aria-label="Destination photography to follow">Singapore · Batam · Johor Bahru</div>}
+          {trip.secondImage.src ? <img src={trip.secondImage.src} alt={trip.secondImage.alt} loading="lazy" referrerPolicy="no-referrer"/> : <div className={styles.imagePending} role="img" aria-label="Destination photography to follow">{trip.secondImage.alt}</div>}
         </Link>
         <div className={styles.copy}><p className={styles.eyebrow}>{trip.eyebrow}</p><h3><Link href={`/inspiration/${trip.slug}/`}>{trip.title}</Link></h3>
           <p>{trip.summary}</p><div className={styles.meta}><span>{trip.duration} / {trip.nights}</span><span>From £{Math.min(...trip.tiers.map(t=>t.price).filter((p): p is number => p !== null)).toLocaleString('en-GB')}pp*</span></div>
