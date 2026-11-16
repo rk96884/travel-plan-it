@@ -28,3 +28,5 @@
 .note{max-width:850px;margin:22px auto 0;text-align:center;line-height:1.6}
 @media(max-width:900px){.destinations{grid-template-columns:1fr}}
 @media(max-width:520px){.section{padding:58px 5%}.card{padding:18px 13px}.month{grid-template-columns:30px minmax(90px,1fr) minmax(80px,.8fr);gap:6px}.temperatures{grid-template-columns:minmax(22px,1fr) 23px minmax(22px,1fr) 23px;gap:3px}.rainfall{gap:4px}.rainfall small{font-size:9px}.legend{gap:10px}}
+
+.compact{padding:0;background:transparent}
