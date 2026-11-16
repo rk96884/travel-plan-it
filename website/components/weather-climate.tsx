@@ -43,7 +43,7 @@ export default function WeatherClimate({ compact = false }: { compact?: boolean 
   const [city, setCity] = useState<'Amsterdam' | 'Mumbai'>('Amsterdam');
   const [units, setUnits] = useState<'C' | 'F'>('C');
   const destination = destinations.find((item) => item.name === city)!;
-  const width = 900, height = 370, left = 62, right = 64, top = 34, bottom = 48;
+  const width = 900, height = 370, left = 92, right = 92, top = 34, bottom = 48;
   const plotW = width - left - right, plotH = height - top - bottom;
   const tMin = units === 'C' ? 0 : 32, tMax = units === 'C' ? 40 : 104;
   const rMax = city === 'Mumbai' ? 900 : 120;
@@ -86,8 +86,8 @@ export default function WeatherClimate({ compact = false }: { compact?: boolean 
           {destination.months.map((item,i) => <rect key={item.month} x={x(i)-17} y={ry(item.rain)} width="34" height={top+plotH-ry(item.rain)} fill="#9ed9e7" opacity=".82" />)}
           {series.map((item) => <g key={item.key}><path d={pathFor(item.values)} fill="none" stroke={item.colour} strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round"/>{item.values.map((v,i)=><circle key={i} cx={x(i)} cy={y(v)} r="4" fill={item.colour}/>)}</g>)}
           {destination.months.map((item,i) => <text key={item.month} x={x(i)} y={height-16} textAnchor="middle">{item.month}</text>)}
-          <text transform={`translate(16 ${top+plotH/2}) rotate(-90)`} textAnchor="middle">Temperature ({units==='C'?'°C':'°F'})</text>
-          <text transform={`translate(${width-10} ${top+plotH/2}) rotate(90)`} textAnchor="middle">Rainfall (mm)</text>
+          <text transform={`translate(24 ${top+plotH/2}) rotate(-90)`} textAnchor="middle">Temperature ({units==='C'?'°C':'°F'})</text>
+          <text transform={`translate(${width-22} ${top+plotH/2}) rotate(90)`} textAnchor="middle">Rainfall (mm)</text>
         </svg>
       </div>
       <p className={styles.source}>Source: <a href={`https://www.timeanddate.com/weather/${city==='Mumbai'?'india/mumbai':'netherlands/amsterdam'}/climate`} target="_blank" rel="noreferrer">{destination.source}</a>. {destination.period}. Figures are historical climate averages, not a forecast. Average temperature line is the midpoint of the displayed monthly high and low.</p>
