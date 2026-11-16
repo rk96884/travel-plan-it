@@ -333,14 +333,14 @@ export const mumbaiWinterSunshine: TripIdea = {
   journeyTitle: 'London to Amsterdam, Mumbai and back.',
   journeyAside: 'Two separate one-night Amsterdam stopovers—one outbound and one on the return—break up the rail and air journey, with six nights on Juhu Beach in Mumbai.',
   hero: {
-    src: '',
-    alt: 'Mumbai’s Juhu Beach and the Arabian Sea',
+    src: '/images/inspiration/mumbai-juhu-beach-hero.webp',
+    alt: 'Golden-hour view across Juhu Beach and the Arabian Sea in Mumbai',
     credit: '',
     creditUrl: '',
   },
   secondImage: {
-    src: '',
-    alt: 'Mumbai skyline and the Arabian Sea at sunset',
+    src: '/images/inspiration/mumbai-gateway-of-india-sunset.webp',
+    alt: 'Gateway of India and the Mumbai harbour in warm evening light',
     credit: '',
     creditUrl: '',
   },
