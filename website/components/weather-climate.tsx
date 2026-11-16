@@ -43,7 +43,7 @@ export default function WeatherClimate({ compact = false }: { compact?: boolean 
   const [city, setCity] = useState<'Amsterdam' | 'Mumbai'>('Amsterdam');
   const [units, setUnits] = useState<'C' | 'F'>('C');
   const destination = destinations.find((item) => item.name === city)!;
-  const width = 900, height = 370, left = 92, right = 92, top = 34, bottom = 48;
+  const width = 900, height = 370, left = 112, right = 112, top = 34, bottom = 48;
   const plotW = width - left - right, plotH = height - top - bottom;
   const tMin = units === 'C' ? 0 : 32, tMax = units === 'C' ? 40 : 104;
   const rMax = city === 'Mumbai' ? 900 : 120;
@@ -81,13 +81,13 @@ export default function WeatherClimate({ compact = false }: { compact?: boolean 
       </div>
       <div className={styles.chartWrap}>
         <svg className={styles.chart} viewBox={`0 0 ${width} ${height}`} role="img" aria-label={`Monthly average minimum, midpoint and maximum temperatures and rainfall for ${city}`}>
-          {ticks.map((tick) => <g key={tick}><line x1={left} x2={width-right} y1={y(tick)} y2={y(tick)} stroke="#d5ded8" strokeWidth="1"/><text x={left-12} y={y(tick)+4} textAnchor="end">{tick}°</text></g>)}
-          {[0, rMax/4, rMax/2, rMax*3/4, rMax].map((tick) => <text key={tick} x={width-right+12} y={ry(tick)+4}>{Math.round(tick)}</text>)}
+          {ticks.map((tick) => <g key={tick}><line x1={left} x2={width-right} y1={y(tick)} y2={y(tick)} stroke="#d5ded8" strokeWidth="1"/><text x={left-28} y={y(tick)+4} textAnchor="end">{tick}°</text></g>)}
+          {[0, rMax/4, rMax/2, rMax*3/4, rMax].map((tick) => <text key={tick} x={width-right+28} y={ry(tick)+4}>{Math.round(tick)}</text>)}
           {destination.months.map((item,i) => <rect key={item.month} x={x(i)-17} y={ry(item.rain)} width="34" height={top+plotH-ry(item.rain)} fill="#9ed9e7" opacity=".82" />)}
           {series.map((item) => <g key={item.key}><path d={pathFor(item.values)} fill="none" stroke={item.colour} strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round"/>{item.values.map((v,i)=><circle key={i} cx={x(i)} cy={y(v)} r="4" fill={item.colour}/>)}</g>)}
           {destination.months.map((item,i) => <text key={item.month} x={x(i)} y={height-16} textAnchor="middle">{item.month}</text>)}
-          <text transform={`translate(24 ${top+plotH/2}) rotate(-90)`} textAnchor="middle">Temperature ({units==='C'?'°C':'°F'})</text>
-          <text transform={`translate(${width-22} ${top+plotH/2}) rotate(90)`} textAnchor="middle">Rainfall (mm)</text>
+          <text transform={`translate(16 ${top+plotH/2}) rotate(-90)`} textAnchor="middle">Temperature ({units==='C'?'°C':'°F'})</text>
+          <text transform={`translate(${width-8} ${top+plotH/2}) rotate(90)`} textAnchor="middle">Rainfall (mm)</text>
         </svg>
       </div>
       <p className={styles.source}>Source: <a href={`https://www.timeanddate.com/weather/${city==='Mumbai'?'india/mumbai':'netherlands/amsterdam'}/climate`} target="_blank" rel="noreferrer">{destination.source}</a>. {destination.period}. Figures are historical climate averages, not a forecast. Average temperature line is the midpoint of the displayed monthly high and low.</p>
