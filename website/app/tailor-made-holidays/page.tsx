@@ -2,16 +2,16 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import SiteHeader from '../../components/site-header';
 import SiteFooter from '../../components/site-footer';
-import { bangkokPhuket, cambodiaTwinCentre, vietnamTwinCentre, laosTwinCentre, singaporeBatamJohor } from '../../lib/trip-ideas';
+import { bangkokPhuket, cambodiaTwinCentre, vietnamTwinCentre, laosTwinCentre, singaporeBatamJohor, mumbaiWinterSunshine } from '../../lib/trip-ideas';
 import styles from './holidays.module.css';
 
 export const metadata: Metadata = {
   title: 'Tailor-Made Holidays | Twin-Centre & Multi-Centre Trips',
-  description: 'Explore tailor-made holidays in Thailand, Cambodia, Vietnam, Laos, Singapore, Indonesia and Malaysia. Compare twin-centre itinerary ideas and personalise your hotels, experiences and route.',
+  description: 'Explore tailor-made holidays in India, Thailand, Cambodia, Vietnam, Laos, Singapore, Indonesia and Malaysia. Compare twin-centre itinerary ideas and personalise your hotels, experiences and route.',
   alternates: { canonical: '/tailor-made-holidays' },
 };
 
-const journeys = [singaporeBatamJohor, bangkokPhuket, cambodiaTwinCentre, vietnamTwinCentre, laosTwinCentre];
+const journeys = [mumbaiWinterSunshine, singaporeBatamJohor, bangkokPhuket, cambodiaTwinCentre, vietnamTwinCentre, laosTwinCentre];
 
 export default function TailorMadeHolidays() {
   return <><SiteHeader/><main id="main" className={styles.page}>
