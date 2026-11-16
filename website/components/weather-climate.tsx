@@ -50,10 +50,10 @@ function toFahrenheit(value: number) {
   return Math.round((value * 9) / 5 + 32);
 }
 
-export default function WeatherClimate() {
+export default function WeatherClimate({ compact = false }: { compact?: boolean }) {
   const [units, setUnits] = useState<'C' | 'F'>('C');
   return (
-    <section className={styles.section} aria-labelledby="climate-heading">
+    <section className={`${styles.section} ${compact ? styles.compact : ''}`} aria-labelledby="climate-heading">
       <div className={styles.heading}>
         <p className={styles.eyebrow}>WHEN TO GO</p>
         <h2 id="climate-heading">Weather throughout the year.</h2>
