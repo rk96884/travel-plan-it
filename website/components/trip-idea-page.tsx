@@ -92,6 +92,7 @@ export default function TripIdeaPage({ trip }: { trip: TripIdea }) {
       <p>{destinationGuidance[trip.country || 'Thailand'].detail}</p>
       <p>Considering another destination? See our <Link href={destinationGuidance[trip.country || 'Thailand'].relatedHref}>{destinationGuidance[trip.country || 'Thailand'].relatedLabel}</Link>, or <Link href="/tailor-made-holidays/">compare all our tailor-made holiday ideas</Link>.</p>
     </section>
+    {trip.country !== "India" && <>
     <section className={styles.tiers} aria-labelledby="tiers-heading">
       <div className={styles.sectionHead}><p className={styles.eyebrow}>YOUR STAY, YOUR STYLE</p><h2 id="tiers-heading">Choose your accommodation.</h2></div>
       <div className={styles.tierGrid}>{trip.tiers.map(tier => <article className={styles.tier} key={tier.id}>
@@ -103,6 +104,7 @@ export default function TripIdeaPage({ trip }: { trip: TripIdea }) {
       <p className={styles.fine}>*Example prices are per person based on two sharing a twin/double room, and include the proposed itinerary. Dates, availability and final prices will be confirmed in a personalised quotation.</p>
     </section>
     {trip.country === "Singapore, Indonesia & Malaysia" ? <ThreeCountryOptions trip={trip} /> : <HolidayDetails trip={trip} />}
+    </>}
     <section className={styles.journey} aria-labelledby="journey-heading">
       <div className={styles.sectionHead}><p className={styles.eyebrow}>YOUR JOURNEY, DAY BY DAY</p><h2 id="journey-heading">{trip.journeyTitle || "From Bangkok to the Andaman Sea."}</h2></div>
       <div className={styles.journeyGrid}><div className={styles.days}>{trip.days.map(day => <article key={day.heading} className={styles.day}><p>{day.heading}</p><div><h3>{day.title}</h3><span>{day.description}</span></div></article>)}</div><div className={styles.journeyAside}><TripPhoto image={trip.secondImage}/><p>{trip.journeyAside || "Seven nights in Phuket, with the freedom to do as much — or as little — as you like."}</p></div></div>
