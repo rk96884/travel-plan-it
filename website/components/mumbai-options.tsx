@@ -64,7 +64,7 @@ export default function MumbaiOptions({ tiers, optionalExperiences = [] }: Props
 
       {activeTab === 'weather' && (
         <div id="panel-weather" role="tabpanel" aria-labelledby="tab-weather" className={styles.panel}>
-          <WeatherClimate />
+          <WeatherClimate compact />
         </div>
       )}
 
