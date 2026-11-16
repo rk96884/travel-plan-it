@@ -393,6 +393,7 @@ export const mumbaiWinterSunshine: TripIdea = {
     'Personal expenses',
   ],
   optionalExperiences: [
+    { name: 'Amsterdam canal cruise and historic centre', image: '/images/excursions/amsterdam-canal-cruise.webp', detail: 'Make the most of your Amsterdam stopover with a relaxed canal cruise past the city’s historic canal houses and bridges, followed by time to explore the surrounding streets and cafés. Can be arranged for either stopover, subject to timing and availability.' },
     { name: 'Mumbai highlights with a private local guide', image: '/images/excursions/mumbai-highlights-gateway-of-india.webp', detail: 'Explore signature sights such as the Gateway of India, the historic Fort district, Chhatrapati Shivaji Maharaj Terminus and the Kala Ghoda arts quarter, with the route shaped around your interests.' },
     { name: 'Elephanta Caves and the harbour', image: '/images/excursions/mumbai-elephanta-caves.webp', detail: 'Take a boat across Mumbai Harbour to the UNESCO-listed Elephanta Caves, known for their remarkable rock-cut temples and sculptures. Boat operations and island access are subject to conditions and opening arrangements.' },
     { name: 'A taste of Mumbai', image: '/images/excursions/mumbai-street-food.webp', detail: 'Discover the city through its food, from much-loved street-food specialities to traditional cafés and regional dishes, with a knowledgeable guide and carefully chosen stops.' },
