@@ -61,29 +61,43 @@ export default function TripIdeaPage({ trip }: { trip: TripIdea }) {
       <TripPhoto image={trip.hero} className={styles.heroPhoto}/>
     </section>
     <section className={styles.intro}><p className={styles.eyebrow}>{trip.introEyebrow || "ONE JOURNEY, TWO SIDES OF THAILAND"}</p><h2>{trip.introTitle || "City energy. Island ease."}</h2><p>{trip.introText || "Start among Bangkok’s riverside temples, gilded palaces and colourful markets. Then fly south to Phuket for unhurried days by the coast. The guided experiences and transfers stay the same whichever accommodation style you choose."}</p></section>
-    {trip.country === 'India' && <section className={styles.tiers} aria-labelledby="accommodation-heading">
-      <div className={styles.sectionHead}>
-        <p className={styles.eyebrow}>YOUR STAY, YOUR STYLE</p>
-        <h2 id="accommodation-heading">Choose your accommodation.</h2>
-      </div>
-      <div className={styles.tierGrid}>
-        {trip.tiers.map((tier) => <article className={styles.tier} key={tier.id}>
-          <p className={styles.tierLabel}>{tier.label}</p>
-          <p className={styles.price}>£{tier.price?.toLocaleString('en-GB')} <span>pp*</span></p>
-          <p className={styles.tierSummary}>{tier.note}</p>
-          <ul className={styles.packageHotels}>
-            {tier.hotels.map((hotel) => <li key={hotel.name}>
-              <strong>{hotel.place} · {hotel.place === 'Amsterdam' ? '1 night each way' : `${hotel.nights} nights`}</strong>
-              <span>{hotel.name}</span>
-              <small>{hotel.room}</small>
-            </li>)}
-          </ul>
-          <TrackedEnquiryLink className={styles.button} href={enquiry(tier.id)} tripSlug={trip.slug} position={`package-${tier.id}`}>Enquire about {tier.id === 'essential' ? 'essential' : 'premium'} escape ↗</TrackedEnquiryLink>
-        </article>)}
-      </div>
-      <p className={styles.packageFootnote}>*Example prices are per person based on two sharing a twin/double room, and include the proposed itinerary. Dates, availability and final prices will be confirmed in a personalised quotation.</p>
-    </section>}
-    {trip.country === 'India' && <MumbaiOptions tiers={trip.tiers} optionalExperiences={trip.optionalExperiences} />}
+    {trip.country === 'India' ? <>
+      <section className={styles.tiers} aria-labelledby="accommodation-heading">
+        <div className={styles.sectionHead}>
+          <p className={styles.eyebrow}>YOUR STAY, YOUR STYLE</p>
+          <h2 id="accommodation-heading">Choose your accommodation.</h2>
+        </div>
+        <div className={styles.tierGrid}>
+          {trip.tiers.map((tier) => <article className={styles.tier} key={tier.id}>
+            <p className={styles.tierLabel}>{tier.label}</p>
+            <p className={styles.price}>£{tier.price?.toLocaleString('en-GB')} <span>pp*</span></p>
+            <p className={styles.tierSummary}>{tier.note}</p>
+            <ul className={styles.packageHotels}>
+              {tier.hotels.map((hotel) => <li key={hotel.name}>
+                <strong>{hotel.place} · {hotel.place === 'Amsterdam' ? '1 night each way' : `${hotel.nights} nights`}</strong>
+                <span>{hotel.name}</span>
+                <small>{hotel.room}</small>
+              </li>)}
+            </ul>
+            <TrackedEnquiryLink className={styles.button} href={enquiry(tier.id)} tripSlug={trip.slug} position={`package-${tier.id}`}>Enquire about {tier.id === 'essential' ? 'essential' : 'premium'} escape ↗</TrackedEnquiryLink>
+          </article>)}
+        </div>
+        <p className={styles.packageFootnote}>*Example prices are per person based on two sharing a twin/double room, and include the proposed itinerary. Dates, availability and final prices will be confirmed in a personalised quotation.</p>
+      </section>
+      <MumbaiOptions tiers={trip.tiers} optionalExperiences={trip.optionalExperiences} />
+    </> : <>
+      <section className={styles.tiers} aria-labelledby="tiers-heading">
+        <div className={styles.sectionHead}><p className={styles.eyebrow}>YOUR STAY, YOUR STYLE</p><h2 id="tiers-heading">Choose your accommodation.</h2></div>
+        <div className={styles.tierGrid}>{trip.tiers.map(tier => <article className={styles.tier} key={tier.id}>
+          <p className={styles.tierLabel}>{tier.label}</p><p className={styles.price}>{tier.price === null ? "Price on request" : <>£{tier.price.toLocaleString("en-GB")} <span>pp*</span></>}</p>
+          <p>{tier.note}</p>
+          <ul>{tier.hotels.map(hotel => <li key={hotel.name}><strong>{hotel.place} · {hotel.nights} nights</strong><span>{hotel.name}</span><small>{hotel.room}</small></li>)}</ul>
+          <TrackedEnquiryLink className={styles.button} href={enquiry(tier.id)} tripSlug={trip.slug} position="accommodation" tier={tier.id}>Enquire about {tier.label.toLowerCase()} ↗</TrackedEnquiryLink>
+        </article>)}</div>
+        <p className={styles.fine}>*Example prices are per person based on two sharing a twin/double room, and include the proposed itinerary. Dates, availability and final prices will be confirmed in a personalised quotation.</p>
+      </section>
+      {trip.country === "Singapore, Indonesia & Malaysia" ? <ThreeCountryOptions trip={trip} /> : <HolidayDetails trip={trip} />}
+    </>}
     <section className={styles.intro}>
       <p className={styles.eyebrow}>MAKE THIS JOURNEY YOUR OWN</p>
       <h2>{destinationGuidance[trip.country || 'Thailand'].heading}</h2>
