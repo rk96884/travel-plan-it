@@ -1,0 +1,30 @@
+.section{padding:82px max(5%,calc((100vw - 1320px)/2));background:#f6f2e9;color:#173f3a}
+.heading{max-width:760px;margin:0 auto 38px;text-align:center}
+.eyebrow{font-size:11px;letter-spacing:2px;font-weight:700;margin:0 0 16px}
+.heading h2{font:400 clamp(34px,4vw,54px)/1.12 Georgia,serif;letter-spacing:-1px;margin:0 0 16px}
+.heading>p:not(.eyebrow){color:#4e635e;line-height:1.6}
+.controls{display:inline-flex;border:1px solid #9aada3;padding:3px;margin-top:14px}
+.controls button{border:0;background:transparent;color:#173f3a;padding:8px 18px;font:600 14px Arial;cursor:pointer}
+.controls button[aria-pressed=true]{background:#173f3a;color:white}
+.destinations{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.card{background:#fffdf8;border:1px solid #d4ded5;padding:28px;min-width:0}
+.cardHeading{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+.cardHeading h3{font:400 30px Georgia,serif;margin:0}
+.cardHeading span,.source,.note{font-size:12px;color:#5b716b}
+.legend{display:flex;gap:16px;flex-wrap:wrap;margin:22px 0 12px;font-size:11px;color:#536a61}
+.legend span{display:flex;align-items:center;gap:6px}
+.legend i{width:9px;height:9px;border-radius:2px;display:inline-block}
+.highKey,.highBar{background:#c9664f}.lowKey,.lowBar{background:#287b78}.rainKey,.rainTrack i{background:#a9c5bf}
+.month{display:grid;grid-template-columns:34px minmax(100px,1fr) minmax(100px,1fr);gap:9px;align-items:center;padding:8px 0;border-top:1px solid #e6ebe5}
+.monthName{font-size:12px;font-weight:700}
+.temperatures{display:grid;grid-template-columns:minmax(30px,1fr) 27px minmax(30px,1fr) 27px;gap:5px;align-items:center}
+.tempTrack,.rainTrack{height:8px;background:#edf0eb;border-radius:10px;overflow:hidden}
+.highBar,.lowBar{height:100%;display:block;border-radius:10px}
+.temperatures strong{font-size:11px;font-weight:600;font-variant-numeric:tabular-nums}
+.rainfall{display:flex;align-items:center;gap:7px;min-width:0}
+.rainTrack{flex:1;min-width:20px}.rainTrack i{height:100%;display:block;border-radius:10px}
+.rainfall small{font-size:10px;white-space:nowrap;color:#536a61;font-variant-numeric:tabular-nums}
+.source{line-height:1.6;margin:18px 0 0}.source a{color:#285850;text-decoration:underline}
+.note{max-width:850px;margin:22px auto 0;text-align:center;line-height:1.6}
+@media(max-width:900px){.destinations{grid-template-columns:1fr}}
+@media(max-width:520px){.section{padding:58px 5%}.card{padding:18px 13px}.month{grid-template-columns:30px minmax(90px,1fr) minmax(80px,.8fr);gap:6px}.temperatures{grid-template-columns:minmax(22px,1fr) 23px minmax(22px,1fr) 23px;gap:3px}.rainfall{gap:4px}.rainfall small{font-size:9px}.legend{gap:10px}}
