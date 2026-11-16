@@ -19,7 +19,7 @@ export type TripIdea = {
   included: string[];
   excluded: string[];
   faqs: { question: string; answer: string }[];
-  optionalExperiences?: { name: string; detail: string }[];
+  optionalExperiences?: { name: string; detail: string; image?: string }[];
 };
 
 export const bangkokPhuket: TripIdea = {
