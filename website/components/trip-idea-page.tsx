@@ -62,7 +62,6 @@ export default function TripIdeaPage({ trip }: { trip: TripIdea }) {
     </section>
     <section className={styles.intro}><p className={styles.eyebrow}>{trip.introEyebrow || "ONE JOURNEY, TWO SIDES OF THAILAND"}</p><h2>{trip.introTitle || "City energy. Island ease."}</h2><p>{trip.introText || "Start among Bangkok’s riverside temples, gilded palaces and colourful markets. Then fly south to Phuket for unhurried days by the coast. The guided experiences and transfers stay the same whichever accommodation style you choose."}</p></section>
     {trip.country === 'India' && <>
-    {trip.country === 'India' ? <>
       <section className={styles.tiers} aria-labelledby="accommodation-heading">
         <div className={styles.sectionHead}>
           <p className={styles.eyebrow}>YOUR STAY, YOUR STYLE</p>
@@ -86,7 +85,6 @@ export default function TripIdeaPage({ trip }: { trip: TripIdea }) {
         <p className={styles.packageFootnote}>*Example prices are per person based on two sharing a twin/double room, and include the proposed itinerary. Dates, availability and final prices will be confirmed in a personalised quotation.</p>
       </section>
       <MumbaiOptions tiers={trip.tiers} optionalExperiences={trip.optionalExperiences} />
-    </>
     </>}
     <section className={styles.intro}>
       <p className={styles.eyebrow}>MAKE THIS JOURNEY YOUR OWN</p>
