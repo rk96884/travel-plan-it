@@ -8,10 +8,10 @@ import styles from './mumbai-options.module.css';
 type Props = Pick<TripIdea, 'tiers' | 'optionalExperiences'>;
 
 const hotelImages: Record<string, { src: string; alt: string }> = {
-  'Hotel Boat & Co.': { src: '/images/inspiration/hotel-boat-and-co-room.webp', alt: 'Guest room at Hotel Boat & Co. in Amsterdam' },
-  'ibis Amsterdam City Centre': { src: '/images/inspiration/ibis-amsterdam-city-centre-room.webp', alt: 'Guest room at ibis Amsterdam City Centre' },
-  'Novotel Mumbai Juhu Beach': { src: '/images/inspiration/novotel-mumbai-juhu-beach-room.webp', alt: 'Guest room at Novotel Mumbai Juhu Beach' },
-  'JW Marriott Mumbai Juhu': { src: '/images/inspiration/jw-marriott-mumbai-premier-club-room.webp', alt: 'Premier Club Room at JW Marriott Mumbai Juhu' },
+  'Hotel Boat & Co.': { src: '/images/hotels/hotel-boat-and-co-room.webp', alt: 'Guest room at Hotel Boat & Co. in Amsterdam' },
+  'ibis Amsterdam City Centre': { src: '/images/hotels/ibis-amsterdam-city-centre-room.webp', alt: 'Guest room at ibis Amsterdam City Centre' },
+  'Novotel Mumbai Juhu Beach': { src: '/images/hotels/novotel-mumbai-juhu-beach-room.webp', alt: 'Guest room at Novotel Mumbai Juhu Beach' },
+  'JW Marriott Mumbai Juhu': { src: '/images/hotels/jw-marriott-mumbai-premier-club-room.webp', alt: 'Premier Club Room at JW Marriott Mumbai Juhu' },
 };
 
 export default function MumbaiOptions({ tiers, optionalExperiences = [] }: Props) {
