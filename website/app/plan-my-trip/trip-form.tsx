@@ -58,6 +58,16 @@ type TripPrefill = {
 };
 
 const tripPrefills: Record<string, TripPrefill> = {
+  'mumbai-winter-sunshine': {
+    destination: 'India — Mumbai winter sunshine and Juhu Beach stay',
+    style: 'Mumbai city and beach escape, with a flexible choice of relaxation and optional local sightseeing',
+    duration: '10 days / 8 nights',
+    notes: 'Interested in the Mumbai winter sunshine itinerary. Essential is £1,499pp and Premium is £2,629pp, based on two sharing. Premium includes Hotel Boat & Co. in Amsterdam and a Premier Club Room at JW Marriott Mumbai Juhu, with breakfast. All prices are indicative and subject to a personalised quotation. Mumbai sightseeing is optional and not included unless added.',
+    options: {
+      essential: 'Essential escape (ibis Amsterdam City Centre + Novotel Mumbai Juhu Beach, Superior Ocean View room)',
+      'premium-jw-marriott': 'Premium escape — Hotel Boat & Co. Amsterdam + six nights in a Premier Club Room at JW Marriott Mumbai Juhu (£2,629pp indicative)',
+    },
+  },
   'singapore-batam-johor-three-country': {
     destination: 'Singapore, Indonesia & Malaysia — Singapore, Batam and Johor Bahru',
     style: 'Private Singapore city and Sentosa tour, Big Bus sightseeing, Batam resort stay and Johor Bahru exploration with ferries and private transfers',

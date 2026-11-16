@@ -638,3 +638,80 @@
 
 /* Await licensed destination photographs before publishing image assets. */
 .photoPlaceholder { display: flex; align-items: center; justify-content: center; min-height: 100%; height: 100%; padding: 2rem; background: linear-gradient(145deg,#143e48,#167c83 48%,#f0b57c); color: white; font: 400 clamp(1.5rem,3vw,3rem)/1.2 Georgia,serif; text-align: center; }
+
+
+/* Mumbai: use the neutral destination layout, not Bangkok/Phuket image rules. */
+.mumbai .heroPhoto {
+    min-height: 620px;
+    background: #e8eee9;
+}
+
+.mumbai .heroPhoto img {
+    object-fit: cover;
+    object-position: center;
+}
+
+.mumbai .journeyAside .photo {
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 4 / 3;
+}
+
+.mumbai .journeyAside .photo img {
+    position: static;
+    display: block;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    object-position: center;
+}
+
+@media(max-width:850px) {
+    .mumbai .heroPhoto { min-height: 420px; }
+    .mumbai .journeyAside .photo { height: auto; }
+}
+
+@media(max-width:580px) {
+    .mumbai .heroPhoto { min-height: 360px; }
+}
+
+
+/* Mumbai accommodation comparison cards, matching the established itinerary package layout. */
+.mumbai .tiers {
+    background: #fffdf8;
+    padding: 72px max(5%, calc((100vw - 1320px)/2)) 78px;
+}
+.mumbai .tiers .sectionHead { margin-bottom: 32px; }
+.mumbai .tiers .sectionHead .eyebrow { color: #173f3a; margin-bottom: 20px; }
+.mumbai .tiers .sectionHead h2 { font-size: clamp(38px, 4vw, 54px); }
+.mumbai .tierGrid { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 22px; }
+.mumbai .tier {
+    border: 1px solid #b7c8bd;
+    padding: 36px 38px;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+.mumbai .tierLabel { margin: 0 0 10px; color: #b84f3e; }
+.mumbai .price { margin: 0 0 8px; font-size: 52px; }
+.mumbai .price span { font-size: 16px; }
+.mumbai .tierSummary { color: #4e635e; line-height: 1.55; min-height: 48px; margin: 0 0 34px; }
+.mumbai .packageHotels { list-style: none; padding: 0; margin: 0 0 28px; }
+.mumbai .packageHotels li { display: flex; flex-direction: column; border-top: 1px solid #dce5de; padding: 15px 0; }
+.mumbai .packageHotels li strong { font-size: 12px; letter-spacing: 1px; text-transform: uppercase; }
+.mumbai .packageHotels li span { font-size: 19px; margin-top: 7px; color: #173f3a; }
+.mumbai .packageHotels li small { color: #586c62; font-size: 13px; margin-top: 4px; line-height: 1.5; }
+.mumbai .tier .button { align-self: flex-start; margin-top: auto; }
+.mumbai .packageFootnote { max-width: 760px; margin: 18px 0 0; font-size: 12px; line-height: 1.7; color: #526b63; }
+.mumbai .journeyAside .photo { aspect-ratio: 4 / 3; }
+@media(max-width:850px) {
+    .mumbai .tierGrid { grid-template-columns: 1fr; }
+    .mumbai .tierSummary { min-height: 0; }
+}
+@media(max-width:580px) {
+    .mumbai .tiers { padding: 55px 6%; }
+    .mumbai .tier { padding: 26px 24px; }
+    .mumbai .price { font-size: 46px; }
+}
