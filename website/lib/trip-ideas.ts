@@ -386,7 +386,7 @@ export const mumbaiWinterSunshine: TripIdea = {
   ],
   included: [
     'Return Eurostar train travel between London St Pancras International and Amsterdam Centraal, including two large pieces of luggage per person',
-    'Two nights at ibis Amsterdam City Centre in a Cosy Room with breakfast, one night on each side of the Mumbai stay',
+    'Two nights at ibis Amsterdam City Centre in a Cosy Room with breakfast, one night on each side of the Mumbai stay, with breakfast boxes requested for early departures where available',
     'Six nights in Mumbai in a twin or double room, with breakfast, at the selected Essential or Premium hotel',
     'Return economy flights between Amsterdam and Mumbai with IndiGo, proposed with 30 kg checked baggage per person',
     'Train transfers between Amsterdam Centraal and Amsterdam Schiphol Airport Station in both directions',
