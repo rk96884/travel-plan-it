@@ -357,13 +357,13 @@ export const mumbaiWinterSunshine: TripIdea = {
     },
     {
       id: 'premium-jw-marriott',
-      label: 'Premium escape · JW Marriott',
-      price: null,
+      label: 'Premium escape · Hotel Boat & Co. + JW Marriott',
+      price: 2629,
       hotels: [
-        { place: 'Amsterdam', name: 'ibis Amsterdam City Centre', room: 'Cosy Room · breakfast · one night on each side of the journey', nights: 2 },
-        { place: 'Mumbai · Juhu Beach', name: 'JW Marriott Mumbai Juhu', room: 'Premium room category with Arabian Sea view · breakfast, subject to confirmation', nights: 6 },
+        { place: 'Amsterdam', name: 'Hotel Boat & Co.', room: 'Premium room · breakfast · one night on each side of the journey', nights: 2 },
+        { place: 'Mumbai · Juhu Beach', name: 'JW Marriott Mumbai Juhu', room: 'Premier Club Room · breakfast', nights: 6 },
       ],
-      note: 'An elevated beachfront resort stay with multiple pools, a spa and a choice of dining, while retaining the convenient Amsterdam stopovers.',
+      note: 'A design-led Amsterdam stay at Hotel Boat & Co., paired with six nights in a Premier Club Room at JW Marriott Mumbai Juhu.',
     },
   ],
   days: [
@@ -376,7 +376,7 @@ export const mumbaiWinterSunshine: TripIdea = {
   ],
   included: [
     'Return Eurostar train travel between London St Pancras International and Amsterdam Centraal, including two large pieces of luggage per person',
-    'Two separate one-night stays at ibis Amsterdam City Centre in a Cosy Room with breakfast: one night before the outbound flight and one night after the return flight from Mumbai. Breakfast boxes can be requested for early departures, subject to hotel availability',
+    'Two separate one-night stays at the selected Amsterdam hotel with breakfast: one night before the outbound flight and one night after the return flight from Mumbai. Essential uses ibis Amsterdam City Centre; Premium uses Hotel Boat & Co. Breakfast boxes can be requested for early departures, subject to hotel availability',
     'Six nights in Mumbai in a twin or double room, with breakfast, at the selected Essential or Premium hotel',
     'Return economy flights between Amsterdam and Mumbai with IndiGo, proposed with 30 kg checked baggage per person',
     'Train transfers between Amsterdam Centraal and Amsterdam Schiphol Airport Station in both directions',
@@ -405,8 +405,8 @@ export const mumbaiWinterSunshine: TripIdea = {
   entryAdviceUrl: 'https://www.gov.uk/foreign-travel-advice/india/entry-requirements',
   faqs: [
     { question: 'Is this a fixed-date package?', answer: 'No. This is a flexible itinerary idea based on an example set of travel arrangements. We can check your preferred dates and confirm current Eurostar, flight and hotel options in a personalised quotation.' },
-    { question: 'Why is there an overnight stay in Amsterdam in both directions?', answer: 'The proposed routing includes one night in Amsterdam before the outbound flight and another night after the return flight from Mumbai. ibis Amsterdam City Centre is beside Amsterdam Centraal, making the train and hotel connection straightforward.' },
-    { question: 'What is the difference between Essential and Premium?', answer: 'The Essential option is based on Novotel Mumbai Juhu Beach in a Superior Ocean View room. Premium offers a choice of JW Marriott Mumbai Juhu or Ramada Plaza by Wyndham Palm Grove. Premium pricing and exact room categories are still to be confirmed.' },
+    { question: 'Why is there an overnight stay in Amsterdam in both directions?', answer: 'The proposed routing includes one night in Amsterdam before the outbound flight and another night after the return flight from Mumbai. The Essential option uses ibis Amsterdam City Centre; Premium uses Hotel Boat & Co. Hotel location and transfer arrangements will be reconfirmed in your quotation.' },
+    { question: 'What is the difference between Essential and Premium?', answer: 'The Essential option is based on Novotel Mumbai Juhu Beach in a Superior Ocean View room, with ibis Amsterdam City Centre for both stopovers. Premium is £2,629pp and pairs Hotel Boat & Co. in Amsterdam with a Premier Club Room at JW Marriott Mumbai Juhu, including breakfast, based on two sharing.' },
     { question: 'Are sightseeing tours included?', answer: 'No. The Mumbai stay is intentionally left open so you can choose how much time to spend relaxing and how much exploring. The experiences shown are ideas that can be added to your personalised itinerary and quotation.' },
     { question: 'Can the hotel or room category be changed?', answer: 'Yes. The listed hotels and room categories are proposed starting points. We can discuss alternatives, subject to availability and a revised quotation.' },
     { question: 'Do I need a visa for India?', answer: 'Entry requirements depend on your nationality and can change. Check the latest UK government entry guidance and the official Indian visa portal before travel. Any visa or e-visa application and fee is not included in the example price.' },
