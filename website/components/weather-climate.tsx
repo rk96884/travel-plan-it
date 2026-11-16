@@ -62,7 +62,7 @@ export default function WeatherClimate({ compact = false }: { compact?: boolean 
     <section className={`${styles.section} ${compact ? styles.compact : ''}`} aria-labelledby="climate-heading">
       <div className={styles.heading}>
         <p className={styles.eyebrow}>WHEN TO GO</p>
-        <h2 id="climate-heading">Weather throughout the year.</h2>
+        <h2 id="climate-heading">Find your best time to go.</h2>
         <p>Explore typical monthly temperatures and rainfall for each stop on your journey.</p>
       </div>
       <div className={styles.cityTabs} role="tablist" aria-label="Choose a city">
