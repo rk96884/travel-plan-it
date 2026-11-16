@@ -52,7 +52,7 @@ export default function WeatherClimate({ compact = false }: { compact?: boolean 
   const ry = (v: number) => top + plotH - (v / rMax) * plotH;
   const series = [
     { key: 'low', label: 'Min temp', colour: '#2462bd', values: destination.months.map((m) => units === 'C' ? m.low : fahrenheit(m.low)) },
-    { key: 'average', label: 'Average temp', colour: '#e69a00', values: destination.months.map((m) => { const v=(m.high+m.low)/2; return units === 'C' ? v : fahrenheit(v); }) },
+    { key: 'average', label: 'High/low midpoint', colour: '#e69a00', values: destination.months.map((m) => { const v=(m.high+m.low)/2; return units === 'C' ? v : fahrenheit(v); }) },
     { key: 'high', label: 'Max temp', colour: '#cf3028', values: destination.months.map((m) => units === 'C' ? m.high : fahrenheit(m.high)) },
   ];
   const pathFor = (values: number[]) => values.map((v,i) => `${i===0?'M':'L'} ${x(i)} ${y(v)}`).join(' ');
