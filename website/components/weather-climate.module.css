@@ -17,8 +17,8 @@
 .legend span{display:flex;align-items:center;gap:7px}
 .legend i{width:24px;height:8px;display:inline-block}
 .rainKey{background:#9ed9e7}
-.chartWrap{width:100%;overflow-x:auto}
-.chart{display:block;width:100%;min-width:640px;height:auto;overflow:visible}
+.chartWrap{width:100%;max-width:960px;margin:0 auto;overflow-x:auto}
+.chart{display:block;width:100%;max-width:960px;min-width:0;height:auto;overflow:visible}
 .chart text{font:12px Arial,sans-serif;fill:#536a61}
 .source{font-size:12px;color:#5b716b;line-height:1.6;margin:18px 0 0}
 .source a{color:#285850;text-decoration:underline}
