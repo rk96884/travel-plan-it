@@ -82,7 +82,7 @@ export default function MumbaiOptions({ tiers, optionalExperiences = [] }: Props
               </article>
             ))}
           </div>
-          <p className={styles.disclaimer}>Optional experiences are not included in the package price. Any guiding, transport, tickets and additional costs will be confirmed before you decide.</p>
+          <p className={`${styles.disclaimer} ${styles.experienceFootnote}`}>Optional experiences are not included in the package price. Any guiding, transport, tickets and additional costs will be confirmed before you decide.</p>
         </div>
       )}
     </section>
