@@ -19,6 +19,7 @@ export type TripIdea = {
   included: string[];
   excluded: string[];
   faqs: { question: string; answer: string }[];
+  optionalExperiences?: { name: string; detail: string }[];
 };
 
 export const bangkokPhuket: TripIdea = {
@@ -314,5 +315,111 @@ export const singaporeBatamJohor: TripIdea = {
     { question: 'Can I choose different dates or hotels?', answer: 'Yes. This is a flexible tailor-made itinerary, not a fixed dated departure. We can revise the hotels, travel dates, length of stay and optional experiences.' },
     { question: 'What entry formalities apply across the three countries?', answer: 'Immigration and visa rules differ across Singapore, Indonesia and Malaysia, and depend on nationality. Check the relevant UK government travel advice for all three countries before travel; ferry and road crossings require passport formalities.' },
     { question: 'Are the proposed flight and ferry timings confirmed?', answer: 'No. Flight schedules, ferry ports, sailings, border-crossing time and transport arrangements are subject to reconfirmation for your chosen travel dates.' },
+  ],
+};
+
+
+export const mumbaiWinterSunshine: TripIdea = {
+  slug: 'mumbai-winter-sunshine',
+  country: 'India',
+  title: 'Mumbai: winter sunshine in India’s Maximum City',
+  eyebrow: 'INDIA · BEACH & CITY ESCAPE',
+  summary: 'Swap the winter chill for warm Arabian Sea sunsets and the energy of Mumbai. Stay on Juhu Beach, with the freedom to relax by the sea, explore the city’s celebrated landmarks or discover the neighbourhoods and hidden gems known to a planner with deep family roots in Mumbai.',
+  duration: '10 days',
+  nights: '8 nights',
+  introEyebrow: 'A WINTER CITY ESCAPE WITH A BEACHFRONT BASE',
+  introTitle: 'Maximum City. Your own pace.',
+  introText: 'Mumbai is a city of contrasts: grand colonial-era landmarks, lively markets, creative neighbourhoods, extraordinary food and a coastline that comes alive at sunset. Your base is Juhu, one of the city’s best-known seaside neighbourhoods, where you can enjoy six nights by the Arabian Sea. The winter months are generally among the more comfortable times to explore, with drier weather and warm daytime temperatures. This itinerary deliberately leaves your days in Mumbai open, so you can decide how much sightseeing, local discovery and time by the pool or beach feels right.',
+  journeyTitle: 'London to Amsterdam, Mumbai and back.',
+  journeyAside: 'A relaxed two-night Amsterdam stopover breaks up the rail and air journey, with six nights on Juhu Beach in Mumbai.',
+  hero: {
+    src: '',
+    alt: 'Mumbai’s Juhu Beach and the Arabian Sea',
+    credit: '',
+    creditUrl: '',
+  },
+  secondImage: {
+    src: '',
+    alt: 'Mumbai skyline and the Arabian Sea at sunset',
+    credit: '',
+    creditUrl: '',
+  },
+  tiers: [
+    {
+      id: 'essential',
+      label: 'Essential escape',
+      price: 1499,
+      hotels: [
+        { place: 'Amsterdam', name: 'ibis Amsterdam City Centre', room: 'Cosy Room · breakfast · one night on each side of the journey', nights: 2 },
+        { place: 'Mumbai · Juhu Beach', name: 'Novotel Mumbai Juhu Beach', room: 'Superior Ocean View room · breakfast', nights: 6 },
+      ],
+      note: 'A beachfront Juhu stay with an ocean-view room, plus convenient overnight stops in central Amsterdam.',
+    },
+    {
+      id: 'premium-jw-marriott',
+      label: 'Premium escape · JW Marriott',
+      price: null,
+      hotels: [
+        { place: 'Amsterdam', name: 'ibis Amsterdam City Centre', room: 'Cosy Room · breakfast · one night on each side of the journey', nights: 2 },
+        { place: 'Mumbai · Juhu Beach', name: 'JW Marriott Mumbai Juhu', room: 'Premium room category with Arabian Sea view · breakfast, subject to confirmation', nights: 6 },
+      ],
+      note: 'An elevated beachfront resort stay with multiple pools, a spa and a choice of dining, while retaining the convenient Amsterdam stopovers.',
+    },
+    {
+      id: 'premium-ramada',
+      label: 'Premium escape · Ramada Plaza',
+      price: null,
+      hotels: [
+        { place: 'Amsterdam', name: 'ibis Amsterdam City Centre', room: 'Cosy Room · breakfast · one night on each side of the journey', nights: 2 },
+        { place: 'Mumbai · Juhu Beach', name: 'Ramada Plaza by Wyndham Palm Grove', room: 'Sea-facing room category · breakfast, subject to confirmation', nights: 6 },
+      ],
+      note: 'A classic beachfront Juhu hotel with Arabian Sea views and a more relaxed resort atmosphere, alongside the Amsterdam stopovers.',
+    },
+  ],
+  days: [
+    { heading: 'DAY 1', title: 'London to Amsterdam', description: 'Depart London St Pancras International by Eurostar in the morning and arrive at Amsterdam Centraal around lunchtime. Check in for one night at ibis Amsterdam City Centre, conveniently located within the station complex. The hotel places you in the heart of the city, close to canals, cafés, museums and public transport. The remainder of the day is at leisure.' },
+    { heading: 'DAY 2', title: 'Amsterdam to Mumbai', description: 'Check out in the morning and take the direct train from Amsterdam Centraal to Schiphol Airport, usually around 15–20 minutes. Fly to Mumbai with IndiGo, with the proposed service departing in the early afternoon. Flight schedules and baggage arrangements will be reconfirmed when quoting.' },
+    { heading: 'DAY 3', title: 'Arrive in Mumbai · welcome to Juhu', description: 'Arrive at Mumbai Chhatrapati Shivaji Maharaj International Airport in the early hours. After immigration, baggage collection and customs, meet your driver, who will be holding a name board, for a private air-conditioned transfer to your Juhu beachfront hotel. Your six-night stay begins, with early-morning room access planned on arrival so you can settle in and rest. The rest of the day is at leisure.' },
+    { heading: 'DAYS 4–8', title: 'Mumbai, your way', description: 'Five full days to enjoy Mumbai at your own pace. Relax by the pool, stroll along Juhu Beach and watch the sun set over the Arabian Sea, or ask us to arrange private sightseeing, food experiences, cultural visits and excursions. We will shape the balance of relaxation and exploration around you; no sightseeing tours are included unless added to your personalised quotation.' },
+    { heading: 'DAY 9', title: 'Mumbai to Amsterdam', description: 'A very early private transfer takes you to Mumbai airport for your return IndiGo flight to Amsterdam, proposed to depart in the early morning and arrive around late morning. After arrival formalities, take the train from Schiphol Airport to Amsterdam Centraal and check in for a second night at ibis Amsterdam City Centre. The rest of the day is at leisure.' },
+    { heading: 'DAY 10', title: 'Amsterdam to London', description: 'Check out in the morning and make your way to Amsterdam Centraal for your return Eurostar journey to London St Pancras International, arriving in the early afternoon. Flight and train schedules are indicative and will be checked for your chosen dates.' },
+  ],
+  included: [
+    'Return Eurostar train travel between London St Pancras International and Amsterdam Centraal, including two large pieces of luggage per person',
+    'Two nights at ibis Amsterdam City Centre in a Cosy Room with breakfast, one night on each side of the Mumbai stay',
+    'Six nights in Mumbai in a twin or double room, with breakfast, at the selected Essential or Premium hotel',
+    'Return economy flights between Amsterdam and Mumbai with IndiGo, proposed with 30 kg checked baggage per person',
+    'Train transfers between Amsterdam Centraal and Amsterdam Schiphol Airport Station in both directions',
+    'Private chauffeur-driven, air-conditioned airport transfers in Mumbai',
+    'Meet-and-greet on arrival at Mumbai airport',
+    'Early-morning room access at the Mumbai hotel on arrival, as proposed and subject to hotel confirmation',
+  ],
+  excluded: [
+    'Indian visa or e-visa fees, where applicable',
+    'Travel insurance',
+    'Tips and gratuities',
+    'Optional tours, excursions, guides and entrance fees',
+    'Any meals or drinks not specified',
+    'Personal expenses',
+  ],
+  optionalExperiences: [
+    { name: 'Mumbai highlights with a private local guide', detail: 'Explore signature sights such as the Gateway of India, the historic Fort district, Chhatrapati Shivaji Maharaj Terminus and the Kala Ghoda arts quarter, with the route shaped around your interests.' },
+    { name: 'Elephanta Caves and the harbour', detail: 'Take a boat across Mumbai Harbour to the UNESCO-listed Elephanta Caves, known for their remarkable rock-cut temples and sculptures. Boat operations and island access are subject to conditions and opening arrangements.' },
+    { name: 'A taste of Mumbai', detail: 'Discover the city through its food, from much-loved street-food specialities to traditional cafés and regional dishes, with a knowledgeable guide and carefully chosen stops.' },
+    { name: 'Markets, shopping and hidden lanes', detail: 'Explore the colour and character of Mumbai’s markets and neighbourhoods, from historic bazaars to independent boutiques and local shopping streets.' },
+    { name: 'Dharavi community-led experience', detail: 'If of interest, consider a responsible, locally led visit that focuses on the area’s enterprise and community life, with a respectful approach to residents and photography.' },
+    { name: 'Bollywood behind the scenes', detail: 'Discover Mumbai’s film heritage with a studio or Bollywood-themed experience, subject to access, schedules and availability.' },
+    { name: 'Bandra, the seafront and city viewpoints', detail: 'Explore Bandra’s cafés, street art and heritage corners, and take in views across the coastline and the Bandra–Worli Sea Link.' },
+    { name: 'A slower day in Juhu', detail: 'Keep a day free for the beach, hotel pool and spa, a sunset stroll and dinner overlooking the Arabian Sea.' },
+  ],
+  entryAdviceUrl: 'https://www.gov.uk/foreign-travel-advice/india/entry-requirements',
+  faqs: [
+    { question: 'Is this a fixed-date package?', answer: 'No. This is a flexible itinerary idea based on an example set of travel arrangements. We can check your preferred dates and confirm current Eurostar, flight and hotel options in a personalised quotation.' },
+    { question: 'Why is there an overnight stay in Amsterdam in both directions?', answer: 'The proposed routing includes one night in Amsterdam before the outbound flight and another night after the return flight from Mumbai. ibis Amsterdam City Centre is beside Amsterdam Centraal, making the train and hotel connection straightforward.' },
+    { question: 'What is the difference between Essential and Premium?', answer: 'The Essential option is based on Novotel Mumbai Juhu Beach in a Superior Ocean View room. Premium offers a choice of JW Marriott Mumbai Juhu or Ramada Plaza by Wyndham Palm Grove. Premium pricing and exact room categories are still to be confirmed.' },
+    { question: 'Are sightseeing tours included?', answer: 'No. The Mumbai stay is intentionally left open so you can choose how much time to spend relaxing and how much exploring. The experiences shown are ideas that can be added to your personalised itinerary and quotation.' },
+    { question: 'Can the hotel or room category be changed?', answer: 'Yes. The listed hotels and room categories are proposed starting points. We can discuss alternatives, subject to availability and a revised quotation.' },
+    { question: 'Do I need a visa for India?', answer: 'Entry requirements depend on your nationality and can change. Check the latest UK government entry guidance and the official Indian visa portal before travel. Any visa or e-visa application and fee is not included in the example price.' },
+    { question: 'Are the flight and train times guaranteed?', answer: 'No. The times supplied are an example for costing purposes. Airline schedules, Eurostar services, hotel availability, baggage allowances and transfer arrangements must all be reconfirmed for your chosen dates.' },
   ],
 };
