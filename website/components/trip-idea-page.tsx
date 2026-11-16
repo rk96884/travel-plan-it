@@ -4,6 +4,7 @@ import styles from './trip-idea.module.css';
 import HolidayDetails from './holiday-details';
 import ThreeCountryOptions from './three-country-options';
 import TrackedEnquiryLink from './tracked-enquiry-link';
+import WeatherClimate from './weather-climate';
 
 function TripPhoto({ image, className = '' }: { image: TripIdea['hero']; className?: string }) {
   return <figure className={`${styles.photo} ${className}`}>
@@ -60,6 +61,7 @@ export default function TripIdeaPage({ trip }: { trip: TripIdea }) {
       <TripPhoto image={trip.hero} className={styles.heroPhoto}/>
     </section>
     <section className={styles.intro}><p className={styles.eyebrow}>{trip.introEyebrow || "ONE JOURNEY, TWO SIDES OF THAILAND"}</p><h2>{trip.introTitle || "City energy. Island ease."}</h2><p>{trip.introText || "Start among Bangkok’s riverside temples, gilded palaces and colourful markets. Then fly south to Phuket for unhurried days by the coast. The guided experiences and transfers stay the same whichever accommodation style you choose."}</p></section>
+    {trip.country === 'India' && <WeatherClimate />}
     <section className={styles.intro}>
       <p className={styles.eyebrow}>MAKE THIS JOURNEY YOUR OWN</p>
       <h2>{destinationGuidance[trip.country || 'Thailand'].heading}</h2>
