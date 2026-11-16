@@ -4,7 +4,7 @@ import styles from './trip-idea.module.css';
 import HolidayDetails from './holiday-details';
 import ThreeCountryOptions from './three-country-options';
 import TrackedEnquiryLink from './tracked-enquiry-link';
-import WeatherClimate from './weather-climate';
+import MumbaiOptions from './mumbai-options';
 
 function TripPhoto({ image, className = '' }: { image: TripIdea['hero']; className?: string }) {
   return <figure className={`${styles.photo} ${className}`}>
@@ -61,24 +61,13 @@ export default function TripIdeaPage({ trip }: { trip: TripIdea }) {
       <TripPhoto image={trip.hero} className={styles.heroPhoto}/>
     </section>
     <section className={styles.intro}><p className={styles.eyebrow}>{trip.introEyebrow || "ONE JOURNEY, TWO SIDES OF THAILAND"}</p><h2>{trip.introTitle || "City energy. Island ease."}</h2><p>{trip.introText || "Start among Bangkok’s riverside temples, gilded palaces and colourful markets. Then fly south to Phuket for unhurried days by the coast. The guided experiences and transfers stay the same whichever accommodation style you choose."}</p></section>
-    {trip.country === 'India' && <WeatherClimate />}
+    {trip.country === 'India' && <MumbaiOptions tiers={trip.tiers} optionalExperiences={trip.optionalExperiences} />}
     <section className={styles.intro}>
       <p className={styles.eyebrow}>MAKE THIS JOURNEY YOUR OWN</p>
       <h2>{destinationGuidance[trip.country || 'Thailand'].heading}</h2>
       <p>{destinationGuidance[trip.country || 'Thailand'].detail}</p>
       <p>Considering another destination? See our <Link href={destinationGuidance[trip.country || 'Thailand'].relatedHref}>{destinationGuidance[trip.country || 'Thailand'].relatedLabel}</Link>, or <Link href="/tailor-made-holidays/">compare all our tailor-made holiday ideas</Link>.</p>
     </section>
-    <section className={styles.tiers} aria-labelledby="tiers-heading">
-      <div className={styles.sectionHead}><p className={styles.eyebrow}>YOUR STAY, YOUR STYLE</p><h2 id="tiers-heading">Choose your accommodation.</h2></div>
-      <div className={styles.tierGrid}>{trip.tiers.map(tier => <article className={styles.tier} key={tier.id}>
-        <p className={styles.tierLabel}>{tier.label}</p><p className={styles.price}>{tier.price === null ? "Price on request" : <>£{tier.price.toLocaleString("en-GB")} <span>pp*</span></>}</p>
-        <p>{tier.note}</p>
-        <ul>{tier.hotels.map(hotel => <li key={hotel.name}><strong>{hotel.place} · {hotel.nights} nights</strong><span>{hotel.name}</span><small>{hotel.room}</small></li>)}</ul>
-        <TrackedEnquiryLink className={styles.button} href={enquiry(tier.id)} tripSlug={trip.slug} position="accommodation" tier={tier.id}>Enquire about {tier.label.toLowerCase()} ↗</TrackedEnquiryLink>
-      </article>)}</div>
-      <p className={styles.fine}>*Example prices are per person based on two sharing a twin/double room, and include the proposed itinerary. Dates, availability and final prices will be confirmed in a personalised quotation.</p>
-    </section>
-    {trip.country === "Singapore, Indonesia & Malaysia" ? <ThreeCountryOptions trip={trip} /> : trip.country === "India" ? <section className={styles.intro} aria-labelledby="mumbai-experiences"><p className={styles.eyebrow}>MAKE THE MOST OF MUMBAI</p><h2 id="mumbai-experiences">A city full of possibilities.</h2><p>The days in Mumbai are deliberately left free. Here are just some of the experiences we could arrange or build into your stay, depending on your interests.</p><div className={styles.tierGrid}>{(trip.optionalExperiences || []).map(item => <article className={styles.tier} key={item.name}><h3>{item.name}</h3><p>{item.detail}</p></article>)}</div><p className={styles.fine}>Optional experiences are not included in the Essential price. Any guiding, transport, tickets and additional costs will be confirmed before you decide.</p></section> : <HolidayDetails trip={trip} />}
     <section className={styles.journey} aria-labelledby="journey-heading">
       <div className={styles.sectionHead}><p className={styles.eyebrow}>YOUR JOURNEY, DAY BY DAY</p><h2 id="journey-heading">{trip.journeyTitle || "From Bangkok to the Andaman Sea."}</h2></div>
       <div className={styles.journeyGrid}><div className={styles.days}>{trip.days.map(day => <article key={day.heading} className={styles.day}><p>{day.heading}</p><div><h3>{day.title}</h3><span>{day.description}</span></div></article>)}</div><div className={styles.journeyAside}><TripPhoto image={trip.secondImage}/><p>{trip.journeyAside || "Seven nights in Phuket, with the freedom to do as much — or as little — as you like."}</p></div></div>
