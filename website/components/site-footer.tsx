@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { site } from '../lib/site';
+import BackToTop from './back-to-top';
 
 export default function SiteFooter({
   contained = false,
@@ -10,10 +11,12 @@ export default function SiteFooter({
 }) {
   const email = process.env.PUBLIC_CONTACT_EMAIL?.trim() || site.contactEmail;
   return (
-    <footer
-      className={`site-footer ${contained ? 'site-footer-contained' : ''}`}
-    >
-      <div className="footer-inner">
+    <>
+      <BackToTop />
+      <footer
+        className={`site-footer ${contained ? 'site-footer-contained' : ''}`}
+      >
+        <div className="footer-inner">
         <div className="footer-top">
           <p>
             A new way to plan
@@ -59,7 +62,8 @@ export default function SiteFooter({
             </a>
           </p>
         )}
-      </div>
-    </footer>
+        </div>
+      </footer>
+    </>
   );
 }
